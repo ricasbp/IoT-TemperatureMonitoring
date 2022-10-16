@@ -5,4 +5,5 @@ services:
     build: 
       context: ./node-red
       dockerfile: Dockerfile
-    
+    volumes:
+      - ./node_red_data:/data
