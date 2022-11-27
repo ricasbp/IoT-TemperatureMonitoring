@@ -40,26 +40,34 @@
         "env": []
     },
     {
-        "id": "637864bd30aeac0a",
+        "id": "eada78bffe31b0ee",
         "type": "tab",
-        "label": "Flow 6",
+        "label": "Room Temperature Comfort IoT Project",
         "disabled": true,
         "info": "",
         "env": []
     },
     {
-        "id": "eada78bffe31b0ee",
+        "id": "2c26b9058db8173f",
         "type": "tab",
-        "label": "Room Temperature Comfort IoT Project",
+        "label": "Database Utils",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "56ec0f1976b88138",
+        "id": "82e904f5c5c26253",
         "type": "tab",
-        "label": "Flow 7",
-        "disabled": true,
+        "label": "Temperature Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0cdf456eee4faca2",
+        "type": "tab",
+        "label": "Temperature Model",
+        "disabled": false,
         "info": "",
         "env": []
     },
@@ -892,16 +900,6 @@
         ]
     },
     {
-        "id": "d35551ea88e0f9e0",
-        "type": "comment",
-        "z": "637864bd30aeac0a",
-        "name": "TODO",
-        "info": "TODO",
-        "x": 710,
-        "y": 280,
-        "wires": []
-    },
-    {
         "id": "8acc2b9b210c0142",
         "type": "csv",
         "z": "eada78bffe31b0ee",
@@ -956,7 +954,6 @@
         "z": "eada78bffe31b0ee",
         "name": "historical data csv file",
         "filename": "/fcul/iot_proj/IoT-TemperatureMonitoring/historical.data",
-        "filenameType": "str",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
@@ -1019,7 +1016,7 @@
         "type": "debug",
         "z": "eada78bffe31b0ee",
         "name": "debug 2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2143,7 +2140,7 @@
         "type": "debug",
         "z": "eada78bffe31b0ee",
         "name": "debug 10",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2190,6 +2187,71 @@
             [
                 "c5d0f978928948ee"
             ]
+        ]
+    },
+    {
+        "id": "2a500ffbb2347df6",
+        "type": "inject",
+        "z": "2c26b9058db8173f",
+        "name": "Load Historical Data",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 180,
+        "y": 60,
+        "wires": [
+            [
+                "ce6ffb3b803686fc"
+            ]
+        ]
+    },
+    {
+        "id": "ce6ffb3b803686fc",
+        "type": "file in",
+        "z": "2c26b9058db8173f",
+        "name": "historical data csv file",
+        "filename": "/fcul/iot_proj/IoT-TemperatureMonitoring/historical.data",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 420,
+        "y": 60,
+        "wires": [
+            [
+                "dfe9b04a6dcc580a"
+            ]
+        ]
+    },
+    {
+        "id": "dfe9b04a6dcc580a",
+        "type": "csv",
+        "z": "2c26b9058db8173f",
+        "name": "parse csv",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "all",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 440,
+        "y": 200,
+        "wires": [
+            []
         ]
     }
 ]
