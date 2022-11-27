@@ -6,6 +6,41 @@ services:
       context: ./node-red
       dockerfile: Dockerfile
     volumes:
-      - ./node_red_data:/data
+      - ./data/node_red:/data
+      - ./data/datasets/historical.data:/app/historical.data
     ports:
       - 1880:1880
+  mosquitto:
+    image: eclipse-mosquitto:2.0.15
+    volumes:
+      - ./data/mosquitto/config/:/mosquitto/config/:ro
+      - ./data/mosquitto/log/:/mosquitto/log/
+      - ./data/mosquitto/data/:/mosquitto/data/
+    #ports:
+    #  - 1883:1883
+    #  - 9001:9001
+  timescale_db:
+    image: timescale/timescaledb:2.8.1-pg14
+    restart: always
+    environment:
+      POSTGRES_USER: timescaledb
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./data/timescaledb:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  #prometheus_postgresql_adapter:
+  #  depends_on:
+  #  - timescaledb
+  #  environment:
+  #    TS_PROM_LOG_LEVEL: debug
+  #    TS_PROM_DB_CONNECT_RETRIES: 10
+  #    TS_PROM_DB_HOST: timescaledb
+  #    TS_PROM_DB_USER: timescaledb
+  #    TS_PROM_DB_PASSWORD: password
+  #    TS_PROM_DB_NAME: postgres
+  #    TS_PROM_WEB_TELEMETRY_PATH: /metrics-text
+  #  image: timescale/timescale-prometheus:latest
+  #  restart: always
+  #  ports:
+  #  - 9201:9201/tcp

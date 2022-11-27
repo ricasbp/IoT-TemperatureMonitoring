@@ -1,0 +1,15 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "node-red-contrib-filter": "~0.1.4",
+        "node-red-dashboard": "~3.2.0",
+        "node-red-node-email": "~1.18.1",
+        "node-red-node-fitbit": "~0.1.0",
+        "node-red-node-openweathermap": "~0.5.1",
+        "node-red-node-pi-gpio": "~2.0.5",
+        "node-red-node-twitter": "~1.2.0"
+    }
+}
