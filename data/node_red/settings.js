@@ -87,6 +87,11 @@ module.exports = {
                 permissions: "*"
             },
             {
+                username: "ricardo",
+                password: "$2b$08$VR7eqEmQO1rSlIv5Uy7HPu0wkTJHmv9zXUc7n1dQOYEQOFRMVhT0y",
+                permissions: "read"
+            },
+            {
                 username: "guest",
                 password: "$2b$08$VR7eqEmQO1rSlIv5Uy7HPu0wkTJHmv9zXUc7n1dQOYEQOFRMVhT0y",
                 permissions: "read"

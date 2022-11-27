@@ -5,6 +5,7 @@ services:
     build: 
       context: ./node-red
       dockerfile: Dockerfile
+    container_name: node_red
     volumes:
       - ./data/node_red:/data
       - ./data/datasets/historical.data:/app/historical.data
@@ -12,6 +13,7 @@ services:
       - 1880:1880
   mosquitto:
     image: eclipse-mosquitto:2.0.15
+    container_name: mosquitto_broker
     volumes:
       - ./data/mosquitto/config/:/mosquitto/config/:ro
       - ./data/mosquitto/log/:/mosquitto/log/
@@ -22,6 +24,7 @@ services:
   timescale_db:
     image: timescale/timescaledb:2.8.1-pg14
     restart: always
+    container_name: timescale_db
     environment:
       POSTGRES_USER: timescaledb
       POSTGRES_PASSWORD: password

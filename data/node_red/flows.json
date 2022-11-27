@@ -388,6 +388,31 @@
         "hidden": false
     },
     {
+        "id": "c1bde5c5cae042e2",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "timescale_db",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "temperature_db",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "temp_monitor",
+        "userFieldType": "str",
+        "password": "fc2023",
+        "passwordFieldType": "str"
+    },
+    {
         "id": "1fe28d05009a58dc",
         "type": "comment",
         "z": "49205adc630d9e62",
@@ -953,7 +978,7 @@
         "type": "file in",
         "z": "eada78bffe31b0ee",
         "name": "historical data csv file",
-        "filename": "/fcul/iot_proj/IoT-TemperatureMonitoring/historical.data",
+        "filename": "/app/historical.data",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
@@ -2193,6 +2218,7 @@
         "id": "2a500ffbb2347df6",
         "type": "inject",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "Load Historical Data",
         "props": [
             {
@@ -2210,7 +2236,7 @@
         "y": 60,
         "wires": [
             [
-                "ce6ffb3b803686fc"
+                "5fe11c1032ef89ef"
             ]
         ]
     },
@@ -2219,13 +2245,13 @@
         "type": "file in",
         "z": "2c26b9058db8173f",
         "name": "historical data csv file",
-        "filename": "/fcul/iot_proj/IoT-TemperatureMonitoring/historical.data",
+        "filename": "/app/historical.data",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 420,
+        "x": 680,
         "y": 60,
         "wires": [
             [
@@ -2241,15 +2267,114 @@
         "sep": ",",
         "hdrin": true,
         "hdrout": "all",
-        "multi": "mult",
+        "multi": "one",
         "ret": "\\n",
         "temp": "",
         "skip": "0",
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 440,
-        "y": 140,
+        "x": 880,
+        "y": 60,
+        "wires": [
+            [
+                "f32d4832927a420f"
+            ]
+        ]
+    },
+    {
+        "id": "fe7dcfd820009cc2",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "Insert Historical Data",
+        "query": "--INSERT INTO historical_data\n--(date, temperature, label)\n--VALUES (TO_TIMESTAMP('{{payload.date}}','YYYY-MM-DD HH:MI:SS'), {{payload.temperature}}, '{{payload.label}}')\n--;\n\n\nINSERT INTO historical_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1440,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5fe11c1032ef89ef",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "Truncate Historical Table",
+        "query": "TRUNCATE historical_data;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 430,
+        "y": 60,
+        "wires": [
+            [
+                "ce6ffb3b803686fc"
+            ]
+        ]
+    },
+    {
+        "id": "f32d4832927a420f",
+        "type": "function",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "func": "\nlet date = msg.payload.date;\nlet temperature = msg.payload.temperature;\nlet label = msg.payload.label;\n\nmsg.params = [date, temperature, label];\nif (temperature != null)\n    return msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 60,
+        "wires": [
+            [
+                "c5ab34a68f470922"
+            ]
+        ]
+    },
+    {
+        "id": "c5ab34a68f470922",
+        "type": "delay",
+        "z": "2c26b9058db8173f",
+        "name": "message pooler",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "3500",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1220,
+        "y": 60,
+        "wires": [
+            [
+                "fe7dcfd820009cc2"
+            ]
+        ]
+    },
+    {
+        "id": "80db1473bff754fc",
+        "type": "ui_date_picker",
+        "z": "82e904f5c5c26253",
+        "name": "",
+        "label": "date",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 590,
+        "y": 200,
         "wires": [
             []
         ]

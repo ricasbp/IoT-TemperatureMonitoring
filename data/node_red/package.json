@@ -5,6 +5,7 @@
     "private": true,
     "dependencies": {
         "node-red-contrib-filter": "~0.1.4",
+        "node-red-contrib-postgresql": "~0.11.2",
         "node-red-dashboard": "~3.2.0",
         "node-red-node-email": "~1.18.1",
         "node-red-node-fitbit": "~0.1.0",

@@ -10,4 +10,4 @@
 
 ### 2.2. Add new User
 In the ./data/node_red folder, open config.users.json and add your desired user.
-To generate hash - TODO (bash not implemented yet)
+To generate hash - `sh ./utils/hash_pwd.sh`

@@ -767,5 +767,25 @@
                 "file": "/data/node_modules/node-red-contrib-filter/18-filter.js"
             }
         }
+    },
+    "node-red-contrib-postgresql": {
+        "name": "node-red-contrib-postgresql",
+        "version": "0.11.2",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "postgresql": {
+                "name": "postgresql",
+                "types": [
+                    "postgreSQLConfig",
+                    "postgresql"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-postgresql",
+                "file": "/data/node_modules/node-red-contrib-postgresql/postgresql.js"
+            }
+        }
     }
 }
