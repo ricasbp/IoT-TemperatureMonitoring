@@ -8,6 +8,7 @@ services:
     container_name: node_red
     volumes:
       - ./data/node_red:/data
+      - ./data/datasets/online.data:/app/online.data
       - ./data/datasets/historical.data:/app/historical.data
     ports:
       - 1880:1880

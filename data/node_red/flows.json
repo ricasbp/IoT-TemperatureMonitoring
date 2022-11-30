@@ -413,6 +413,36 @@
         "passwordFieldType": "str"
     },
     {
+        "id": "2115f8efaf2412c8",
+        "type": "ui_tab",
+        "name": "Temperature Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "867a9ab96d94d9de",
+        "type": "ui_group",
+        "name": "Historical Dashboard",
+        "tab": "2115f8efaf2412c8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6fcb8fa133925954",
+        "type": "ui_group",
+        "name": "Temperature Model",
+        "tab": "2115f8efaf2412c8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "1fe28d05009a58dc",
         "type": "comment",
         "z": "49205adc630d9e62",
@@ -2218,7 +2248,6 @@
         "id": "2a500ffbb2347df6",
         "type": "inject",
         "z": "2c26b9058db8173f",
-        "d": true,
         "name": "Load Historical Data",
         "props": [
             {
@@ -2244,14 +2273,14 @@
         "id": "ce6ffb3b803686fc",
         "type": "file in",
         "z": "2c26b9058db8173f",
-        "name": "historical data csv file",
+        "name": "read historical data csv file",
         "filename": "/app/historical.data",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 680,
+        "x": 700,
         "y": 60,
         "wires": [
             [
@@ -2274,7 +2303,7 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 880,
+        "x": 920,
         "y": 60,
         "wires": [
             [
@@ -2287,12 +2316,12 @@
         "type": "postgresql",
         "z": "2c26b9058db8173f",
         "name": "Insert Historical Data",
-        "query": "--INSERT INTO historical_data\n--(date, temperature, label)\n--VALUES (TO_TIMESTAMP('{{payload.date}}','YYYY-MM-DD HH:MI:SS'), {{payload.temperature}}, '{{payload.label}}')\n--;\n\n\nINSERT INTO historical_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
+        "query": "\nINSERT INTO historical_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
         "postgreSQLConfig": "c1bde5c5cae042e2",
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 1440,
+        "x": 1480,
         "y": 60,
         "wires": [
             []
@@ -2327,7 +2356,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
+        "x": 1080,
         "y": 60,
         "wires": [
             [
@@ -2352,7 +2381,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1220,
+        "x": 1260,
         "y": 60,
         "wires": [
             [
@@ -2361,22 +2390,340 @@
         ]
     },
     {
-        "id": "80db1473bff754fc",
-        "type": "ui_date_picker",
-        "z": "82e904f5c5c26253",
-        "name": "",
-        "label": "date",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 590,
-        "y": 200,
+        "id": "c75e2a82787cfb26",
+        "type": "inject",
+        "z": "2c26b9058db8173f",
+        "name": "Load Online Data",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "38b53cc8bbb43cf5"
+            ]
+        ]
+    },
+    {
+        "id": "691504a54d0a2ebf",
+        "type": "file in",
+        "z": "2c26b9058db8173f",
+        "name": "read online data csv file",
+        "filename": "/app/online.data",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 690,
+        "y": 120,
+        "wires": [
+            [
+                "b5c7e71320bf45d9"
+            ]
+        ]
+    },
+    {
+        "id": "b5c7e71320bf45d9",
+        "type": "csv",
+        "z": "2c26b9058db8173f",
+        "name": "parse csv",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 920,
+        "y": 120,
+        "wires": [
+            [
+                "3c6f6f304d9e570c"
+            ]
+        ]
+    },
+    {
+        "id": "eb140b4200af64d2",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "Insert Online Data",
+        "query": "\nINSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1470,
+        "y": 120,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "38b53cc8bbb43cf5",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "Truncate Online Table",
+        "query": "TRUNCATE online_data;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "691504a54d0a2ebf"
+            ]
+        ]
+    },
+    {
+        "id": "3c6f6f304d9e570c",
+        "type": "function",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "func": "\nlet date = msg.payload.date;\nlet temperature = msg.payload.temperature;\nlet label = msg.payload.label;\n\nmsg.params = [date, temperature, label];\nif (temperature != null)\n    return msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 120,
+        "wires": [
+            [
+                "f765bef7caa879ac"
+            ]
+        ]
+    },
+    {
+        "id": "f765bef7caa879ac",
+        "type": "delay",
+        "z": "2c26b9058db8173f",
+        "name": "message pooler",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "3500",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1260,
+        "y": 120,
+        "wires": [
+            [
+                "eb140b4200af64d2"
+            ]
+        ]
+    },
+    {
+        "id": "7fb6dfe382f9ee44",
+        "type": "ui_gauge",
+        "z": "82e904f5c5c26253",
+        "name": "Mean Temperature",
+        "group": "867a9ab96d94d9de",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Mean Temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-30",
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 850,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d4fbd5e8ae89b743",
+        "type": "ui_dropdown",
+        "z": "82e904f5c5c26253",
+        "name": "Granularity",
+        "label": "Granularity",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "867a9ab96d94d9de",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Daily",
+                "value": "Daily",
+                "type": "str"
+            },
+            {
+                "label": "Monthly",
+                "value": "Monthly",
+                "type": "str"
+            },
+            {
+                "label": "Yearly",
+                "value": "Yearly",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 830,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46ac09ed1e6cdc75",
+        "type": "ui_table",
+        "z": "82e904f5c5c26253",
+        "group": "867a9ab96d94d9de",
+        "name": "Values",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "columns": [
+            {
+                "field": "",
+                "title": "Test",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 810,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "3384aeebe5bd7856",
+        "type": "ui_dropdown",
+        "z": "82e904f5c5c26253",
+        "name": "Display",
+        "label": "Display",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "867a9ab96d94d9de",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Graph",
+                "value": "Graph",
+                "type": "str"
+            },
+            {
+                "label": "Table",
+                "value": "Table",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 820,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "418da393f012208a",
+        "type": "ui_gauge",
+        "z": "0cdf456eee4faca2",
+        "name": "Current Temperature",
+        "group": "6fcb8fa133925954",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Current Temperature",
+        "label": "º C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 680,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8a3306af8267d0cc",
+        "type": "ui_text",
+        "z": "0cdf456eee4faca2",
+        "group": "6fcb8fa133925954",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "Current Predicted Confort",
+        "label": "Current Predicted Confort",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 690,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d58eb4b3c6fbb369",
+        "type": "ui_text",
+        "z": "0cdf456eee4faca2",
+        "group": "6fcb8fa133925954",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "Predicted Confort Range",
+        "label": "Predicted Confort Range",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 690,
+        "y": 400,
+        "wires": []
     }
 ]

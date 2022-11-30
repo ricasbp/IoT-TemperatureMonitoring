@@ -1,0 +1,1127 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--no-audit',
+1 verbose cli   '--no-update-notifier',
+1 verbose cli   '--no-fund',
+1 verbose cli   '--save',
+1 verbose cli   '--save-prefix=~',
+1 verbose cli   '--production',
+1 verbose cli   '--engine-strict',
+1 verbose cli   'node-red-node-email@1.18.2'
+1 verbose cli ]
+2 info using npm@6.14.15
+3 info using node@v14.18.2
+4 verbose npm-session 493c6d28f194e802
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 200 https://registry.npmjs.org/node-red-node-email 937ms
+8 http fetch GET 200 https://registry.npmjs.org/node-red-node-email/-/node-red-node-email-1.18.2.tgz 199ms
+9 silly pacote version manifest for node-red-node-email@1.18.2 fetched in 1158ms
+10 timing stage:loadCurrentTree Completed in 1786ms
+11 silly install loadIdealTree
+12 silly install cloneCurrentTreeToIdealTree
+13 timing stage:loadIdealTree:cloneCurrentTree Completed in 4ms
+14 silly install loadShrinkwrap
+15 timing stage:loadIdealTree:loadShrinkwrap Completed in 99ms
+16 silly install loadAllDepsIntoIdealTree
+17 silly resolveWithNewModule node-red-node-email@1.18.2 checking installable status
+18 silly tarball trying https://registry.npmjs.org/node-red-node-email/-/node-red-node-email-1.18.2.tgz by hash: sha512-Vkbv+F8pHQTvuqnOtHZvdaS9q8JvxyRM8mVLRyxgClFSWBePyX5qqUWuxV3ejquwfGMSHRK9H0yQZos3rXZMeQ==
+19 silly extract https://registry.npmjs.org/node-red-node-email/-/node-red-node-email-1.18.2.tgz extracted to /tmp/npm-15536-badac014/unpack-44018b13 (304ms)
+20 silly addBundled read tarball
+21 silly cleanup remove extracted module
+22 silly removeObsoleteDep removing node-red-node-email@1.18.1 from the tree as its been replaced by a newer version or is no longer required
+23 silly removeObsoleteDep removing imap@0.8.19 from the tree as its been replaced by a newer version or is no longer required
+24 silly removeObsoleteDep removing readable-stream@1.1.14 from the tree as its been replaced by a newer version or is no longer required
+25 silly removeObsoleteDep removing core-util-is@1.0.3 from the tree as its been replaced by a newer version or is no longer required
+26 silly removeObsoleteDep removing inherits@2.0.4 from the tree as its been replaced by a newer version or is no longer required
+27 silly removeObsoleteDep removing isarray@0.0.1 from the tree as its been replaced by a newer version or is no longer required
+28 silly removeObsoleteDep removing string_decoder@0.10.31 from the tree as its been replaced by a newer version or is no longer required
+29 silly removeObsoleteDep removing utf7@1.0.2 from the tree as its been replaced by a newer version or is no longer required
+30 silly removeObsoleteDep removing semver@5.3.0 from the tree as its been replaced by a newer version or is no longer required
+31 silly removeObsoleteDep removing mailparser@3.5.0 from the tree as its been replaced by a newer version or is no longer required
+32 silly removeObsoleteDep removing encoding-japanese@2.0.0 from the tree as its been replaced by a newer version or is no longer required
+33 silly removeObsoleteDep removing he@1.2.0 from the tree as its been replaced by a newer version or is no longer required
+34 silly removeObsoleteDep removing html-to-text@8.2.0 from the tree as its been replaced by a newer version or is no longer required
+35 silly removeObsoleteDep removing @selderee/plugin-htmlparser2@0.6.0 from the tree as its been replaced by a newer version or is no longer required
+36 silly removeObsoleteDep removing domhandler@4.3.1 from the tree as its been replaced by a newer version or is no longer required
+37 silly removeObsoleteDep removing domelementtype@2.3.0 from the tree as its been replaced by a newer version or is no longer required
+38 silly removeObsoleteDep removing selderee@0.6.0 from the tree as its been replaced by a newer version or is no longer required
+39 silly removeObsoleteDep removing parseley@0.7.0 from the tree as its been replaced by a newer version or is no longer required
+40 silly removeObsoleteDep removing moo@0.5.2 from the tree as its been replaced by a newer version or is no longer required
+41 silly removeObsoleteDep removing nearley@2.20.1 from the tree as its been replaced by a newer version or is no longer required
+42 silly removeObsoleteDep removing commander@2.20.3 from the tree as its been replaced by a newer version or is no longer required
+43 silly removeObsoleteDep removing railroad-diagrams@1.0.0 from the tree as its been replaced by a newer version or is no longer required
+44 silly removeObsoleteDep removing randexp@0.4.6 from the tree as its been replaced by a newer version or is no longer required
+45 silly removeObsoleteDep removing discontinuous-range@1.0.0 from the tree as its been replaced by a newer version or is no longer required
+46 silly removeObsoleteDep removing ret@0.1.15 from the tree as its been replaced by a newer version or is no longer required
+47 silly removeObsoleteDep removing deepmerge@4.2.2 from the tree as its been replaced by a newer version or is no longer required
+48 silly removeObsoleteDep removing htmlparser2@6.1.0 from the tree as its been replaced by a newer version or is no longer required
+49 silly removeObsoleteDep removing domutils@2.8.0 from the tree as its been replaced by a newer version or is no longer required
+50 silly removeObsoleteDep removing dom-serializer@1.4.1 from the tree as its been replaced by a newer version or is no longer required
+51 silly removeObsoleteDep removing entities@2.2.0 from the tree as its been replaced by a newer version or is no longer required
+52 silly removeObsoleteDep removing minimist@1.2.7 from the tree as its been replaced by a newer version or is no longer required
+53 silly removeObsoleteDep removing iconv-lite@0.6.3 from the tree as its been replaced by a newer version or is no longer required
+54 silly removeObsoleteDep removing safer-buffer@2.1.2 from the tree as its been replaced by a newer version or is no longer required
+55 silly removeObsoleteDep removing libmime@5.1.0 from the tree as its been replaced by a newer version or is no longer required
+56 silly removeObsoleteDep removing libbase64@1.2.1 from the tree as its been replaced by a newer version or is no longer required
+57 silly removeObsoleteDep removing libqp@1.1.0 from the tree as its been replaced by a newer version or is no longer required
+58 silly removeObsoleteDep removing linkify-it@4.0.0 from the tree as its been replaced by a newer version or is no longer required
+59 silly removeObsoleteDep removing uc.micro@1.0.6 from the tree as its been replaced by a newer version or is no longer required
+60 silly removeObsoleteDep removing mailsplit@5.3.2 from the tree as its been replaced by a newer version or is no longer required
+61 silly removeObsoleteDep removing nodemailer@6.7.3 from the tree as its been replaced by a newer version or is no longer required
+62 silly removeObsoleteDep removing tlds@1.231.0 from the tree as its been replaced by a newer version or is no longer required
+63 silly removeObsoleteDep removing nodemailer@6.8.0 from the tree as its been replaced by a newer version or is no longer required
+64 silly removeObsoleteDep removing smtp-server@3.11.0 from the tree as its been replaced by a newer version or is no longer required
+65 silly removeObsoleteDep removing base32.js@0.1.0 from the tree as its been replaced by a newer version or is no longer required
+66 silly removeObsoleteDep removing ipv6-normalize@1.0.1 from the tree as its been replaced by a newer version or is no longer required
+67 silly removeObsoleteDep removing nodemailer@6.7.3 from the tree as its been replaced by a newer version or is no longer required
+68 timing stage:loadIdealTree:loadAllDepsIntoIdealTree Completed in 567ms
+69 timing stage:loadIdealTree Completed in 684ms
+70 silly currentTree node-red-project@0.0.1
+70 silly currentTree +-- @socket.io/component-emitter@3.1.0
+70 silly currentTree +-- @types/cookie@0.4.1
+70 silly currentTree +-- @types/cors@2.8.12
+70 silly currentTree +-- @types/node@18.11.9
+70 silly currentTree +-- accepts@1.3.8
+70 silly currentTree +-- ajv@6.12.6
+70 silly currentTree +-- asn1@0.2.6
+70 silly currentTree +-- assert-plus@1.0.0
+70 silly currentTree +-- asynckit@0.4.0
+70 silly currentTree +-- aws-sign2@0.7.0
+70 silly currentTree +-- aws4@1.11.0
+70 silly currentTree +-- base64id@2.0.0
+70 silly currentTree +-- bcrypt-pbkdf@1.0.2
+70 silly currentTree +-- buffer-writer@2.0.0
+70 silly currentTree +-- bytes@3.0.0
+70 silly currentTree +-- caseless@0.12.0
+70 silly currentTree +-- combined-stream@1.0.8
+70 silly currentTree +-- compressible@2.0.18
+70 silly currentTree +-- compression@1.7.4
+70 silly currentTree +-- cookie@0.4.2
+70 silly currentTree +-- core-util-is@1.0.2
+70 silly currentTree +-- cors@2.8.5
+70 silly currentTree +-- dashdash@1.14.1
+70 silly currentTree +-- debug@2.6.9
+70 silly currentTree +-- delayed-stream@1.0.0
+70 silly currentTree +-- depd@2.0.0
+70 silly currentTree +-- destroy@1.2.0
+70 silly currentTree +-- ecc-jsbn@0.1.2
+70 silly currentTree +-- ee-first@1.1.1
+70 silly currentTree +-- encodeurl@1.0.2
+70 silly currentTree +-- engine.io-parser@5.0.4
+70 silly currentTree +-- engine.io@6.2.1
+70 silly currentTree | +-- debug@4.3.4
+70 silly currentTree | `-- ms@2.1.2
+70 silly currentTree +-- escape-html@1.0.3
+70 silly currentTree +-- etag@1.8.1
+70 silly currentTree +-- extend@3.0.2
+70 silly currentTree +-- extsprintf@1.3.0
+70 silly currentTree +-- fast-deep-equal@3.1.3
+70 silly currentTree +-- fast-json-stable-stringify@2.1.0
+70 silly currentTree +-- forever-agent@0.6.1
+70 silly currentTree +-- form-data@2.3.3
+70 silly currentTree +-- fresh@0.5.2
+70 silly currentTree +-- getpass@0.1.7
+70 silly currentTree +-- gridstack@0.6.4
+70 silly currentTree +-- har-schema@2.0.0
+70 silly currentTree +-- har-validator@5.1.5
+70 silly currentTree +-- http-errors@2.0.0
+70 silly currentTree +-- http-signature@1.2.0
+70 silly currentTree +-- inherits@2.0.4
+70 silly currentTree +-- is-typedarray@1.0.0
+70 silly currentTree +-- isstream@0.1.2
+70 silly currentTree +-- jquery@3.6.1
+70 silly currentTree +-- jsbn@0.1.1
+70 silly currentTree +-- json-schema-traverse@0.4.1
+70 silly currentTree +-- json-schema@0.4.0
+70 silly currentTree +-- json-stringify-safe@5.0.1
+70 silly currentTree +-- jsprim@1.4.2
+70 silly currentTree +-- mime-db@1.52.0
+70 silly currentTree +-- mime-types@2.1.35
+70 silly currentTree +-- mime@1.6.0
+70 silly currentTree +-- ms@2.0.0
+70 silly currentTree +-- mustache@4.2.0
+70 silly currentTree +-- negotiator@0.6.3
+70 silly currentTree +-- node-red-contrib-filter@0.1.4
+70 silly currentTree +-- node-red-contrib-postgresql@0.11.2
+70 silly currentTree +-- node-red-dashboard@3.2.3
+70 silly currentTree +-- node-red-node-email@1.18.1
+70 silly currentTree | +-- @selderee/plugin-htmlparser2@0.6.0
+70 silly currentTree | +-- base32.js@0.1.0
+70 silly currentTree | +-- commander@2.20.3
+70 silly currentTree | +-- core-util-is@1.0.3
+70 silly currentTree | +-- deepmerge@4.2.2
+70 silly currentTree | +-- discontinuous-range@1.0.0
+70 silly currentTree | +-- dom-serializer@1.4.1
+70 silly currentTree | +-- domelementtype@2.3.0
+70 silly currentTree | +-- domhandler@4.3.1
+70 silly currentTree | +-- domutils@2.8.0
+70 silly currentTree | +-- encoding-japanese@2.0.0
+70 silly currentTree | +-- entities@2.2.0
+70 silly currentTree | +-- he@1.2.0
+70 silly currentTree | +-- html-to-text@8.2.0
+70 silly currentTree | +-- htmlparser2@6.1.0
+70 silly currentTree | +-- iconv-lite@0.6.3
+70 silly currentTree | +-- imap@0.8.19
+70 silly currentTree | +-- inherits@2.0.4
+70 silly currentTree | +-- ipv6-normalize@1.0.1
+70 silly currentTree | +-- isarray@0.0.1
+70 silly currentTree | +-- libbase64@1.2.1
+70 silly currentTree | +-- libmime@5.1.0
+70 silly currentTree | +-- libqp@1.1.0
+70 silly currentTree | +-- linkify-it@4.0.0
+70 silly currentTree | +-- mailparser@3.5.0
+70 silly currentTree | | `-- nodemailer@6.7.3
+70 silly currentTree | +-- mailsplit@5.3.2
+70 silly currentTree | +-- minimist@1.2.7
+70 silly currentTree | +-- moo@0.5.2
+70 silly currentTree | +-- nearley@2.20.1
+70 silly currentTree | +-- nodemailer@6.8.0
+70 silly currentTree | +-- parseley@0.7.0
+70 silly currentTree | +-- railroad-diagrams@1.0.0
+70 silly currentTree | +-- randexp@0.4.6
+70 silly currentTree | +-- readable-stream@1.1.14
+70 silly currentTree | +-- ret@0.1.15
+70 silly currentTree | +-- safer-buffer@2.1.2
+70 silly currentTree | +-- selderee@0.6.0
+70 silly currentTree | +-- semver@5.3.0
+70 silly currentTree | +-- smtp-server@3.11.0
+70 silly currentTree | | `-- nodemailer@6.7.3
+70 silly currentTree | +-- string_decoder@0.10.31
+70 silly currentTree | +-- tlds@1.231.0
+70 silly currentTree | +-- uc.micro@1.0.6
+70 silly currentTree | `-- utf7@1.0.2
+70 silly currentTree +-- node-red-node-fitbit@0.1.0
+70 silly currentTree | `-- oauth@0.9.15
+70 silly currentTree +-- node-red-node-openweathermap@0.5.1
+70 silly currentTree +-- node-red-node-pi-gpio@2.0.5
+70 silly currentTree +-- node-red-node-twitter@1.2.0
+70 silly currentTree +-- oauth-sign@0.9.0
+70 silly currentTree +-- oauth@0.10.0
+70 silly currentTree +-- object-assign@4.1.1
+70 silly currentTree +-- on-finished@2.4.1
+70 silly currentTree +-- on-headers@1.0.2
+70 silly currentTree +-- packet-reader@1.0.0
+70 silly currentTree +-- parseurl@1.3.3
+70 silly currentTree +-- performance-now@2.1.0
+70 silly currentTree +-- pg-connection-string@2.5.0
+70 silly currentTree +-- pg-cursor@2.7.4
+70 silly currentTree +-- pg-int8@1.0.1
+70 silly currentTree +-- pg-pool@3.5.2
+70 silly currentTree +-- pg-protocol@1.5.0
+70 silly currentTree +-- pg-types@2.2.0
+70 silly currentTree +-- pg@8.8.0
+70 silly currentTree +-- pgpass@1.0.5
+70 silly currentTree +-- postgres-array@2.0.0
+70 silly currentTree +-- postgres-bytea@1.0.0
+70 silly currentTree +-- postgres-date@1.0.7
+70 silly currentTree +-- postgres-interval@1.2.0
+70 silly currentTree +-- psl@1.9.0
+70 silly currentTree +-- punycode@2.1.1
+70 silly currentTree +-- qs@6.5.3
+70 silly currentTree +-- range-parser@1.2.1
+70 silly currentTree +-- request@2.88.2
+70 silly currentTree +-- safe-buffer@5.1.2
+70 silly currentTree +-- safer-buffer@2.1.2
+70 silly currentTree +-- send@0.18.0
+70 silly currentTree | `-- ms@2.1.3
+70 silly currentTree +-- serve-static@1.15.0
+70 silly currentTree +-- setprototypeof@1.2.0
+70 silly currentTree +-- socket.io-adapter@2.4.0
+70 silly currentTree +-- socket.io-parser@4.2.1
+70 silly currentTree | +-- debug@4.3.4
+70 silly currentTree | `-- ms@2.1.2
+70 silly currentTree +-- socket.io@4.5.4
+70 silly currentTree | +-- debug@4.3.4
+70 silly currentTree | `-- ms@2.1.2
+70 silly currentTree +-- split2@4.1.0
+70 silly currentTree +-- sshpk@1.17.0
+70 silly currentTree +-- statuses@2.0.1
+70 silly currentTree +-- toidentifier@1.0.1
+70 silly currentTree +-- tough-cookie@2.5.0
+70 silly currentTree +-- tunnel-agent@0.6.0
+70 silly currentTree +-- tweetnacl@0.14.5
+70 silly currentTree +-- twitter-ng@0.6.2
+70 silly currentTree +-- uri-js@4.4.1
+70 silly currentTree +-- uuid@3.4.0
+70 silly currentTree +-- vary@1.1.2
+70 silly currentTree +-- verror@1.10.0
+70 silly currentTree +-- ws@8.2.3
+70 silly currentTree `-- xtend@4.0.2
+71 silly idealTree node-red-project@0.0.1
+71 silly idealTree +-- @socket.io/component-emitter@3.1.0
+71 silly idealTree +-- @types/cookie@0.4.1
+71 silly idealTree +-- @types/cors@2.8.12
+71 silly idealTree +-- @types/node@18.11.9
+71 silly idealTree +-- accepts@1.3.8
+71 silly idealTree +-- ajv@6.12.6
+71 silly idealTree +-- asn1@0.2.6
+71 silly idealTree +-- assert-plus@1.0.0
+71 silly idealTree +-- asynckit@0.4.0
+71 silly idealTree +-- aws-sign2@0.7.0
+71 silly idealTree +-- aws4@1.11.0
+71 silly idealTree +-- base64id@2.0.0
+71 silly idealTree +-- bcrypt-pbkdf@1.0.2
+71 silly idealTree +-- buffer-writer@2.0.0
+71 silly idealTree +-- bytes@3.0.0
+71 silly idealTree +-- caseless@0.12.0
+71 silly idealTree +-- combined-stream@1.0.8
+71 silly idealTree +-- compressible@2.0.18
+71 silly idealTree +-- compression@1.7.4
+71 silly idealTree +-- cookie@0.4.2
+71 silly idealTree +-- core-util-is@1.0.2
+71 silly idealTree +-- cors@2.8.5
+71 silly idealTree +-- dashdash@1.14.1
+71 silly idealTree +-- debug@2.6.9
+71 silly idealTree +-- delayed-stream@1.0.0
+71 silly idealTree +-- depd@2.0.0
+71 silly idealTree +-- destroy@1.2.0
+71 silly idealTree +-- ecc-jsbn@0.1.2
+71 silly idealTree +-- ee-first@1.1.1
+71 silly idealTree +-- encodeurl@1.0.2
+71 silly idealTree +-- engine.io-parser@5.0.4
+71 silly idealTree +-- engine.io@6.2.1
+71 silly idealTree | +-- debug@4.3.4
+71 silly idealTree | `-- ms@2.1.2
+71 silly idealTree +-- escape-html@1.0.3
+71 silly idealTree +-- etag@1.8.1
+71 silly idealTree +-- extend@3.0.2
+71 silly idealTree +-- extsprintf@1.3.0
+71 silly idealTree +-- fast-deep-equal@3.1.3
+71 silly idealTree +-- fast-json-stable-stringify@2.1.0
+71 silly idealTree +-- forever-agent@0.6.1
+71 silly idealTree +-- form-data@2.3.3
+71 silly idealTree +-- fresh@0.5.2
+71 silly idealTree +-- getpass@0.1.7
+71 silly idealTree +-- gridstack@0.6.4
+71 silly idealTree +-- har-schema@2.0.0
+71 silly idealTree +-- har-validator@5.1.5
+71 silly idealTree +-- http-errors@2.0.0
+71 silly idealTree +-- http-signature@1.2.0
+71 silly idealTree +-- inherits@2.0.4
+71 silly idealTree +-- is-typedarray@1.0.0
+71 silly idealTree +-- isstream@0.1.2
+71 silly idealTree +-- jquery@3.6.1
+71 silly idealTree +-- jsbn@0.1.1
+71 silly idealTree +-- json-schema-traverse@0.4.1
+71 silly idealTree +-- json-schema@0.4.0
+71 silly idealTree +-- json-stringify-safe@5.0.1
+71 silly idealTree +-- jsprim@1.4.2
+71 silly idealTree +-- mime-db@1.52.0
+71 silly idealTree +-- mime-types@2.1.35
+71 silly idealTree +-- mime@1.6.0
+71 silly idealTree +-- ms@2.0.0
+71 silly idealTree +-- mustache@4.2.0
+71 silly idealTree +-- negotiator@0.6.3
+71 silly idealTree +-- node-red-contrib-filter@0.1.4
+71 silly idealTree +-- node-red-contrib-postgresql@0.11.2
+71 silly idealTree +-- node-red-dashboard@3.2.3
+71 silly idealTree +-- node-red-node-email@1.18.2
+71 silly idealTree | +-- @selderee/plugin-htmlparser2@0.6.0
+71 silly idealTree | +-- base32.js@0.1.0
+71 silly idealTree | +-- commander@2.20.3
+71 silly idealTree | +-- core-util-is@1.0.3
+71 silly idealTree | +-- deepmerge@4.2.2
+71 silly idealTree | +-- discontinuous-range@1.0.0
+71 silly idealTree | +-- dom-serializer@1.4.1
+71 silly idealTree | +-- domelementtype@2.3.0
+71 silly idealTree | +-- domhandler@4.3.1
+71 silly idealTree | +-- domutils@2.8.0
+71 silly idealTree | +-- encoding-japanese@2.0.0
+71 silly idealTree | +-- entities@2.2.0
+71 silly idealTree | +-- he@1.2.0
+71 silly idealTree | +-- html-to-text@8.2.0
+71 silly idealTree | +-- htmlparser2@6.1.0
+71 silly idealTree | +-- iconv-lite@0.6.3
+71 silly idealTree | +-- imap@0.8.19
+71 silly idealTree | +-- inherits@2.0.4
+71 silly idealTree | +-- ipv6-normalize@1.0.1
+71 silly idealTree | +-- isarray@0.0.1
+71 silly idealTree | +-- libbase64@1.2.1
+71 silly idealTree | +-- libmime@5.1.0
+71 silly idealTree | +-- libqp@1.1.0
+71 silly idealTree | +-- linkify-it@4.0.0
+71 silly idealTree | +-- mailparser@3.5.0
+71 silly idealTree | | `-- nodemailer@6.7.3
+71 silly idealTree | +-- mailsplit@5.3.2
+71 silly idealTree | +-- minimist@1.2.7
+71 silly idealTree | +-- moo@0.5.2
+71 silly idealTree | +-- nearley@2.20.1
+71 silly idealTree | +-- nodemailer@6.8.0
+71 silly idealTree | +-- parseley@0.7.0
+71 silly idealTree | +-- railroad-diagrams@1.0.0
+71 silly idealTree | +-- randexp@0.4.6
+71 silly idealTree | +-- readable-stream@1.1.14
+71 silly idealTree | +-- ret@0.1.15
+71 silly idealTree | +-- safer-buffer@2.1.2
+71 silly idealTree | +-- selderee@0.6.0
+71 silly idealTree | +-- semver@5.3.0
+71 silly idealTree | +-- smtp-server@3.11.0
+71 silly idealTree | | `-- nodemailer@6.7.3
+71 silly idealTree | +-- string_decoder@0.10.31
+71 silly idealTree | +-- tlds@1.231.0
+71 silly idealTree | +-- uc.micro@1.0.6
+71 silly idealTree | `-- utf7@1.0.2
+71 silly idealTree +-- node-red-node-fitbit@0.1.0
+71 silly idealTree | `-- oauth@0.9.15
+71 silly idealTree +-- node-red-node-openweathermap@0.5.1
+71 silly idealTree +-- node-red-node-pi-gpio@2.0.5
+71 silly idealTree +-- node-red-node-twitter@1.2.0
+71 silly idealTree +-- oauth-sign@0.9.0
+71 silly idealTree +-- oauth@0.10.0
+71 silly idealTree +-- object-assign@4.1.1
+71 silly idealTree +-- on-finished@2.4.1
+71 silly idealTree +-- on-headers@1.0.2
+71 silly idealTree +-- packet-reader@1.0.0
+71 silly idealTree +-- parseurl@1.3.3
+71 silly idealTree +-- performance-now@2.1.0
+71 silly idealTree +-- pg-connection-string@2.5.0
+71 silly idealTree +-- pg-cursor@2.7.4
+71 silly idealTree +-- pg-int8@1.0.1
+71 silly idealTree +-- pg-pool@3.5.2
+71 silly idealTree +-- pg-protocol@1.5.0
+71 silly idealTree +-- pg-types@2.2.0
+71 silly idealTree +-- pg@8.8.0
+71 silly idealTree +-- pgpass@1.0.5
+71 silly idealTree +-- postgres-array@2.0.0
+71 silly idealTree +-- postgres-bytea@1.0.0
+71 silly idealTree +-- postgres-date@1.0.7
+71 silly idealTree +-- postgres-interval@1.2.0
+71 silly idealTree +-- psl@1.9.0
+71 silly idealTree +-- punycode@2.1.1
+71 silly idealTree +-- qs@6.5.3
+71 silly idealTree +-- range-parser@1.2.1
+71 silly idealTree +-- request@2.88.2
+71 silly idealTree +-- safe-buffer@5.1.2
+71 silly idealTree +-- safer-buffer@2.1.2
+71 silly idealTree +-- send@0.18.0
+71 silly idealTree | `-- ms@2.1.3
+71 silly idealTree +-- serve-static@1.15.0
+71 silly idealTree +-- setprototypeof@1.2.0
+71 silly idealTree +-- socket.io-adapter@2.4.0
+71 silly idealTree +-- socket.io-parser@4.2.1
+71 silly idealTree | +-- debug@4.3.4
+71 silly idealTree | `-- ms@2.1.2
+71 silly idealTree +-- socket.io@4.5.4
+71 silly idealTree | +-- debug@4.3.4
+71 silly idealTree | `-- ms@2.1.2
+71 silly idealTree +-- split2@4.1.0
+71 silly idealTree +-- sshpk@1.17.0
+71 silly idealTree +-- statuses@2.0.1
+71 silly idealTree +-- toidentifier@1.0.1
+71 silly idealTree +-- tough-cookie@2.5.0
+71 silly idealTree +-- tunnel-agent@0.6.0
+71 silly idealTree +-- tweetnacl@0.14.5
+71 silly idealTree +-- twitter-ng@0.6.2
+71 silly idealTree +-- uri-js@4.4.1
+71 silly idealTree +-- uuid@3.4.0
+71 silly idealTree +-- vary@1.1.2
+71 silly idealTree +-- verror@1.10.0
+71 silly idealTree +-- ws@8.2.3
+71 silly idealTree `-- xtend@4.0.2
+72 silly install generateActionsToTake
+73 silly diff-trees filtering actions: includeDev false includeProd true includeOpt true
+74 timing stage:generateActionsToTake Completed in 104ms
+75 silly diffTrees action count 46
+76 silly diffTrees update base32.js@0.1.0
+77 silly diffTrees update commander@2.20.3
+78 silly diffTrees update core-util-is@1.0.3
+79 silly diffTrees update deepmerge@4.2.2
+80 silly diffTrees update discontinuous-range@1.0.0
+81 silly diffTrees update domelementtype@2.3.0
+82 silly diffTrees update domhandler@4.3.1
+83 silly diffTrees update encoding-japanese@2.0.0
+84 silly diffTrees update entities@2.2.0
+85 silly diffTrees update dom-serializer@1.4.1
+86 silly diffTrees update domutils@2.8.0
+87 silly diffTrees update he@1.2.0
+88 silly diffTrees update htmlparser2@6.1.0
+89 silly diffTrees update inherits@2.0.4
+90 silly diffTrees update ipv6-normalize@1.0.1
+91 silly diffTrees update isarray@0.0.1
+92 silly diffTrees update libbase64@1.2.1
+93 silly diffTrees update libqp@1.1.0
+94 silly diffTrees update nodemailer@6.7.3
+95 silly diffTrees update minimist@1.2.7
+96 silly diffTrees update moo@0.5.2
+97 silly diffTrees update railroad-diagrams@1.0.0
+98 silly diffTrees update ret@0.1.15
+99 silly diffTrees update randexp@0.4.6
+100 silly diffTrees update nearley@2.20.1
+101 silly diffTrees update parseley@0.7.0
+102 silly diffTrees update safer-buffer@2.1.2
+103 silly diffTrees update iconv-lite@0.6.3
+104 silly diffTrees update libmime@5.1.0
+105 silly diffTrees update mailsplit@5.3.2
+106 silly diffTrees update selderee@0.6.0
+107 silly diffTrees update @selderee/plugin-htmlparser2@0.6.0
+108 silly diffTrees update html-to-text@8.2.0
+109 silly diffTrees update semver@5.3.0
+110 silly diffTrees update nodemailer@6.7.3
+111 silly diffTrees update string_decoder@0.10.31
+112 silly diffTrees update readable-stream@1.1.14
+113 silly diffTrees update tlds@1.231.0
+114 silly diffTrees update uc.micro@1.0.6
+115 silly diffTrees update linkify-it@4.0.0
+116 silly diffTrees update utf7@1.0.2
+117 silly diffTrees update imap@0.8.19
+118 silly diffTrees update mailparser@3.5.0
+119 silly diffTrees update nodemailer@6.8.0
+120 silly diffTrees update smtp-server@3.11.0
+121 silly diffTrees update node-red-node-email@1.18.2
+122 silly decomposeActions action count 370
+123 silly decomposeActions unbuild base32.js@0.1.0
+124 silly decomposeActions remove base32.js@0.1.0
+125 silly decomposeActions fetch node-red-node-email@1.18.2
+126 silly decomposeActions extract node-red-node-email@1.18.2
+127 silly decomposeActions preinstall base32.js@0.1.0
+128 silly decomposeActions build base32.js@0.1.0
+129 silly decomposeActions install base32.js@0.1.0
+130 silly decomposeActions postinstall base32.js@0.1.0
+131 silly decomposeActions finalize base32.js@0.1.0
+132 silly decomposeActions refresh-package-json base32.js@0.1.0
+133 silly decomposeActions unbuild commander@2.20.3
+134 silly decomposeActions remove commander@2.20.3
+135 silly decomposeActions preinstall commander@2.20.3
+136 silly decomposeActions build commander@2.20.3
+137 silly decomposeActions install commander@2.20.3
+138 silly decomposeActions postinstall commander@2.20.3
+139 silly decomposeActions finalize commander@2.20.3
+140 silly decomposeActions refresh-package-json commander@2.20.3
+141 silly decomposeActions unbuild core-util-is@1.0.3
+142 silly decomposeActions remove core-util-is@1.0.3
+143 silly decomposeActions preinstall core-util-is@1.0.3
+144 silly decomposeActions build core-util-is@1.0.3
+145 silly decomposeActions install core-util-is@1.0.3
+146 silly decomposeActions postinstall core-util-is@1.0.3
+147 silly decomposeActions finalize core-util-is@1.0.3
+148 silly decomposeActions refresh-package-json core-util-is@1.0.3
+149 silly decomposeActions unbuild deepmerge@4.2.2
+150 silly decomposeActions remove deepmerge@4.2.2
+151 silly decomposeActions preinstall deepmerge@4.2.2
+152 silly decomposeActions build deepmerge@4.2.2
+153 silly decomposeActions install deepmerge@4.2.2
+154 silly decomposeActions postinstall deepmerge@4.2.2
+155 silly decomposeActions finalize deepmerge@4.2.2
+156 silly decomposeActions refresh-package-json deepmerge@4.2.2
+157 silly decomposeActions unbuild discontinuous-range@1.0.0
+158 silly decomposeActions remove discontinuous-range@1.0.0
+159 silly decomposeActions preinstall discontinuous-range@1.0.0
+160 silly decomposeActions build discontinuous-range@1.0.0
+161 silly decomposeActions install discontinuous-range@1.0.0
+162 silly decomposeActions postinstall discontinuous-range@1.0.0
+163 silly decomposeActions finalize discontinuous-range@1.0.0
+164 silly decomposeActions refresh-package-json discontinuous-range@1.0.0
+165 silly decomposeActions unbuild domelementtype@2.3.0
+166 silly decomposeActions remove domelementtype@2.3.0
+167 silly decomposeActions preinstall domelementtype@2.3.0
+168 silly decomposeActions build domelementtype@2.3.0
+169 silly decomposeActions install domelementtype@2.3.0
+170 silly decomposeActions postinstall domelementtype@2.3.0
+171 silly decomposeActions finalize domelementtype@2.3.0
+172 silly decomposeActions refresh-package-json domelementtype@2.3.0
+173 silly decomposeActions unbuild domhandler@4.3.1
+174 silly decomposeActions remove domhandler@4.3.1
+175 silly decomposeActions preinstall domhandler@4.3.1
+176 silly decomposeActions build domhandler@4.3.1
+177 silly decomposeActions install domhandler@4.3.1
+178 silly decomposeActions postinstall domhandler@4.3.1
+179 silly decomposeActions finalize domhandler@4.3.1
+180 silly decomposeActions refresh-package-json domhandler@4.3.1
+181 silly decomposeActions unbuild encoding-japanese@2.0.0
+182 silly decomposeActions remove encoding-japanese@2.0.0
+183 silly decomposeActions preinstall encoding-japanese@2.0.0
+184 silly decomposeActions build encoding-japanese@2.0.0
+185 silly decomposeActions install encoding-japanese@2.0.0
+186 silly decomposeActions postinstall encoding-japanese@2.0.0
+187 silly decomposeActions finalize encoding-japanese@2.0.0
+188 silly decomposeActions refresh-package-json encoding-japanese@2.0.0
+189 silly decomposeActions unbuild entities@2.2.0
+190 silly decomposeActions remove entities@2.2.0
+191 silly decomposeActions preinstall entities@2.2.0
+192 silly decomposeActions build entities@2.2.0
+193 silly decomposeActions install entities@2.2.0
+194 silly decomposeActions postinstall entities@2.2.0
+195 silly decomposeActions finalize entities@2.2.0
+196 silly decomposeActions refresh-package-json entities@2.2.0
+197 silly decomposeActions unbuild dom-serializer@1.4.1
+198 silly decomposeActions remove dom-serializer@1.4.1
+199 silly decomposeActions preinstall dom-serializer@1.4.1
+200 silly decomposeActions build dom-serializer@1.4.1
+201 silly decomposeActions install dom-serializer@1.4.1
+202 silly decomposeActions postinstall dom-serializer@1.4.1
+203 silly decomposeActions finalize dom-serializer@1.4.1
+204 silly decomposeActions refresh-package-json dom-serializer@1.4.1
+205 silly decomposeActions unbuild domutils@2.8.0
+206 silly decomposeActions remove domutils@2.8.0
+207 silly decomposeActions preinstall domutils@2.8.0
+208 silly decomposeActions build domutils@2.8.0
+209 silly decomposeActions install domutils@2.8.0
+210 silly decomposeActions postinstall domutils@2.8.0
+211 silly decomposeActions finalize domutils@2.8.0
+212 silly decomposeActions refresh-package-json domutils@2.8.0
+213 silly decomposeActions unbuild he@1.2.0
+214 silly decomposeActions remove he@1.2.0
+215 silly decomposeActions preinstall he@1.2.0
+216 silly decomposeActions build he@1.2.0
+217 silly decomposeActions install he@1.2.0
+218 silly decomposeActions postinstall he@1.2.0
+219 silly decomposeActions finalize he@1.2.0
+220 silly decomposeActions refresh-package-json he@1.2.0
+221 silly decomposeActions unbuild htmlparser2@6.1.0
+222 silly decomposeActions remove htmlparser2@6.1.0
+223 silly decomposeActions preinstall htmlparser2@6.1.0
+224 silly decomposeActions build htmlparser2@6.1.0
+225 silly decomposeActions install htmlparser2@6.1.0
+226 silly decomposeActions postinstall htmlparser2@6.1.0
+227 silly decomposeActions finalize htmlparser2@6.1.0
+228 silly decomposeActions refresh-package-json htmlparser2@6.1.0
+229 silly decomposeActions unbuild inherits@2.0.4
+230 silly decomposeActions remove inherits@2.0.4
+231 silly decomposeActions preinstall inherits@2.0.4
+232 silly decomposeActions build inherits@2.0.4
+233 silly decomposeActions install inherits@2.0.4
+234 silly decomposeActions postinstall inherits@2.0.4
+235 silly decomposeActions finalize inherits@2.0.4
+236 silly decomposeActions refresh-package-json inherits@2.0.4
+237 silly decomposeActions unbuild ipv6-normalize@1.0.1
+238 silly decomposeActions remove ipv6-normalize@1.0.1
+239 silly decomposeActions preinstall ipv6-normalize@1.0.1
+240 silly decomposeActions build ipv6-normalize@1.0.1
+241 silly decomposeActions install ipv6-normalize@1.0.1
+242 silly decomposeActions postinstall ipv6-normalize@1.0.1
+243 silly decomposeActions finalize ipv6-normalize@1.0.1
+244 silly decomposeActions refresh-package-json ipv6-normalize@1.0.1
+245 silly decomposeActions unbuild isarray@0.0.1
+246 silly decomposeActions remove isarray@0.0.1
+247 silly decomposeActions preinstall isarray@0.0.1
+248 silly decomposeActions build isarray@0.0.1
+249 silly decomposeActions install isarray@0.0.1
+250 silly decomposeActions postinstall isarray@0.0.1
+251 silly decomposeActions finalize isarray@0.0.1
+252 silly decomposeActions refresh-package-json isarray@0.0.1
+253 silly decomposeActions unbuild libbase64@1.2.1
+254 silly decomposeActions remove libbase64@1.2.1
+255 silly decomposeActions preinstall libbase64@1.2.1
+256 silly decomposeActions build libbase64@1.2.1
+257 silly decomposeActions install libbase64@1.2.1
+258 silly decomposeActions postinstall libbase64@1.2.1
+259 silly decomposeActions finalize libbase64@1.2.1
+260 silly decomposeActions refresh-package-json libbase64@1.2.1
+261 silly decomposeActions unbuild libqp@1.1.0
+262 silly decomposeActions remove libqp@1.1.0
+263 silly decomposeActions preinstall libqp@1.1.0
+264 silly decomposeActions build libqp@1.1.0
+265 silly decomposeActions install libqp@1.1.0
+266 silly decomposeActions postinstall libqp@1.1.0
+267 silly decomposeActions finalize libqp@1.1.0
+268 silly decomposeActions refresh-package-json libqp@1.1.0
+269 silly decomposeActions unbuild nodemailer@6.7.3
+270 silly decomposeActions remove nodemailer@6.7.3
+271 silly decomposeActions preinstall nodemailer@6.7.3
+272 silly decomposeActions build nodemailer@6.7.3
+273 silly decomposeActions install nodemailer@6.7.3
+274 silly decomposeActions postinstall nodemailer@6.7.3
+275 silly decomposeActions finalize nodemailer@6.7.3
+276 silly decomposeActions refresh-package-json nodemailer@6.7.3
+277 silly decomposeActions unbuild minimist@1.2.7
+278 silly decomposeActions remove minimist@1.2.7
+279 silly decomposeActions preinstall minimist@1.2.7
+280 silly decomposeActions build minimist@1.2.7
+281 silly decomposeActions install minimist@1.2.7
+282 silly decomposeActions postinstall minimist@1.2.7
+283 silly decomposeActions finalize minimist@1.2.7
+284 silly decomposeActions refresh-package-json minimist@1.2.7
+285 silly decomposeActions unbuild moo@0.5.2
+286 silly decomposeActions remove moo@0.5.2
+287 silly decomposeActions preinstall moo@0.5.2
+288 silly decomposeActions build moo@0.5.2
+289 silly decomposeActions install moo@0.5.2
+290 silly decomposeActions postinstall moo@0.5.2
+291 silly decomposeActions finalize moo@0.5.2
+292 silly decomposeActions refresh-package-json moo@0.5.2
+293 silly decomposeActions unbuild railroad-diagrams@1.0.0
+294 silly decomposeActions remove railroad-diagrams@1.0.0
+295 silly decomposeActions preinstall railroad-diagrams@1.0.0
+296 silly decomposeActions build railroad-diagrams@1.0.0
+297 silly decomposeActions install railroad-diagrams@1.0.0
+298 silly decomposeActions postinstall railroad-diagrams@1.0.0
+299 silly decomposeActions finalize railroad-diagrams@1.0.0
+300 silly decomposeActions refresh-package-json railroad-diagrams@1.0.0
+301 silly decomposeActions unbuild ret@0.1.15
+302 silly decomposeActions remove ret@0.1.15
+303 silly decomposeActions preinstall ret@0.1.15
+304 silly decomposeActions build ret@0.1.15
+305 silly decomposeActions install ret@0.1.15
+306 silly decomposeActions postinstall ret@0.1.15
+307 silly decomposeActions finalize ret@0.1.15
+308 silly decomposeActions refresh-package-json ret@0.1.15
+309 silly decomposeActions unbuild randexp@0.4.6
+310 silly decomposeActions remove randexp@0.4.6
+311 silly decomposeActions preinstall randexp@0.4.6
+312 silly decomposeActions build randexp@0.4.6
+313 silly decomposeActions install randexp@0.4.6
+314 silly decomposeActions postinstall randexp@0.4.6
+315 silly decomposeActions finalize randexp@0.4.6
+316 silly decomposeActions refresh-package-json randexp@0.4.6
+317 silly decomposeActions unbuild nearley@2.20.1
+318 silly decomposeActions remove nearley@2.20.1
+319 silly decomposeActions preinstall nearley@2.20.1
+320 silly decomposeActions build nearley@2.20.1
+321 silly decomposeActions install nearley@2.20.1
+322 silly decomposeActions postinstall nearley@2.20.1
+323 silly decomposeActions finalize nearley@2.20.1
+324 silly decomposeActions refresh-package-json nearley@2.20.1
+325 silly decomposeActions unbuild parseley@0.7.0
+326 silly decomposeActions remove parseley@0.7.0
+327 silly decomposeActions preinstall parseley@0.7.0
+328 silly decomposeActions build parseley@0.7.0
+329 silly decomposeActions install parseley@0.7.0
+330 silly decomposeActions postinstall parseley@0.7.0
+331 silly decomposeActions finalize parseley@0.7.0
+332 silly decomposeActions refresh-package-json parseley@0.7.0
+333 silly decomposeActions unbuild safer-buffer@2.1.2
+334 silly decomposeActions remove safer-buffer@2.1.2
+335 silly decomposeActions preinstall safer-buffer@2.1.2
+336 silly decomposeActions build safer-buffer@2.1.2
+337 silly decomposeActions install safer-buffer@2.1.2
+338 silly decomposeActions postinstall safer-buffer@2.1.2
+339 silly decomposeActions finalize safer-buffer@2.1.2
+340 silly decomposeActions refresh-package-json safer-buffer@2.1.2
+341 silly decomposeActions unbuild iconv-lite@0.6.3
+342 silly decomposeActions remove iconv-lite@0.6.3
+343 silly decomposeActions preinstall iconv-lite@0.6.3
+344 silly decomposeActions build iconv-lite@0.6.3
+345 silly decomposeActions install iconv-lite@0.6.3
+346 silly decomposeActions postinstall iconv-lite@0.6.3
+347 silly decomposeActions finalize iconv-lite@0.6.3
+348 silly decomposeActions refresh-package-json iconv-lite@0.6.3
+349 silly decomposeActions unbuild libmime@5.1.0
+350 silly decomposeActions remove libmime@5.1.0
+351 silly decomposeActions preinstall libmime@5.1.0
+352 silly decomposeActions build libmime@5.1.0
+353 silly decomposeActions install libmime@5.1.0
+354 silly decomposeActions postinstall libmime@5.1.0
+355 silly decomposeActions finalize libmime@5.1.0
+356 silly decomposeActions refresh-package-json libmime@5.1.0
+357 silly decomposeActions unbuild mailsplit@5.3.2
+358 silly decomposeActions remove mailsplit@5.3.2
+359 silly decomposeActions preinstall mailsplit@5.3.2
+360 silly decomposeActions build mailsplit@5.3.2
+361 silly decomposeActions install mailsplit@5.3.2
+362 silly decomposeActions postinstall mailsplit@5.3.2
+363 silly decomposeActions finalize mailsplit@5.3.2
+364 silly decomposeActions refresh-package-json mailsplit@5.3.2
+365 silly decomposeActions unbuild selderee@0.6.0
+366 silly decomposeActions remove selderee@0.6.0
+367 silly decomposeActions preinstall selderee@0.6.0
+368 silly decomposeActions build selderee@0.6.0
+369 silly decomposeActions install selderee@0.6.0
+370 silly decomposeActions postinstall selderee@0.6.0
+371 silly decomposeActions finalize selderee@0.6.0
+372 silly decomposeActions refresh-package-json selderee@0.6.0
+373 silly decomposeActions unbuild @selderee/plugin-htmlparser2@0.6.0
+374 silly decomposeActions remove @selderee/plugin-htmlparser2@0.6.0
+375 silly decomposeActions preinstall @selderee/plugin-htmlparser2@0.6.0
+376 silly decomposeActions build @selderee/plugin-htmlparser2@0.6.0
+377 silly decomposeActions install @selderee/plugin-htmlparser2@0.6.0
+378 silly decomposeActions postinstall @selderee/plugin-htmlparser2@0.6.0
+379 silly decomposeActions finalize @selderee/plugin-htmlparser2@0.6.0
+380 silly decomposeActions refresh-package-json @selderee/plugin-htmlparser2@0.6.0
+381 silly decomposeActions unbuild html-to-text@8.2.0
+382 silly decomposeActions remove html-to-text@8.2.0
+383 silly decomposeActions preinstall html-to-text@8.2.0
+384 silly decomposeActions build html-to-text@8.2.0
+385 silly decomposeActions install html-to-text@8.2.0
+386 silly decomposeActions postinstall html-to-text@8.2.0
+387 silly decomposeActions finalize html-to-text@8.2.0
+388 silly decomposeActions refresh-package-json html-to-text@8.2.0
+389 silly decomposeActions unbuild semver@5.3.0
+390 silly decomposeActions remove semver@5.3.0
+391 silly decomposeActions preinstall semver@5.3.0
+392 silly decomposeActions build semver@5.3.0
+393 silly decomposeActions install semver@5.3.0
+394 silly decomposeActions postinstall semver@5.3.0
+395 silly decomposeActions finalize semver@5.3.0
+396 silly decomposeActions refresh-package-json semver@5.3.0
+397 silly decomposeActions unbuild nodemailer@6.7.3
+398 silly decomposeActions remove nodemailer@6.7.3
+399 silly decomposeActions preinstall nodemailer@6.7.3
+400 silly decomposeActions build nodemailer@6.7.3
+401 silly decomposeActions install nodemailer@6.7.3
+402 silly decomposeActions postinstall nodemailer@6.7.3
+403 silly decomposeActions finalize nodemailer@6.7.3
+404 silly decomposeActions refresh-package-json nodemailer@6.7.3
+405 silly decomposeActions unbuild string_decoder@0.10.31
+406 silly decomposeActions remove string_decoder@0.10.31
+407 silly decomposeActions preinstall string_decoder@0.10.31
+408 silly decomposeActions build string_decoder@0.10.31
+409 silly decomposeActions install string_decoder@0.10.31
+410 silly decomposeActions postinstall string_decoder@0.10.31
+411 silly decomposeActions finalize string_decoder@0.10.31
+412 silly decomposeActions refresh-package-json string_decoder@0.10.31
+413 silly decomposeActions unbuild readable-stream@1.1.14
+414 silly decomposeActions remove readable-stream@1.1.14
+415 silly decomposeActions preinstall readable-stream@1.1.14
+416 silly decomposeActions build readable-stream@1.1.14
+417 silly decomposeActions install readable-stream@1.1.14
+418 silly decomposeActions postinstall readable-stream@1.1.14
+419 silly decomposeActions finalize readable-stream@1.1.14
+420 silly decomposeActions refresh-package-json readable-stream@1.1.14
+421 silly decomposeActions unbuild tlds@1.231.0
+422 silly decomposeActions remove tlds@1.231.0
+423 silly decomposeActions preinstall tlds@1.231.0
+424 silly decomposeActions build tlds@1.231.0
+425 silly decomposeActions install tlds@1.231.0
+426 silly decomposeActions postinstall tlds@1.231.0
+427 silly decomposeActions finalize tlds@1.231.0
+428 silly decomposeActions refresh-package-json tlds@1.231.0
+429 silly decomposeActions unbuild uc.micro@1.0.6
+430 silly decomposeActions remove uc.micro@1.0.6
+431 silly decomposeActions preinstall uc.micro@1.0.6
+432 silly decomposeActions build uc.micro@1.0.6
+433 silly decomposeActions install uc.micro@1.0.6
+434 silly decomposeActions postinstall uc.micro@1.0.6
+435 silly decomposeActions finalize uc.micro@1.0.6
+436 silly decomposeActions refresh-package-json uc.micro@1.0.6
+437 silly decomposeActions unbuild linkify-it@4.0.0
+438 silly decomposeActions remove linkify-it@4.0.0
+439 silly decomposeActions preinstall linkify-it@4.0.0
+440 silly decomposeActions build linkify-it@4.0.0
+441 silly decomposeActions install linkify-it@4.0.0
+442 silly decomposeActions postinstall linkify-it@4.0.0
+443 silly decomposeActions finalize linkify-it@4.0.0
+444 silly decomposeActions refresh-package-json linkify-it@4.0.0
+445 silly decomposeActions unbuild utf7@1.0.2
+446 silly decomposeActions remove utf7@1.0.2
+447 silly decomposeActions preinstall utf7@1.0.2
+448 silly decomposeActions build utf7@1.0.2
+449 silly decomposeActions install utf7@1.0.2
+450 silly decomposeActions postinstall utf7@1.0.2
+451 silly decomposeActions finalize utf7@1.0.2
+452 silly decomposeActions refresh-package-json utf7@1.0.2
+453 silly decomposeActions unbuild imap@0.8.19
+454 silly decomposeActions remove imap@0.8.19
+455 silly decomposeActions preinstall imap@0.8.19
+456 silly decomposeActions build imap@0.8.19
+457 silly decomposeActions install imap@0.8.19
+458 silly decomposeActions postinstall imap@0.8.19
+459 silly decomposeActions finalize imap@0.8.19
+460 silly decomposeActions refresh-package-json imap@0.8.19
+461 silly decomposeActions unbuild mailparser@3.5.0
+462 silly decomposeActions remove mailparser@3.5.0
+463 silly decomposeActions preinstall mailparser@3.5.0
+464 silly decomposeActions build mailparser@3.5.0
+465 silly decomposeActions install mailparser@3.5.0
+466 silly decomposeActions postinstall mailparser@3.5.0
+467 silly decomposeActions finalize mailparser@3.5.0
+468 silly decomposeActions refresh-package-json mailparser@3.5.0
+469 silly decomposeActions unbuild nodemailer@6.8.0
+470 silly decomposeActions remove nodemailer@6.8.0
+471 silly decomposeActions preinstall nodemailer@6.8.0
+472 silly decomposeActions build nodemailer@6.8.0
+473 silly decomposeActions install nodemailer@6.8.0
+474 silly decomposeActions postinstall nodemailer@6.8.0
+475 silly decomposeActions finalize nodemailer@6.8.0
+476 silly decomposeActions refresh-package-json nodemailer@6.8.0
+477 silly decomposeActions unbuild smtp-server@3.11.0
+478 silly decomposeActions remove smtp-server@3.11.0
+479 silly decomposeActions preinstall smtp-server@3.11.0
+480 silly decomposeActions build smtp-server@3.11.0
+481 silly decomposeActions install smtp-server@3.11.0
+482 silly decomposeActions postinstall smtp-server@3.11.0
+483 silly decomposeActions finalize smtp-server@3.11.0
+484 silly decomposeActions refresh-package-json smtp-server@3.11.0
+485 silly decomposeActions unbuild node-red-node-email@1.18.1
+486 silly decomposeActions remove node-red-node-email@1.18.1
+487 silly decomposeActions preinstall node-red-node-email@1.18.2
+488 silly decomposeActions build node-red-node-email@1.18.2
+489 silly decomposeActions install node-red-node-email@1.18.2
+490 silly decomposeActions postinstall node-red-node-email@1.18.2
+491 silly decomposeActions finalize node-red-node-email@1.18.2
+492 silly decomposeActions refresh-package-json node-red-node-email@1.18.2
+493 silly install executeActions
+494 silly doSerial global-install 370
+495 verbose correctMkdir /data/.npm/_locks correctMkdir not in flight; initializing
+496 verbose lock using /data/.npm/_locks/staging-accc372ed0ccb0d8.lock for /data/node_modules/.staging
+497 silly doParallel extract 1
+498 silly extract node-red-node-email@1.18.2
+499 silly tarball trying node-red-node-email@1.18.2 by hash: sha512-Vkbv+F8pHQTvuqnOtHZvdaS9q8JvxyRM8mVLRyxgClFSWBePyX5qqUWuxV3ejquwfGMSHRK9H0yQZos3rXZMeQ==
+500 silly extract node-red-node-email@1.18.2 extracted to /data/node_modules/.staging/node-red-node-email-b47d063a (3309ms)
+501 timing action:extract Completed in 3425ms
+502 silly doReverseSerial unbuild 370
+503 silly unbuild node-red-node-email@1.18.1
+504 info lifecycle node-red-node-email@1.18.1~preuninstall: node-red-node-email@1.18.1
+505 info lifecycle node-red-node-email@1.18.1~uninstall: node-red-node-email@1.18.1
+506 verbose unbuild rmStuff node-red-node-email@1.18.1 from /data/node_modules
+507 info lifecycle node-red-node-email@1.18.1~postuninstall: node-red-node-email@1.18.1
+508 silly unbuild smtp-server@3.11.0
+509 info lifecycle smtp-server@3.11.0~preuninstall: smtp-server@3.11.0
+510 info lifecycle smtp-server@3.11.0~uninstall: smtp-server@3.11.0
+511 verbose unbuild rmStuff smtp-server@3.11.0 from /data/node_modules
+512 verbose unbuild rmStuff in /data/node_modules/node-red-node-email/node_modules
+513 info lifecycle smtp-server@3.11.0~postuninstall: smtp-server@3.11.0
+514 silly unbuild nodemailer@6.8.0
+515 info lifecycle nodemailer@6.8.0~preuninstall: nodemailer@6.8.0
+516 info lifecycle nodemailer@6.8.0~uninstall: nodemailer@6.8.0
+517 verbose unbuild rmStuff nodemailer@6.8.0 from /data/node_modules
+518 verbose unbuild rmStuff in /data/node_modules/node-red-node-email/node_modules
+519 info lifecycle nodemailer@6.8.0~postuninstall: nodemailer@6.8.0
+520 silly unbuild mailparser@3.5.0
+521 info lifecycle mailparser@3.5.0~preuninstall: mailparser@3.5.0
+522 info lifecycle mailparser@3.5.0~uninstall: mailparser@3.5.0
+523 verbose unbuild rmStuff mailparser@3.5.0 from /data/node_modules
+524 verbose unbuild rmStuff in /data/node_modules/node-red-node-email/node_modules
+525 info lifecycle mailparser@3.5.0~postuninstall: mailparser@3.5.0
+526 silly unbuild imap@0.8.19
+527 info lifecycle imap@0.8.19~preuninstall: imap@0.8.19
+528 info lifecycle imap@0.8.19~uninstall: imap@0.8.19
+529 verbose unbuild rmStuff imap@0.8.19 from /data/node_modules
+530 verbose unbuild rmStuff in /data/node_modules/node-red-node-email/node_modules
+531 info lifecycle imap@0.8.19~postuninstall: imap@0.8.19
+532 silly unbuild utf7@1.0.2
+533 info lifecycle utf7@1.0.2~preuninstall: utf7@1.0.2
+534 info lifecycle utf7@1.0.2~uninstall: utf7@1.0.2
+535 verbose unbuild rmStuff utf7@1.0.2 from /data/node_modules
+536 verbose unbuild rmStuff in /data/node_modules/node-red-node-email/node_modules
+537 info lifecycle utf7@1.0.2~postuninstall: utf7@1.0.2
+538 silly unbuild linkify-it@4.0.0
+539 info lifecycle linkify-it@4.0.0~preuninstall: linkify-it@4.0.0
+540 info lifecycle linkify-it@4.0.0~uninstall: linkify-it@4.0.0
+541 verbose unbuild rmStuff linkify-it@4.0.0 from /data/node_modules
+542 verbose unbuild rmStuff in /data/node_modules/node-red-node-email/node_modules
+543 info lifecycle linkify-it@4.0.0~postuninstall: linkify-it@4.0.0
+544 silly unbuild uc.micro@1.0.6
+545 info lifecycle uc.micro@1.0.6~preuninstall: uc.micro@1.0.6
+546 info lifecycle uc.micro@1.0.6~uninstall: uc.micro@1.0.6
+547 verbose unbuild rmStuff uc.micro@1.0.6 from /data/node_modules
+548 verbose unbuild rmStuff in /data/node_modules/node-red-node-email/node_modules
+549 info lifecycle uc.micro@1.0.6~postuninstall: uc.micro@1.0.6
+550 silly unbuild tlds@1.231.0
+551 info lifecycle tlds@1.231.0~preuninstall: tlds@1.231.0
+552 info lifecycle tlds@1.231.0~uninstall: tlds@1.231.0
+553 verbose unbuild rmStuff tlds@1.231.0 from /data/node_modules
+554 verbose unbuild rmStuff in /data/node_modules/node-red-node-email/node_modules
+555 silly isEverInside /data/node_modules/node-red-node-email/node_modules/tlds is not inside /usr/local
+556 silly isEverInside /data/node_modules/node-red-node-email/node_modules/tlds is not inside /usr/local/lib/node_modules
+557 silly isEverInside /data/node_modules/node-red-node-email/node_modules/tlds is not inside /usr/local/bin
+558 silly isEverInside /data/node_modules/node-red-node-email/node_modules/.bin/tlds is not inside /data/node_modules/node-red-node-email/node_modules/tlds
+559 silly gentlyRm parent.path = /data/node_modules/node-red-node-email/node_modules/tlds
+560 silly gentlyRm parent.managed = /data/node_modules/node-red-node-email/node_modules/tlds is in /data
+561 silly gentlyRm target.path =  /data/node_modules/node-red-node-email/node_modules/.bin/tlds
+562 silly gentlyRm target.symlink = null
+563 silly gentlyRm target.managed = /data/node_modules/node-red-node-email/node_modules/.bin/tlds is in /data
+564 silly gentlyRm target.inParent =  false
+565 timing action:unbuild Completed in 19ms
+566 verbose unlock done using /data/.npm/_locks/staging-accc372ed0ccb0d8.lock for /data/node_modules/.staging
+567 timing stage:rollbackFailedOptional Completed in 0ms
+568 timing stage:runTopLevelLifecycles Completed in 6796ms
+569 silly saveTree node-red-project@0.0.1
+569 silly saveTree +-- node-red-contrib-filter@0.1.4
+569 silly saveTree +-- node-red-contrib-postgresql@0.11.2
+569 silly saveTree | +-- mustache@4.2.0
+569 silly saveTree | +-- pg-cursor@2.7.4
+569 silly saveTree | `-- pg@8.8.0
+569 silly saveTree |   +-- buffer-writer@2.0.0
+569 silly saveTree |   +-- packet-reader@1.0.0
+569 silly saveTree |   +-- pg-connection-string@2.5.0
+569 silly saveTree |   +-- pg-pool@3.5.2
+569 silly saveTree |   +-- pg-protocol@1.5.0
+569 silly saveTree |   +-- pg-types@2.2.0
+569 silly saveTree |   | +-- pg-int8@1.0.1
+569 silly saveTree |   | +-- postgres-array@2.0.0
+569 silly saveTree |   | +-- postgres-bytea@1.0.0
+569 silly saveTree |   | +-- postgres-date@1.0.7
+569 silly saveTree |   | `-- postgres-interval@1.2.0
+569 silly saveTree |   |   `-- xtend@4.0.2
+569 silly saveTree |   `-- pgpass@1.0.5
+569 silly saveTree |     `-- split2@4.1.0
+569 silly saveTree +-- node-red-dashboard@3.2.3
+569 silly saveTree | +-- compression@1.7.4
+569 silly saveTree | | +-- accepts@1.3.8
+569 silly saveTree | | | +-- mime-types@2.1.35
+569 silly saveTree | | | | `-- mime-db@1.52.0
+569 silly saveTree | | | `-- negotiator@0.6.3
+569 silly saveTree | | +-- bytes@3.0.0
+569 silly saveTree | | +-- compressible@2.0.18
+569 silly saveTree | | +-- debug@2.6.9
+569 silly saveTree | | | `-- ms@2.0.0
+569 silly saveTree | | +-- on-headers@1.0.2
+569 silly saveTree | | +-- safe-buffer@5.1.2
+569 silly saveTree | | `-- vary@1.1.2
+569 silly saveTree | +-- gridstack@0.6.4
+569 silly saveTree | | `-- jquery@3.6.1
+569 silly saveTree | +-- serve-static@1.15.0
+569 silly saveTree | | +-- encodeurl@1.0.2
+569 silly saveTree | | +-- escape-html@1.0.3
+569 silly saveTree | | +-- parseurl@1.3.3
+569 silly saveTree | | `-- send@0.18.0
+569 silly saveTree | |   +-- depd@2.0.0
+569 silly saveTree | |   +-- destroy@1.2.0
+569 silly saveTree | |   +-- etag@1.8.1
+569 silly saveTree | |   +-- fresh@0.5.2
+569 silly saveTree | |   +-- http-errors@2.0.0
+569 silly saveTree | |   | +-- inherits@2.0.4
+569 silly saveTree | |   | +-- setprototypeof@1.2.0
+569 silly saveTree | |   | +-- statuses@2.0.1
+569 silly saveTree | |   | `-- toidentifier@1.0.1
+569 silly saveTree | |   +-- mime@1.6.0
+569 silly saveTree | |   +-- ms@2.1.3
+569 silly saveTree | |   +-- on-finished@2.4.1
+569 silly saveTree | |   | `-- ee-first@1.1.1
+569 silly saveTree | |   +-- range-parser@1.2.1
+569 silly saveTree | |   `-- statuses@2.0.1
+569 silly saveTree | `-- socket.io@4.5.4
+569 silly saveTree |   +-- base64id@2.0.0
+569 silly saveTree |   +-- debug@4.3.4
+569 silly saveTree |   | `-- ms@2.1.2
+569 silly saveTree |   +-- engine.io@6.2.1
+569 silly saveTree |   | +-- @types/cookie@0.4.1
+569 silly saveTree |   | +-- @types/cors@2.8.12
+569 silly saveTree |   | +-- @types/node@18.11.9
+569 silly saveTree |   | +-- cookie@0.4.2
+569 silly saveTree |   | +-- cors@2.8.5
+569 silly saveTree |   | | `-- object-assign@4.1.1
+569 silly saveTree |   | +-- debug@4.3.4
+569 silly saveTree |   | | `-- ms@2.1.2
+569 silly saveTree |   | +-- engine.io-parser@5.0.4
+569 silly saveTree |   | `-- ws@8.2.3
+569 silly saveTree |   +-- socket.io-adapter@2.4.0
+569 silly saveTree |   `-- socket.io-parser@4.2.1
+569 silly saveTree |     +-- @socket.io/component-emitter@3.1.0
+569 silly saveTree |     `-- debug@4.3.4
+569 silly saveTree |       `-- ms@2.1.2
+569 silly saveTree +-- node-red-node-email@1.18.2
+569 silly saveTree | +-- imap@0.8.19
+569 silly saveTree | | +-- readable-stream@1.1.14
+569 silly saveTree | | | +-- core-util-is@1.0.3
+569 silly saveTree | | | +-- inherits@2.0.4
+569 silly saveTree | | | +-- isarray@0.0.1
+569 silly saveTree | | | `-- string_decoder@0.10.31
+569 silly saveTree | | `-- utf7@1.0.2
+569 silly saveTree | |   `-- semver@5.3.0
+569 silly saveTree | +-- mailparser@3.5.0
+569 silly saveTree | | +-- encoding-japanese@2.0.0
+569 silly saveTree | | +-- he@1.2.0
+569 silly saveTree | | +-- html-to-text@8.2.0
+569 silly saveTree | | | +-- @selderee/plugin-htmlparser2@0.6.0
+569 silly saveTree | | | | +-- domhandler@4.3.1
+569 silly saveTree | | | | | `-- domelementtype@2.3.0
+569 silly saveTree | | | | `-- selderee@0.6.0
+569 silly saveTree | | | |   `-- parseley@0.7.0
+569 silly saveTree | | | |     +-- moo@0.5.2
+569 silly saveTree | | | |     `-- nearley@2.20.1
+569 silly saveTree | | | |       +-- commander@2.20.3
+569 silly saveTree | | | |       +-- railroad-diagrams@1.0.0
+569 silly saveTree | | | |       `-- randexp@0.4.6
+569 silly saveTree | | | |         +-- discontinuous-range@1.0.0
+569 silly saveTree | | | |         `-- ret@0.1.15
+569 silly saveTree | | | +-- deepmerge@4.2.2
+569 silly saveTree | | | +-- htmlparser2@6.1.0
+569 silly saveTree | | | | +-- domutils@2.8.0
+569 silly saveTree | | | | | `-- dom-serializer@1.4.1
+569 silly saveTree | | | | |   `-- entities@2.2.0
+569 silly saveTree | | | | `-- entities@2.2.0
+569 silly saveTree | | | +-- minimist@1.2.7
+569 silly saveTree | | | `-- selderee@0.6.0
+569 silly saveTree | | +-- iconv-lite@0.6.3
+569 silly saveTree | | | `-- safer-buffer@2.1.2
+569 silly saveTree | | +-- libmime@5.1.0
+569 silly saveTree | | | +-- libbase64@1.2.1
+569 silly saveTree | | | `-- libqp@1.1.0
+569 silly saveTree | | +-- linkify-it@4.0.0
+569 silly saveTree | | | `-- uc.micro@1.0.6
+569 silly saveTree | | +-- mailsplit@5.3.2
+569 silly saveTree | | +-- nodemailer@6.7.3
+569 silly saveTree | | `-- tlds@1.231.0
+569 silly saveTree | +-- nodemailer@6.8.0
+569 silly saveTree | `-- smtp-server@3.11.0
+569 silly saveTree |   +-- base32.js@0.1.0
+569 silly saveTree |   +-- ipv6-normalize@1.0.1
+569 silly saveTree |   `-- nodemailer@6.7.3
+569 silly saveTree +-- node-red-node-fitbit@0.1.0
+569 silly saveTree | `-- oauth@0.9.15
+569 silly saveTree +-- node-red-node-openweathermap@0.5.1
+569 silly saveTree | `-- request@2.88.2
+569 silly saveTree |   +-- aws-sign2@0.7.0
+569 silly saveTree |   +-- aws4@1.11.0
+569 silly saveTree |   +-- caseless@0.12.0
+569 silly saveTree |   +-- combined-stream@1.0.8
+569 silly saveTree |   | `-- delayed-stream@1.0.0
+569 silly saveTree |   +-- extend@3.0.2
+569 silly saveTree |   +-- forever-agent@0.6.1
+569 silly saveTree |   +-- form-data@2.3.3
+569 silly saveTree |   | `-- asynckit@0.4.0
+569 silly saveTree |   +-- har-validator@5.1.5
+569 silly saveTree |   | +-- ajv@6.12.6
+569 silly saveTree |   | | +-- fast-deep-equal@3.1.3
+569 silly saveTree |   | | +-- fast-json-stable-stringify@2.1.0
+569 silly saveTree |   | | +-- json-schema-traverse@0.4.1
+569 silly saveTree |   | | `-- uri-js@4.4.1
+569 silly saveTree |   | |   `-- punycode@2.1.1
+569 silly saveTree |   | `-- har-schema@2.0.0
+569 silly saveTree |   +-- http-signature@1.2.0
+569 silly saveTree |   | +-- assert-plus@1.0.0
+569 silly saveTree |   | +-- jsprim@1.4.2
+569 silly saveTree |   | | +-- extsprintf@1.3.0
+569 silly saveTree |   | | +-- json-schema@0.4.0
+569 silly saveTree |   | | `-- verror@1.10.0
+569 silly saveTree |   | |   `-- core-util-is@1.0.2
+569 silly saveTree |   | `-- sshpk@1.17.0
+569 silly saveTree |   |   +-- asn1@0.2.6
+569 silly saveTree |   |   | `-- safer-buffer@2.1.2
+569 silly saveTree |   |   +-- bcrypt-pbkdf@1.0.2
+569 silly saveTree |   |   | `-- tweetnacl@0.14.5
+569 silly saveTree |   |   +-- dashdash@1.14.1
+569 silly saveTree |   |   +-- ecc-jsbn@0.1.2
+569 silly saveTree |   |   | `-- jsbn@0.1.1
+569 silly saveTree |   |   +-- getpass@0.1.7
+569 silly saveTree |   |   +-- jsbn@0.1.1
+569 silly saveTree |   |   +-- safer-buffer@2.1.2
+569 silly saveTree |   |   `-- tweetnacl@0.14.5
+569 silly saveTree |   +-- is-typedarray@1.0.0
+569 silly saveTree |   +-- isstream@0.1.2
+569 silly saveTree |   +-- json-stringify-safe@5.0.1
+569 silly saveTree |   +-- oauth-sign@0.9.0
+569 silly saveTree |   +-- performance-now@2.1.0
+569 silly saveTree |   +-- qs@6.5.3
+569 silly saveTree |   +-- tough-cookie@2.5.0
+569 silly saveTree |   | `-- psl@1.9.0
+569 silly saveTree |   +-- tunnel-agent@0.6.0
+569 silly saveTree |   `-- uuid@3.4.0
+569 silly saveTree +-- node-red-node-pi-gpio@2.0.5
+569 silly saveTree `-- node-red-node-twitter@1.2.0
+569 silly saveTree   `-- twitter-ng@0.6.2
+569 silly saveTree     `-- oauth@0.10.0
+570 verbose stack Error: Refusing to delete /data/node_modules/node-red-node-email/node_modules/.bin/tlds: is outside /data/node_modules/node-red-node-email/node_modules/tlds and not a link
+570 verbose stack     at clobberFail (/usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:121:12)
+570 verbose stack     at isSafeToRm (/usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:114:15)
+570 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:54:5
+570 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:7:26)
+570 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:18:7
+570 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:180:7
+570 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/gentle-fs/node_modules/iferr/index.js:13:50
+570 verbose stack     at _readAllLinks (/usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:215:28)
+570 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/gentle-fs/node_modules/iferr/index.js:13:50
+570 verbose stack     at resolveSymlink (/usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:226:22)
+570 verbose stack     at _readAllLinks (/usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:217:5)
+570 verbose stack     at readAllLinks (/usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:212:3)
+570 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:179:5
+570 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/gentle-fs/node_modules/iferr/index.js:13:50
+570 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+570 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js:153:16
+571 verbose cwd /data
+572 verbose Linux 5.10.16.3-microsoft-standard-WSL2
+573 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "--save-prefix=~" "--production" "--engine-strict" "node-red-node-email@1.18.2"
+574 verbose node v14.18.2
+575 verbose npm  v6.14.15
+576 error code EEXIST
+577 error path /data/node_modules/node-red-node-email/node_modules/.bin/tlds
+578 error Refusing to delete /data/node_modules/node-red-node-email/node_modules/.bin/tlds: is outside /data/node_modules/node-red-node-email/node_modules/tlds and not a link
+579 error File exists: /data/node_modules/node-red-node-email/node_modules/.bin/tlds
+580 error Remove the existing file and try again, or run npm
+581 error with --force to overwrite files recklessly.
+582 verbose exit [ 1, true ]
