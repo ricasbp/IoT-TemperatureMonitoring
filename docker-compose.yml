@@ -5,7 +5,9 @@ services:
     profiles:
       - main_vm
       - total
-    build:
+    env_file: .env
+    image: duarter/py-node_red:${PY_NODERED}
+    build: 
       context: ./node-red
       dockerfile: Dockerfile
     container_name: node_red
