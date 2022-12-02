@@ -2633,7 +2633,7 @@
         "id": "3384aeebe5bd7856",
         "type": "ui_dropdown",
         "z": "82e904f5c5c26253",
-        "name": "Granularity",
+        "name": "Display",
         "label": "Display",
         "tooltip": "",
         "place": "Select option",
@@ -2659,7 +2659,7 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 830,
+        "x": 820,
         "y": 320,
         "wires": [
             []

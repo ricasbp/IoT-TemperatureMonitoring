@@ -443,6 +443,33 @@
         "className": ""
     },
     {
+        "id": "aa3f918d0607a86e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto_broker",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
         "id": "1fe28d05009a58dc",
         "type": "comment",
         "z": "49205adc630d9e62",
@@ -2393,6 +2420,7 @@
         "id": "c75e2a82787cfb26",
         "type": "inject",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "Load Online Data",
         "props": [
             {
@@ -2407,7 +2435,7 @@
         "payload": "1",
         "payloadType": "num",
         "x": 170,
-        "y": 120,
+        "y": 480,
         "wires": [
             [
                 "38b53cc8bbb43cf5"
@@ -2418,6 +2446,7 @@
         "id": "691504a54d0a2ebf",
         "type": "file in",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "read online data csv file",
         "filename": "/app/online.data",
         "format": "utf8",
@@ -2426,7 +2455,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 690,
-        "y": 120,
+        "y": 480,
         "wires": [
             [
                 "b5c7e71320bf45d9"
@@ -2437,6 +2466,7 @@
         "id": "b5c7e71320bf45d9",
         "type": "csv",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "parse csv",
         "sep": ",",
         "hdrin": true,
@@ -2449,10 +2479,10 @@
         "include_empty_strings": "",
         "include_null_values": "",
         "x": 920,
-        "y": 120,
+        "y": 480,
         "wires": [
             [
-                "3c6f6f304d9e570c"
+                "f765bef7caa879ac"
             ]
         ]
     },
@@ -2460,14 +2490,15 @@
         "id": "eb140b4200af64d2",
         "type": "postgresql",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "Insert Online Data",
         "query": "\nINSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
         "postgreSQLConfig": "c1bde5c5cae042e2",
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 1470,
-        "y": 120,
+        "x": 670,
+        "y": 540,
         "wires": [
             []
         ]
@@ -2476,6 +2507,7 @@
         "id": "38b53cc8bbb43cf5",
         "type": "postgresql",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "Truncate Online Table",
         "query": "TRUNCATE online_data;",
         "postgreSQLConfig": "c1bde5c5cae042e2",
@@ -2483,7 +2515,7 @@
         "rowsPerMsg": 1,
         "outputs": 1,
         "x": 420,
-        "y": 120,
+        "y": 480,
         "wires": [
             [
                 "691504a54d0a2ebf"
@@ -2494,6 +2526,7 @@
         "id": "3c6f6f304d9e570c",
         "type": "function",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "",
         "func": "\nlet date = msg.payload.date;\nlet temperature = msg.payload.temperature;\nlet label = msg.payload.label;\n\nmsg.params = [date, temperature, label];\nif (temperature != null)\n    return msg;\n",
         "outputs": 1,
@@ -2501,11 +2534,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1080,
-        "y": 120,
+        "x": 380,
+        "y": 540,
         "wires": [
             [
-                "f765bef7caa879ac"
+                "eb140b4200af64d2"
             ]
         ]
     },
@@ -2513,6 +2546,7 @@
         "id": "f765bef7caa879ac",
         "type": "delay",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "message pooler",
         "pauseType": "rate",
         "timeout": "5",
@@ -2526,13 +2560,54 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1260,
-        "y": 120,
+        "x": 1160,
+        "y": 480,
         "wires": [
             [
-                "eb140b4200af64d2"
+                "7d2ca4fae2fd45f5"
             ]
         ]
+    },
+    {
+        "id": "6958fb34e42edb4d",
+        "type": "mqtt in",
+        "z": "2c26b9058db8173f",
+        "d": true,
+        "name": "",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2a66695ea3e077da",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 540,
+        "wires": [
+            [
+                "3c6f6f304d9e570c"
+            ]
+        ]
+    },
+    {
+        "id": "7d2ca4fae2fd45f5",
+        "type": "mqtt out",
+        "z": "2c26b9058db8173f",
+        "d": true,
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "aa3f918d0607a86e",
+        "x": 1430,
+        "y": 480,
+        "wires": []
     },
     {
         "id": "7fb6dfe382f9ee44",
@@ -2669,6 +2744,7 @@
         "id": "418da393f012208a",
         "type": "ui_gauge",
         "z": "0cdf456eee4faca2",
+        "d": true,
         "name": "Current Temperature",
         "group": "6fcb8fa133925954",
         "order": 4,
@@ -2688,14 +2764,15 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 680,
-        "y": 340,
+        "x": 1620,
+        "y": 620,
         "wires": []
     },
     {
         "id": "8a3306af8267d0cc",
         "type": "ui_text",
         "z": "0cdf456eee4faca2",
+        "d": true,
         "group": "6fcb8fa133925954",
         "order": 5,
         "width": 0,
@@ -2705,14 +2782,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 690,
-        "y": 460,
+        "x": 1630,
+        "y": 740,
         "wires": []
     },
     {
         "id": "d58eb4b3c6fbb369",
         "type": "ui_text",
         "z": "0cdf456eee4faca2",
+        "d": true,
         "group": "6fcb8fa133925954",
         "order": 6,
         "width": 0,
@@ -2722,8 +2800,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 690,
-        "y": 400,
+        "x": 1630,
+        "y": 680,
         "wires": []
     }
 ]
