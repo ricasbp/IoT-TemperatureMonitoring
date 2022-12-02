@@ -5,8 +5,6 @@ services:
     profiles:
       - main_vm
       - total
-    env_file: .env
-    image: duarter/py-node_red:${PY_NODERED}
     build: 
       context: ./node-red
       dockerfile: Dockerfile
@@ -17,19 +15,19 @@ services:
       - ./data/datasets/historical.data:/app/historical.data
     ports:
       - 1880:1880
-  mosquitto:
-    profiles:
-      - broker_vm
-      - total
-    image: eclipse-mosquitto:2.0.15
-    container_name: mosquitto_broker
-    volumes:
-      - ./data/mosquitto/config/:/mosquitto/config/:ro
-      - ./data/mosquitto/log/:/mosquitto/log/
-      - ./data/mosquitto/data/:/mosquitto/data/
-    #ports:
-    #  - 1883:1883
-    #  - 9001:9001
+  #mosquitto:
+  #  profiles:
+  #    - broker_vm
+  #    - total
+  #  image: eclipse-mosquitto:2.0.15
+  #  container_name: mosquitto_broker
+  #  volumes:
+  #    - ./data/mosquitto/config/:/mosquitto/config/:ro
+  #    - ./data/mosquitto/log/:/mosquitto/log/
+  #    - ./data/mosquitto/data/:/mosquitto/data/
+  #  #ports:
+  #  #  - 1883:1883
+  #  #  - 9001:9001
   timescale_db:
     profiles:
       - main_vm
@@ -42,8 +40,8 @@ services:
       POSTGRES_PASSWORD: password
     volumes:
       - ./data/timescaledb:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
+    #ports:
+    #  - 5432:5432
   #prometheus_postgresql_adapter:
   #  depends_on:
   #  - timescaledb
