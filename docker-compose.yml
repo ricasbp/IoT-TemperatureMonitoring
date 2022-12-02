@@ -2,6 +2,9 @@ version: "3.8"
 
 services:
   node-red:
+    profiles:
+      - main_vm
+      - total
     build: 
       context: ./node-red
       dockerfile: Dockerfile
@@ -13,6 +16,9 @@ services:
     ports:
       - 1880:1880
   mosquitto:
+    profiles:
+      - broker_vm
+      - total
     image: eclipse-mosquitto:2.0.15
     container_name: mosquitto_broker
     volumes:
@@ -23,6 +29,9 @@ services:
     #  - 1883:1883
     #  - 9001:9001
   timescale_db:
+    profiles:
+      - main_vm
+      - total
     image: timescale/timescaledb:2.8.1-pg14
     restart: always
     container_name: timescale_db
