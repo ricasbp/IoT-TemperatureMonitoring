@@ -18,9 +18,9 @@ RUN apk --no-cache --update-cache add gcc gfortran build-base wget freetype-dev 
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 # Install deps
-RUN pip install numpy
-RUN pip install pandas
-RUN pip install scikit-learn
+RUN pip3 install numpy
+RUN pip3 install pandas
+RUN pip3 install scikit-learn
 
 
 USER node-red
