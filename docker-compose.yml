@@ -14,6 +14,7 @@ services:
     container_name: node_red
     volumes:
       - ./data/node_red:/data
+      - ./data/model:/app/model
       - ./data/datasets/online.data:/app/online.data
       - ./data/datasets/historical.data:/app/historical.data
       #- ./data/temp:/usr/src/node-red
