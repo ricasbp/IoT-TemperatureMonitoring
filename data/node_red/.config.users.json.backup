@@ -77,6 +77,42 @@
                 "view-node-show-label": true,
                 "view-show-tips": true,
                 "view-show-welcome-tours": true
+            },
+            "tours": {
+                "welcome": "2.2.3"
+            }
+        }
+    },
+    "lukasz": {
+        "editor": {
+            "view": {
+                "view-store-zoom": false,
+                "view-store-position": false,
+                "view-show-grid": true,
+                "view-snap-grid": true,
+                "view-grid-size": 20,
+                "view-node-status": true,
+                "view-node-show-label": true,
+                "view-show-tips": true,
+                "view-show-welcome-tours": true
+            },
+            "tours": {
+                "welcome": "2.2.3"
+            }
+        }
+    },
+    "ricardo": {
+        "editor": {
+            "view": {
+                "view-store-zoom": false,
+                "view-store-position": false,
+                "view-show-grid": true,
+                "view-snap-grid": true,
+                "view-grid-size": 20,
+                "view-node-status": true,
+                "view-node-show-label": true,
+                "view-show-tips": true,
+                "view-show-welcome-tours": true
             }
         }
     }

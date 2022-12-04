@@ -99,13 +99,56 @@
         "sessionExpiry": ""
     },
     {
-        "id": "05ab338d28506311",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": true,
-        "hidden": true
+        "id": "aa3f918d0607a86e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto_broker",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c1bde5c5cae042e2",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "timescale_db",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "temperature_db",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "temp_monitor",
+        "userFieldType": "str",
+        "password": "fc2023",
+        "passwordFieldType": "str"
     },
     {
         "id": "1dbbe41505f6a875",
@@ -205,6 +248,59 @@
         }
     },
     {
+        "id": "05ab338d28506311",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": true,
+        "hidden": true
+    },
+    {
+        "id": "b62be0f157db7a6d",
+        "type": "ui_tab",
+        "name": "Historical Data Dashboard Linear Chart",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "307997e3463c4b5d",
+        "type": "ui_tab",
+        "name": "Historical Data Dashboard Stats",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "570827782eb80e5e",
+        "type": "ui_tab",
+        "name": "Historical Data Dashboard Monthly Stats",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9137e1ef55ad6cd5",
+        "type": "ui_tab",
+        "name": "Historical Data Dashboard Daily Stats",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2115f8efaf2412c8",
+        "type": "ui_tab",
+        "name": "Temperature Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
         "id": "88fc72d279b77248",
         "type": "ui_group",
         "name": "Historical Data Dashboard Stats Outside",
@@ -227,19 +323,6 @@
         "className": ""
     },
     {
-        "id": "58eafe82a730c2c5",
-        "type": "fitbit-credentials"
-    },
-    {
-        "id": "b62be0f157db7a6d",
-        "type": "ui_tab",
-        "name": "Historical Data Dashboard Linear Chart",
-        "icon": "dashboard",
-        "order": 5,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "c0e788045b09315c",
         "type": "ui_group",
         "name": "Historical Data Dashboard Linar Chart",
@@ -249,15 +332,6 @@
         "width": "27",
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "307997e3463c4b5d",
-        "type": "ui_tab",
-        "name": "Historical Data Dashboard Stats",
-        "icon": "dashboard",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "08682ef44b2901a9",
@@ -370,57 +444,6 @@
         "className": ""
     },
     {
-        "id": "570827782eb80e5e",
-        "type": "ui_tab",
-        "name": "Historical Data Dashboard Monthly Stats",
-        "icon": "dashboard",
-        "order": 3,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "9137e1ef55ad6cd5",
-        "type": "ui_tab",
-        "name": "Historical Data Dashboard Daily Stats",
-        "icon": "dashboard",
-        "order": 4,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "c1bde5c5cae042e2",
-        "type": "postgreSQLConfig",
-        "name": "",
-        "host": "timescale_db",
-        "hostFieldType": "str",
-        "port": "5432",
-        "portFieldType": "num",
-        "database": "temperature_db",
-        "databaseFieldType": "str",
-        "ssl": "false",
-        "sslFieldType": "bool",
-        "applicationName": "",
-        "applicationNameType": "str",
-        "max": "10",
-        "maxFieldType": "num",
-        "idle": "1000",
-        "idleFieldType": "num",
-        "connectionTimeout": "10000",
-        "connectionTimeoutFieldType": "num",
-        "user": "temp_monitor",
-        "userFieldType": "str",
-        "password": "fc2023",
-        "passwordFieldType": "str"
-    },
-    {
-        "id": "2115f8efaf2412c8",
-        "type": "ui_tab",
-        "name": "Temperature Dashboard",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "867a9ab96d94d9de",
         "type": "ui_group",
         "name": "Historical Dashboard",
@@ -443,31 +466,8 @@
         "className": ""
     },
     {
-        "id": "aa3f918d0607a86e",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "mosquitto_broker",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
+        "id": "58eafe82a730c2c5",
+        "type": "fitbit-credentials"
     },
     {
         "id": "1fe28d05009a58dc",
@@ -667,135 +667,6 @@
         "wires": []
     },
     {
-        "id": "a3d48dd614b417b3",
-        "type": "ui_chart",
-        "z": "ef830ba8643f487a",
-        "name": "",
-        "group": "c0b7f86240cd365e",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "5",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 990,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "18c6326e87b61500",
-        "type": "ui_gauge",
-        "z": "ef830ba8643f487a",
-        "name": "",
-        "group": "c0b7f86240cd365e",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "gauge",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#ff8000",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "className": "",
-        "x": 990,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "0ec64920333aa134",
-        "type": "ui_slider",
-        "z": "ef830ba8643f487a",
-        "name": "",
-        "label": "Rand Val Slider",
-        "tooltip": "",
-        "group": "c0b7f86240cd365e",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "outs": "all",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": 0,
-        "max": "100",
-        "step": 1,
-        "className": "",
-        "x": 1020,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7c95af4249691c4e",
-        "type": "ui_text",
-        "z": "ef830ba8643f487a",
-        "group": "c0b7f86240cd365e",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Rand Val",
-        "format": "{{msg.payload}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 1000,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "c49a90ff6d83374c",
-        "type": "twitter in",
-        "z": "a1dcd4be55729e02",
-        "d": true,
-        "twitter": "",
-        "tags": "#led",
-        "user": "false",
-        "name": "#led sensor",
-        "inputs": 0,
-        "x": 370,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c6ea0b6c9f64d619",
         "type": "trigger",
         "z": "a1dcd4be55729e02",
@@ -819,21 +690,6 @@
                 "271ac9217c43d952"
             ]
         ]
-    },
-    {
-        "id": "271ac9217c43d952",
-        "type": "rpi-gpio out",
-        "z": "a1dcd4be55729e02",
-        "name": "Raspb Pi",
-        "pin": "12",
-        "set": true,
-        "level": "0",
-        "freq": "",
-        "out": "out",
-        "bcm": true,
-        "x": 780,
-        "y": 420,
-        "wires": []
     },
     {
         "id": "bc1ec2662152d563",
@@ -865,25 +721,6 @@
         ]
     },
     {
-        "id": "e9bf8d09ae3c530d",
-        "type": "openweathermap in",
-        "z": "65f642e2b5357bf0",
-        "name": "Weather Now",
-        "wtype": "current",
-        "lon": "",
-        "lat": "",
-        "city": "Lisbon",
-        "country": "Portugal",
-        "language": "en",
-        "x": 210,
-        "y": 140,
-        "wires": [
-            [
-                "300e606a3874aa30"
-            ]
-        ]
-    },
-    {
         "id": "300e606a3874aa30",
         "type": "switch",
         "z": "65f642e2b5357bf0",
@@ -905,21 +742,6 @@
         "wires": [
             [
                 "c02df81e3ec0125a"
-            ]
-        ]
-    },
-    {
-        "id": "c02df81e3ec0125a",
-        "type": "fitbit",
-        "z": "65f642e2b5357bf0",
-        "fitbit": "58eafe82a730c2c5",
-        "name": "",
-        "dataType": "activities",
-        "x": 600,
-        "y": 220,
-        "wires": [
-            [
-                "3a7b8d3967b1f28f"
             ]
         ]
     },
@@ -947,20 +769,6 @@
                 "3fc70f596cf8814c"
             ]
         ]
-    },
-    {
-        "id": "312d7a252b51f8cf",
-        "type": "e-mail",
-        "z": "65f642e2b5357bf0",
-        "server": "smtp.gmail.com",
-        "port": "465",
-        "secure": true,
-        "tls": true,
-        "name": "",
-        "dname": "",
-        "x": 1070,
-        "y": 340,
-        "wires": []
     },
     {
         "id": "3fc70f596cf8814c",
@@ -1050,50 +858,6 @@
         ]
     },
     {
-        "id": "320ae2d07171a7eb",
-        "type": "ui_chart",
-        "z": "eada78bffe31b0ee",
-        "name": "",
-        "group": "c0e788045b09315c",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "YYYY-MM-DD HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 690,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "186fce137cd7569b",
         "type": "debug",
         "z": "eada78bffe31b0ee",
@@ -1160,82 +924,6 @@
                 "066996cca95d0dea"
             ]
         ]
-    },
-    {
-        "id": "44c5a5b1b5067094",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "53efb4f83d4163ec",
-        "name": "maximum total",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<h1>Total</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 960,
-        "y": 20,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5b1317c580dbf498",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "53efb4f83d4163ec",
-        "name": "minimum total",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 960,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "42daf970b476f548",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "53efb4f83d4163ec",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "average total",
-        "label": "Average",
-        "format": "{{msg.payload.avg}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 950,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "57ed463baf47cc23",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "53efb4f83d4163ec",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "standard deviation total",
-        "label": "Standard Deviation",
-        "format": "{{msg.payload.standDev}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 990,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "e8c8cc8e79862ec6",
@@ -1406,158 +1094,6 @@
         ]
     },
     {
-        "id": "d19ba005af0079c5",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "08682ef44b2901a9",
-        "name": "maximum inside",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<h1>Total</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 960,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cfcfaf5bb155eac0",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "08682ef44b2901a9",
-        "name": "minimum inside",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 960,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b5b4c5bdf91f660c",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "08682ef44b2901a9",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "average inside",
-        "label": "Average",
-        "format": "{{msg.payload.avg}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 960,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "4f9c23e0fd1aa44f",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "08682ef44b2901a9",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "standard deviation inside",
-        "label": "Standard Deviation",
-        "format": "{{msg.payload.standDev}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 990,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "464de72d8af7fad0",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "88fc72d279b77248",
-        "name": "maximum outside",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<h1>Total</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 970,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b2a3b733fd36d831",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "88fc72d279b77248",
-        "name": "minimum outside",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 970,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b4b6fa28585b9f1a",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "88fc72d279b77248",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "average outside",
-        "label": "Average",
-        "format": "{{msg.payload.avg}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 960,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "1c93576d7bcc4a64",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "88fc72d279b77248",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "standard deviation outside",
-        "label": "Standard Deviation",
-        "format": "{{msg.payload.standDev}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 990,
-        "y": 460,
-        "wires": []
-    },
-    {
         "id": "066996cca95d0dea",
         "type": "debug",
         "z": "eada78bffe31b0ee",
@@ -1611,550 +1147,6 @@
                 "1558639f5cbf8f07",
                 "0f084666f33326b4"
             ]
-        ]
-    },
-    {
-        "id": "3ba1ee73f2b08138",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "57c5d568b219a078",
-        "name": "maximum total monthly",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<h1>Monthly</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 990,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6d4f643fcfc8673e",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "57c5d568b219a078",
-        "name": "minimum total monthly",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 980,
-        "y": 560,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "09c55d14d937b9c6",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "57c5d568b219a078",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "average total monthly",
-        "label": "Average",
-        "format": "{{msg.payload.avg}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 980,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "973bee0fd20c0a8d",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "57c5d568b219a078",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "name": "standard deviation total monthly",
-        "label": "Standard Deviation",
-        "format": "{{msg.payload.standDev}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 1010,
-        "y": 640,
-        "wires": []
-    },
-    {
-        "id": "114df67d336fa73b",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "0ac8192562804d6e",
-        "name": "maximum inside monthly",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<h1>Monthly</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 990,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "58cfa08ffa7a792d",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "0ac8192562804d6e",
-        "name": "minimum inside monthly",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 990,
-        "y": 720,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7adbf78ef9dd81c0",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "0ac8192562804d6e",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "average inside monthly",
-        "label": "Average",
-        "format": "{{msg.payload.avg}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 990,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "059fdc6d07830e11",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "0ac8192562804d6e",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "standard deviation inside monthly",
-        "label": "Standard Deviation",
-        "format": "{{msg.payload.standDev}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 1020,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "bd1863aa0e5ee344",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "c5a03ac5d9b08b46",
-        "name": "maximum outside monthly",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<h1>Monthly</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 990,
-        "y": 840,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "439f6d511b9ebfec",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "c5a03ac5d9b08b46",
-        "name": "minimum outside monthly",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 990,
-        "y": 880,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "54eabe9c71d9ccdc",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "c5a03ac5d9b08b46",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "average outside monthly",
-        "label": "Average",
-        "format": "{{msg.payload.avg}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 990,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "4d5b62b8020aa97e",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "c5a03ac5d9b08b46",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "standard deviation outside monthly",
-        "label": "Standard Deviation",
-        "format": "{{msg.payload.standDev}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 1020,
-        "y": 960,
-        "wires": []
-    },
-    {
-        "id": "a484d1231c645126",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "a4b51cc31fa97707",
-        "name": "maximum total daily",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<h1>Daily</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 980,
-        "y": 1080,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1d64f8ad0e29b4e6",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "a4b51cc31fa97707",
-        "name": "minimum total daily",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 970,
-        "y": 1120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cab51cc189bfd58e",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "a4b51cc31fa97707",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "average total daily",
-        "label": "Average",
-        "format": "{{msg.payload.avg}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 970,
-        "y": 1160,
-        "wires": []
-    },
-    {
-        "id": "40e6deb1181f750a",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "a4b51cc31fa97707",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "standard deviation total daily",
-        "label": "Standard Deviation",
-        "format": "{{msg.payload.standDev}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 1000,
-        "y": 1200,
-        "wires": []
-    },
-    {
-        "id": "ba28e96f2429ca8d",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "0aa1394ccb26afe8",
-        "name": "maximum inside daily",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<h1>Daily</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 980,
-        "y": 1240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e2bf61b364cebcc5",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "0aa1394ccb26afe8",
-        "name": "minimum inside daily",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 980,
-        "y": 1280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6571cc53ef633e45",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "0aa1394ccb26afe8",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "average inside daily",
-        "label": "Average",
-        "format": "{{msg.payload.avg}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 980,
-        "y": 1320,
-        "wires": []
-    },
-    {
-        "id": "1755752ef1d2dfdd",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "0aa1394ccb26afe8",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "standard deviation inside daily",
-        "label": "Standard Deviation",
-        "format": "{{msg.payload.standDev}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 1010,
-        "y": 1360,
-        "wires": []
-    },
-    {
-        "id": "a5060cbe537c192c",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "13eafad7bf544662",
-        "name": "maximum outside daily",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<h1>Daily</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 980,
-        "y": 1400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "05781869da124c36",
-        "type": "ui_template",
-        "z": "eada78bffe31b0ee",
-        "group": "13eafad7bf544662",
-        "name": "minimum outside daily",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 980,
-        "y": 1440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4ea58d0ca37a800d",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "13eafad7bf544662",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "average outside daily",
-        "label": "Average",
-        "format": "{{msg.payload.avg}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 980,
-        "y": 1480,
-        "wires": []
-    },
-    {
-        "id": "d427eb24ccdce873",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "13eafad7bf544662",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "standard deviation outside daily",
-        "label": "Standard Deviation",
-        "format": "{{msg.payload.standDev}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 1010,
-        "y": 1520,
-        "wires": []
-    },
-    {
-        "id": "7ceb591baaf0a2db",
-        "type": "ui_chart",
-        "z": "eada78bffe31b0ee",
-        "name": "",
-        "group": "2f0107cd809f5bb8",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "monthly variations",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "YYYY-MM-DD",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1270,
-        "y": 1020,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c5d0f978928948ee",
-        "type": "ui_chart",
-        "z": "eada78bffe31b0ee",
-        "name": "",
-        "group": "1eebc368271218b4",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "daily variations",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "YYYY-MM-DD",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1260,
-        "y": 1580,
-        "wires": [
-            []
         ]
     },
     {
@@ -2272,6 +1264,1279 @@
         ]
     },
     {
+        "id": "fe7dcfd820009cc2",
+        "type": "postgresql",
+        "z": "eada78bffe31b0ee",
+        "name": "Insert Historical Data",
+        "query": "\nINSERT INTO historical_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1480,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5fe11c1032ef89ef",
+        "type": "postgresql",
+        "z": "eada78bffe31b0ee",
+        "name": "Truncate Historical Table",
+        "query": "TRUNCATE historical_data;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 430,
+        "y": 60,
+        "wires": [
+            [
+                "ce6ffb3b803686fc"
+            ]
+        ]
+    },
+    {
+        "id": "eb140b4200af64d2",
+        "type": "postgresql",
+        "z": "eada78bffe31b0ee",
+        "d": true,
+        "name": "Insert Online Data",
+        "query": "\nINSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 670,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "38b53cc8bbb43cf5",
+        "type": "postgresql",
+        "z": "eada78bffe31b0ee",
+        "d": true,
+        "name": "Truncate Online Table",
+        "query": "TRUNCATE online_data;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 420,
+        "y": 480,
+        "wires": [
+            [
+                "691504a54d0a2ebf"
+            ]
+        ]
+    },
+    {
+        "id": "d4fbd5e8ae89b743",
+        "type": "ui_dropdown",
+        "z": "eada78bffe31b0ee",
+        "name": "Granularity",
+        "label": "Granularity",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "867a9ab96d94d9de",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Daily",
+                "value": "Daily",
+                "type": "str"
+            },
+            {
+                "label": "Monthly",
+                "value": "Monthly",
+                "type": "str"
+            },
+            {
+                "label": "Yearly",
+                "value": "Yearly",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 830,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3384aeebe5bd7856",
+        "type": "ui_dropdown",
+        "z": "eada78bffe31b0ee",
+        "name": "Display",
+        "label": "Display",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "867a9ab96d94d9de",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Graph",
+                "value": "Graph",
+                "type": "str"
+            },
+            {
+                "label": "Table",
+                "value": "Table",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 820,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ec64920333aa134",
+        "type": "ui_slider",
+        "z": "eada78bffe31b0ee",
+        "name": "",
+        "label": "Rand Val Slider",
+        "tooltip": "",
+        "group": "c0b7f86240cd365e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 1020,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c95af4249691c4e",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "c0b7f86240cd365e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Rand Val",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1000,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "42daf970b476f548",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "53efb4f83d4163ec",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "average total",
+        "label": "Average",
+        "format": "{{msg.payload.avg}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 950,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "57ed463baf47cc23",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "53efb4f83d4163ec",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "standard deviation total",
+        "label": "Standard Deviation",
+        "format": "{{msg.payload.standDev}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 990,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b5b4c5bdf91f660c",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "08682ef44b2901a9",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "average inside",
+        "label": "Average",
+        "format": "{{msg.payload.avg}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 960,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4f9c23e0fd1aa44f",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "08682ef44b2901a9",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "standard deviation inside",
+        "label": "Standard Deviation",
+        "format": "{{msg.payload.standDev}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 990,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b4b6fa28585b9f1a",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "88fc72d279b77248",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "average outside",
+        "label": "Average",
+        "format": "{{msg.payload.avg}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 960,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "1c93576d7bcc4a64",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "88fc72d279b77248",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "standard deviation outside",
+        "label": "Standard Deviation",
+        "format": "{{msg.payload.standDev}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 990,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "09c55d14d937b9c6",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "57c5d568b219a078",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "average total monthly",
+        "label": "Average",
+        "format": "{{msg.payload.avg}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 980,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "973bee0fd20c0a8d",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "57c5d568b219a078",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "standard deviation total monthly",
+        "label": "Standard Deviation",
+        "format": "{{msg.payload.standDev}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "7adbf78ef9dd81c0",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "0ac8192562804d6e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "average inside monthly",
+        "label": "Average",
+        "format": "{{msg.payload.avg}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 990,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "059fdc6d07830e11",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "0ac8192562804d6e",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "standard deviation inside monthly",
+        "label": "Standard Deviation",
+        "format": "{{msg.payload.standDev}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1020,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "54eabe9c71d9ccdc",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "c5a03ac5d9b08b46",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "average outside monthly",
+        "label": "Average",
+        "format": "{{msg.payload.avg}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 990,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "4d5b62b8020aa97e",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "c5a03ac5d9b08b46",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "standard deviation outside monthly",
+        "label": "Standard Deviation",
+        "format": "{{msg.payload.standDev}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1020,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "cab51cc189bfd58e",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "a4b51cc31fa97707",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "average total daily",
+        "label": "Average",
+        "format": "{{msg.payload.avg}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 970,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "40e6deb1181f750a",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "a4b51cc31fa97707",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "standard deviation total daily",
+        "label": "Standard Deviation",
+        "format": "{{msg.payload.standDev}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1000,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "6571cc53ef633e45",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "0aa1394ccb26afe8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "average inside daily",
+        "label": "Average",
+        "format": "{{msg.payload.avg}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 980,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "1755752ef1d2dfdd",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "0aa1394ccb26afe8",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "standard deviation inside daily",
+        "label": "Standard Deviation",
+        "format": "{{msg.payload.standDev}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "4ea58d0ca37a800d",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "13eafad7bf544662",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "average outside daily",
+        "label": "Average",
+        "format": "{{msg.payload.avg}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 980,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "d427eb24ccdce873",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "group": "13eafad7bf544662",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "standard deviation outside daily",
+        "label": "Standard Deviation",
+        "format": "{{msg.payload.standDev}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "8a3306af8267d0cc",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "d": true,
+        "group": "6fcb8fa133925954",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "Current Predicted Confort",
+        "label": "Current Predicted Confort",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1630,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "d58eb4b3c6fbb369",
+        "type": "ui_text",
+        "z": "eada78bffe31b0ee",
+        "d": true,
+        "group": "6fcb8fa133925954",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "Predicted Confort Range",
+        "label": "Predicted Confort Range",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1630,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "18c6326e87b61500",
+        "type": "ui_gauge",
+        "z": "eada78bffe31b0ee",
+        "name": "",
+        "group": "c0b7f86240cd365e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#ff8000",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 990,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7fb6dfe382f9ee44",
+        "type": "ui_gauge",
+        "z": "eada78bffe31b0ee",
+        "name": "Mean Temperature",
+        "group": "867a9ab96d94d9de",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Mean Temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-30",
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 850,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "418da393f012208a",
+        "type": "ui_gauge",
+        "z": "eada78bffe31b0ee",
+        "d": true,
+        "name": "Current Temperature",
+        "group": "6fcb8fa133925954",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Current Temperature",
+        "label": "º C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1620,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "a3d48dd614b417b3",
+        "type": "ui_chart",
+        "z": "eada78bffe31b0ee",
+        "name": "",
+        "group": "c0b7f86240cd365e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 990,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "320ae2d07171a7eb",
+        "type": "ui_chart",
+        "z": "eada78bffe31b0ee",
+        "name": "",
+        "group": "c0e788045b09315c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "YYYY-MM-DD HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 690,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ceb591baaf0a2db",
+        "type": "ui_chart",
+        "z": "eada78bffe31b0ee",
+        "name": "",
+        "group": "2f0107cd809f5bb8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "monthly variations",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "YYYY-MM-DD",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1270,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c5d0f978928948ee",
+        "type": "ui_chart",
+        "z": "eada78bffe31b0ee",
+        "name": "",
+        "group": "1eebc368271218b4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "daily variations",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "YYYY-MM-DD",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1260,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44c5a5b1b5067094",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "53efb4f83d4163ec",
+        "name": "maximum total",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<h1>Total</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b1317c580dbf498",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "53efb4f83d4163ec",
+        "name": "minimum total",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d19ba005af0079c5",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "08682ef44b2901a9",
+        "name": "maximum inside",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<h1>Total</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cfcfaf5bb155eac0",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "08682ef44b2901a9",
+        "name": "minimum inside",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "464de72d8af7fad0",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "88fc72d279b77248",
+        "name": "maximum outside",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<h1>Total</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 970,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b2a3b733fd36d831",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "88fc72d279b77248",
+        "name": "minimum outside",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 970,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ba1ee73f2b08138",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "57c5d568b219a078",
+        "name": "maximum total monthly",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<h1>Monthly</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 990,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d4f643fcfc8673e",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "57c5d568b219a078",
+        "name": "minimum total monthly",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "114df67d336fa73b",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "0ac8192562804d6e",
+        "name": "maximum inside monthly",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<h1>Monthly</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 990,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58cfa08ffa7a792d",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "0ac8192562804d6e",
+        "name": "minimum inside monthly",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 990,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bd1863aa0e5ee344",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "c5a03ac5d9b08b46",
+        "name": "maximum outside monthly",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<h1>Monthly</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 990,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "439f6d511b9ebfec",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "c5a03ac5d9b08b46",
+        "name": "minimum outside monthly",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 990,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a484d1231c645126",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "a4b51cc31fa97707",
+        "name": "maximum total daily",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<h1>Daily</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d64f8ad0e29b4e6",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "a4b51cc31fa97707",
+        "name": "minimum total daily",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 970,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba28e96f2429ca8d",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "0aa1394ccb26afe8",
+        "name": "maximum inside daily",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<h1>Daily</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2bf61b364cebcc5",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "0aa1394ccb26afe8",
+        "name": "minimum inside daily",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a5060cbe537c192c",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "13eafad7bf544662",
+        "name": "maximum outside daily",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<h1>Daily</h1>\n<p>Maximum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.max.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "05781869da124c36",
+        "type": "ui_template",
+        "z": "eada78bffe31b0ee",
+        "group": "13eafad7bf544662",
+        "name": "minimum outside daily",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<p>Minimum</p>\n<table>\n\n    <tr>\n        <th style=\"width: 50%;\">date</th>\n        <th style=\"width: 50%;\">val</th>\n    </tr>\n    <tr>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.date\" /></th>\n        <th style=\"width: 50%;\"><div ng-bind-html=\"msg.payload.min.val\" /></th>\n    </tr>\n\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46ac09ed1e6cdc75",
+        "type": "ui_table",
+        "z": "eada78bffe31b0ee",
+        "group": "867a9ab96d94d9de",
+        "name": "Values",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "columns": [
+            {
+                "field": "",
+                "title": "Test",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 810,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "312d7a252b51f8cf",
+        "type": "e-mail",
+        "z": "eada78bffe31b0ee",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 1070,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "c02df81e3ec0125a",
+        "type": "fitbit",
+        "z": "eada78bffe31b0ee",
+        "fitbit": "58eafe82a730c2c5",
+        "name": "",
+        "dataType": "activities",
+        "x": 600,
+        "y": 220,
+        "wires": [
+            [
+                "3a7b8d3967b1f28f"
+            ]
+        ]
+    },
+    {
+        "id": "e9bf8d09ae3c530d",
+        "type": "openweathermap in",
+        "z": "eada78bffe31b0ee",
+        "name": "Weather Now",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Lisbon",
+        "country": "Portugal",
+        "language": "en",
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "300e606a3874aa30"
+            ]
+        ]
+    },
+    {
+        "id": "271ac9217c43d952",
+        "type": "rpi-gpio out",
+        "z": "eada78bffe31b0ee",
+        "name": "Raspb Pi",
+        "pin": "12",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 780,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "c49a90ff6d83374c",
+        "type": "twitter in",
+        "z": "eada78bffe31b0ee",
+        "d": true,
+        "twitter": "",
+        "tags": "#led",
+        "user": "false",
+        "name": "#led sensor",
+        "inputs": 0,
+        "x": 370,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "2a500ffbb2347df6",
         "type": "inject",
         "z": "2c26b9058db8173f",
@@ -2292,7 +2557,8 @@
         "y": 60,
         "wires": [
             [
-                "5fe11c1032ef89ef"
+                "5fe11c1032ef89ef",
+                "70cb1d24919f6d6c"
             ]
         ]
     },
@@ -2339,40 +2605,6 @@
         ]
     },
     {
-        "id": "fe7dcfd820009cc2",
-        "type": "postgresql",
-        "z": "2c26b9058db8173f",
-        "name": "Insert Historical Data",
-        "query": "\nINSERT INTO historical_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
-        "split": false,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 1480,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5fe11c1032ef89ef",
-        "type": "postgresql",
-        "z": "2c26b9058db8173f",
-        "name": "Truncate Historical Table",
-        "query": "TRUNCATE historical_data;",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
-        "split": false,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 430,
-        "y": 60,
-        "wires": [
-            [
-                "ce6ffb3b803686fc"
-            ]
-        ]
-    },
-    {
         "id": "f32d4832927a420f",
         "type": "function",
         "z": "2c26b9058db8173f",
@@ -2412,7 +2644,8 @@
         "y": 60,
         "wires": [
             [
-                "fe7dcfd820009cc2"
+                "fe7dcfd820009cc2",
+                "501e883d75814a02"
             ]
         ]
     },
@@ -2438,7 +2671,8 @@
         "y": 480,
         "wires": [
             [
-                "38b53cc8bbb43cf5"
+                "38b53cc8bbb43cf5",
+                "c828a0a1d636b849"
             ]
         ]
     },
@@ -2487,42 +2721,6 @@
         ]
     },
     {
-        "id": "eb140b4200af64d2",
-        "type": "postgresql",
-        "z": "2c26b9058db8173f",
-        "d": true,
-        "name": "Insert Online Data",
-        "query": "\nINSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
-        "split": false,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 670,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "38b53cc8bbb43cf5",
-        "type": "postgresql",
-        "z": "2c26b9058db8173f",
-        "d": true,
-        "name": "Truncate Online Table",
-        "query": "TRUNCATE online_data;",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
-        "split": false,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 420,
-        "y": 480,
-        "wires": [
-            [
-                "691504a54d0a2ebf"
-            ]
-        ]
-    },
-    {
         "id": "3c6f6f304d9e570c",
         "type": "function",
         "z": "2c26b9058db8173f",
@@ -2538,7 +2736,8 @@
         "y": 540,
         "wires": [
             [
-                "eb140b4200af64d2"
+                "eb140b4200af64d2",
+                "c4e4382e292dfdfe"
             ]
         ]
     },
@@ -2610,198 +2809,134 @@
         "wires": []
     },
     {
-        "id": "7fb6dfe382f9ee44",
-        "type": "ui_gauge",
-        "z": "82e904f5c5c26253",
-        "name": "Mean Temperature",
-        "group": "867a9ab96d94d9de",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Mean Temperature",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-30",
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "className": "",
-        "x": 850,
-        "y": 380,
-        "wires": []
+        "id": "70cb1d24919f6d6c",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "Truncate Historical Table",
+        "query": "TRUNCATE historical_data;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 430,
+        "y": 60,
+        "wires": [
+            [
+                "ce6ffb3b803686fc"
+            ]
+        ]
     },
     {
-        "id": "d4fbd5e8ae89b743",
-        "type": "ui_dropdown",
-        "z": "82e904f5c5c26253",
-        "name": "Granularity",
-        "label": "Granularity",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "867a9ab96d94d9de",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Daily",
-                "value": "Daily",
-                "type": "str"
-            },
-            {
-                "label": "Monthly",
-                "value": "Monthly",
-                "type": "str"
-            },
-            {
-                "label": "Yearly",
-                "value": "Yearly",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 830,
-        "y": 260,
+        "id": "501e883d75814a02",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "Insert Historical Data",
+        "query": "\nINSERT INTO historical_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1480,
+        "y": 60,
         "wires": [
             []
         ]
     },
     {
-        "id": "46ac09ed1e6cdc75",
-        "type": "ui_table",
-        "z": "82e904f5c5c26253",
-        "group": "867a9ab96d94d9de",
-        "name": "Values",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "columns": [
-            {
-                "field": "",
-                "title": "Test",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 810,
-        "y": 440,
-        "wires": []
+        "id": "c828a0a1d636b849",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "Truncate Online Table",
+        "query": "TRUNCATE online_data;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 420,
+        "y": 480,
+        "wires": [
+            [
+                "691504a54d0a2ebf"
+            ]
+        ]
     },
     {
-        "id": "3384aeebe5bd7856",
-        "type": "ui_dropdown",
-        "z": "82e904f5c5c26253",
-        "name": "Display",
-        "label": "Display",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "867a9ab96d94d9de",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Graph",
-                "value": "Graph",
-                "type": "str"
-            },
-            {
-                "label": "Table",
-                "value": "Table",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 820,
-        "y": 320,
+        "id": "c4e4382e292dfdfe",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "Insert Online Data",
+        "query": "\nINSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 670,
+        "y": 540,
         "wires": [
             []
         ]
     },
     {
-        "id": "418da393f012208a",
-        "type": "ui_gauge",
-        "z": "0cdf456eee4faca2",
-        "d": true,
-        "name": "Current Temperature",
-        "group": "6fcb8fa133925954",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Current Temperature",
-        "label": "º C",
-        "format": "{{value}}",
-        "min": 0,
-        "max": 10,
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
+        "id": "e38fcd69b348ee88",
+        "type": "debug",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ae7c1c2c7f154272",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "test historical data",
+        "query": "SELECT * FROM historical_data\norder by date desc\nlimit 10;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "e38fcd69b348ee88"
+            ]
+        ]
+    },
+    {
+        "id": "91d1cb00ae0403c9",
+        "type": "inject",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
         ],
-        "seg1": "",
-        "seg2": "",
-        "className": "",
-        "x": 1620,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "8a3306af8267d0cc",
-        "type": "ui_text",
-        "z": "0cdf456eee4faca2",
-        "d": true,
-        "group": "6fcb8fa133925954",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "name": "Current Predicted Confort",
-        "label": "Current Predicted Confort",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1630,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "d58eb4b3c6fbb369",
-        "type": "ui_text",
-        "z": "0cdf456eee4faca2",
-        "d": true,
-        "group": "6fcb8fa133925954",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "name": "Predicted Confort Range",
-        "label": "Predicted Confort Range",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1630,
-        "y": 680,
-        "wires": []
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "ae7c1c2c7f154272"
+            ]
+        ]
     }
 ]

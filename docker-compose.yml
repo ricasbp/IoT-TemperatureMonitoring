@@ -7,14 +7,16 @@ services:
       - total
     env_file: .env
     image: duarter/py-node_red:${PY_NODERED}
-    build: 
+    build:
       context: ./node-red
       dockerfile: Dockerfile
+    #entrypoint: "tail -f /dev/null"
     container_name: node_red
     volumes:
       - ./data/node_red:/data
       - ./data/datasets/online.data:/app/online.data
       - ./data/datasets/historical.data:/app/historical.data
+      #- ./data/temp:/usr/src/node-red
     ports:
       - 1880:1880
   #mosquitto:
@@ -40,8 +42,9 @@ services:
     environment:
       POSTGRES_USER: timescaledb
       POSTGRES_PASSWORD: password
+    #entrypoint: "tail -f /dev/null"
     volumes:
-      - ./data/timescaledb:/var/lib/postgresql/data
+      - ./data/timescaledb2:/var/lib/postgresql/data
     #ports:
     #  - 5432:5432
   #prometheus_postgresql_adapter:

@@ -405,9 +405,48 @@
             }
         }
     },
+    "node-red-contrib-filter": {
+        "name": "node-red-contrib-filter",
+        "version": "0.1.4",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "filter": {
+                "name": "filter",
+                "types": [
+                    "filter"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-filter",
+                "file": "/data/node_modules/node-red-contrib-filter/18-filter.js"
+            }
+        }
+    },
+    "node-red-contrib-postgresql": {
+        "name": "node-red-contrib-postgresql",
+        "version": "0.11.2",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "postgresql": {
+                "name": "postgresql",
+                "types": [
+                    "postgreSQLConfig",
+                    "postgresql"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-postgresql",
+                "file": "/data/node_modules/node-red-contrib-postgresql/postgresql.js"
+            }
+        }
+    },
     "node-red-dashboard": {
         "name": "node-red-dashboard",
-        "version": "3.2.0",
+        "version": "3.2.3",
         "local": true,
         "user": true,
         "nodes": {
@@ -642,69 +681,45 @@
                 "module": "node-red-dashboard",
                 "file": "/data/node_modules/node-red-dashboard/nodes/ui_spacer.js"
             }
-        },
-        "pending_version": "3.2.3"
+        }
     },
-    "node-red-node-twitter": {
-        "name": "node-red-node-twitter",
-        "version": "1.2.0",
+    "node-red-node-ui-table": {
+        "name": "node-red-node-ui-table",
+        "version": "0.4.3",
         "local": true,
         "user": true,
         "nodes": {
-            "twitter": {
-                "name": "twitter",
+            "ui_table": {
+                "name": "ui_table",
                 "types": [
-                    "twitter-credentials",
-                    "twitter in",
-                    "twitter out"
+                    "ui_table"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-node-twitter",
-                "file": "/data/node_modules/node-red-node-twitter/27-twitter.js"
+                "module": "node-red-node-ui-table",
+                "file": "/data/node_modules/node-red-node-ui-table/node.js"
             }
         }
     },
-    "node-red-node-pi-gpio": {
-        "name": "node-red-node-pi-gpio",
-        "version": "2.0.5",
+    "node-red-node-email": {
+        "name": "node-red-node-email",
+        "version": "1.18.2",
         "local": true,
         "user": true,
         "nodes": {
-            "rpi-gpio": {
-                "name": "rpi-gpio",
+            "email": {
+                "name": "email",
                 "types": [
-                    "rpi-gpio in",
-                    "rpi-gpio out",
-                    "rpi-mouse",
-                    "rpi-keyboard"
+                    "e-mail",
+                    "e-mail in",
+                    "e-mail mta"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-node-pi-gpio",
-                "file": "/data/node_modules/node-red-node-pi-gpio/36-rpi-gpio.js"
-            }
-        }
-    },
-    "node-red-node-openweathermap": {
-        "name": "node-red-node-openweathermap",
-        "version": "0.5.1",
-        "local": true,
-        "user": true,
-        "nodes": {
-            "openweathermap": {
-                "name": "openweathermap",
-                "types": [
-                    "openweathermap",
-                    "openweathermap in"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-node-openweathermap",
-                "file": "/data/node_modules/node-red-node-openweathermap/weather.js"
+                "module": "node-red-node-email",
+                "file": "/data/node_modules/node-red-node-email/61-email.js"
             }
         }
     },
@@ -729,82 +744,45 @@
             }
         }
     },
-    "node-red-node-email": {
-        "name": "node-red-node-email",
-        "version": "1.18.1",
+    "node-red-node-openweathermap": {
+        "name": "node-red-node-openweathermap",
+        "version": "0.5.1",
         "local": true,
         "user": true,
         "nodes": {
-            "email": {
-                "name": "email",
+            "openweathermap": {
+                "name": "openweathermap",
                 "types": [
-                    "e-mail",
-                    "e-mail in",
-                    "e-mail mta"
+                    "openweathermap",
+                    "openweathermap in"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-node-email",
-                "file": "/data/node_modules/node-red-node-email/61-email.js"
+                "module": "node-red-node-openweathermap",
+                "file": "/data/node_modules/node-red-node-openweathermap/weather.js"
             }
         }
     },
-    "node-red-contrib-filter": {
-        "name": "node-red-contrib-filter",
-        "version": "0.1.4",
+    "node-red-node-pi-gpio": {
+        "name": "node-red-node-pi-gpio",
+        "version": "2.0.5",
         "local": true,
         "user": true,
         "nodes": {
-            "filter": {
-                "name": "filter",
+            "rpi-gpio": {
+                "name": "rpi-gpio",
                 "types": [
-                    "filter"
+                    "rpi-gpio in",
+                    "rpi-gpio out",
+                    "rpi-mouse",
+                    "rpi-keyboard"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-contrib-filter",
-                "file": "/data/node_modules/node-red-contrib-filter/18-filter.js"
-            }
-        }
-    },
-    "node-red-contrib-postgresql": {
-        "name": "node-red-contrib-postgresql",
-        "version": "0.11.2",
-        "local": true,
-        "user": true,
-        "nodes": {
-            "postgresql": {
-                "name": "postgresql",
-                "types": [
-                    "postgreSQLConfig",
-                    "postgresql"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-postgresql",
-                "file": "/data/node_modules/node-red-contrib-postgresql/postgresql.js"
-            }
-        }
-    },
-    "node-red-node-ui-table": {
-        "name": "node-red-node-ui-table",
-        "version": "0.4.3",
-        "local": true,
-        "user": true,
-        "nodes": {
-            "ui_table": {
-                "name": "ui_table",
-                "types": [
-                    "ui_table"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-node-ui-table",
-                "file": "/data/node_modules/node-red-node-ui-table/node.js"
+                "module": "node-red-node-pi-gpio",
+                "file": "/data/node_modules/node-red-node-pi-gpio/36-rpi-gpio.js"
             }
         }
     }
