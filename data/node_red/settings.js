@@ -86,10 +86,15 @@ module.exports = {
                 password: "$2b$08$wCzwjjuZb5zjml8Hs38o3OzSohKiLRkQ7ZEbauHm6ntb2.IwmN4Wy",
                 permissions: "*"
             },
+	    {
+                username: "lukasz",
+                password: "$2b$08$3f6eMb1zF9GqRmaOk/.y6uq9w/RljIlrFlDH9i7HZ1q0EKmHczFj.",
+                permissions: "*"
+            },
             {
                 username: "ricardo",
-                password: "$2b$08$VR7eqEmQO1rSlIv5Uy7HPu0wkTJHmv9zXUc7n1dQOYEQOFRMVhT0y",
-                permissions: "read"
+                password: "$2b$08$/pCvSINtfDz0bDi2grLiA.Jw0vQAHSTK9TnZFclQyFi69l/1xXegK",
+                permissions: "*"
             },
             {
                 username: "guest",
