@@ -93,7 +93,7 @@ module.exports = {
             },
             {
                 username: "ricardo",
-                password: "$2b$08$3f6eMb1zF9GqRmaOk/.y6uq9w/RljIlrFlDH9i7HZ1q0EKmHczFj.",
+                password: "$2b$08$/pCvSINtfDz0bDi2grLiA.Jw0vQAHSTK9TnZFclQyFi69l/1xXegK",
                 permissions: "*"
             },
             {

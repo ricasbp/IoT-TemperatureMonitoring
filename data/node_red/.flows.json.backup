@@ -43,14 +43,6 @@
         "id": "eada78bffe31b0ee",
         "type": "tab",
         "label": "Room Temperature Comfort IoT Project",
-        "disabled": true,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "2c26b9058db8173f",
-        "type": "tab",
-        "label": "Database Utils",
         "disabled": false,
         "info": "",
         "env": []
@@ -59,6 +51,14 @@
         "id": "82e904f5c5c26253",
         "type": "tab",
         "label": "Temperature Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2c26b9058db8173f",
+        "type": "tab",
+        "label": "Database Utils",
         "disabled": false,
         "info": "",
         "env": []
@@ -444,30 +444,246 @@
         "className": ""
     },
     {
-        "id": "867a9ab96d94d9de",
-        "type": "ui_group",
-        "name": "Historical Dashboard",
-        "tab": "2115f8efaf2412c8",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "6fcb8fa133925954",
         "type": "ui_group",
-        "name": "Temperature Model",
+        "name": "Temperature graph",
         "tab": "2115f8efaf2412c8",
         "order": 2,
         "disp": true,
-        "width": "6",
+        "width": "22",
         "collapse": false,
         "className": ""
     },
     {
         "id": "58eafe82a730c2c5",
         "type": "fitbit-credentials"
+    },
+    {
+        "id": "41445dc30e2a6a35",
+        "type": "mqtt-broker",
+        "name": "mosquitoBroker",
+        "broker": "34.175.93.216",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "49de7393f66cfd9c",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 1,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "eb5d8abb8a3ae323",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 3,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "8111a72bcec81a16",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 4,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "2b655b8768d5010c",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 5,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "f109868c71511fac",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 8,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "f73f0ce395678137",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 11,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "12bb57da3836253a",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 12,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "a03e41aafad84414",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 13,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "8a0ea5f13d87e773",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 14,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "4637a3229148e690",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 15,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "26ae07253432068f",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 16,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "be0440689d698e7e",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 17,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "1acd53455902d17a",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 18,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "d05d0950283d93a1",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 19,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "adb0951b44d1c212",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 20,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "57dd71853b9bbd6d",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 21,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "04f03bb8cc9101b1",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 22,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "ba789ac63dd871a7",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 23,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "9bb567d5e9aecc76",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 24,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "b804cab9fdb22ab2",
+        "type": "ui_spacer",
+        "z": "82e904f5c5c26253",
+        "name": "spacer",
+        "group": "6fcb8fa133925954",
+        "order": 25,
+        "width": 9,
+        "height": 1
     },
     {
         "id": "1fe28d05009a58dc",
@@ -641,11 +857,7 @@
         "y": 400,
         "wires": [
             [
-                "04ce4e2eb46aa290",
-                "a3d48dd614b417b3",
-                "18c6326e87b61500",
-                "7c95af4249691c4e",
-                "0ec64920333aa134"
+                "04ce4e2eb46aa290"
             ]
         ]
     },
@@ -686,9 +898,7 @@
         "x": 580,
         "y": 360,
         "wires": [
-            [
-                "271ac9217c43d952"
-            ]
+            []
         ]
     },
     {
@@ -740,9 +950,7 @@
         "x": 400,
         "y": 180,
         "wires": [
-            [
-                "c02df81e3ec0125a"
-            ]
+            []
         ]
     },
     {
@@ -784,9 +992,7 @@
         "x": 920,
         "y": 300,
         "wires": [
-            [
-                "312d7a252b51f8cf"
-            ]
+            []
         ]
     },
     {
@@ -849,7 +1055,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 280,
+        "x": 300,
         "y": 60,
         "wires": [
             [
@@ -1119,7 +1325,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 360,
@@ -1262,195 +1469,6 @@
                 "c5d0f978928948ee"
             ]
         ]
-    },
-    {
-        "id": "fe7dcfd820009cc2",
-        "type": "postgresql",
-        "z": "eada78bffe31b0ee",
-        "name": "Insert Historical Data",
-        "query": "\nINSERT INTO historical_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
-        "split": false,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 1480,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5fe11c1032ef89ef",
-        "type": "postgresql",
-        "z": "eada78bffe31b0ee",
-        "name": "Truncate Historical Table",
-        "query": "TRUNCATE historical_data;",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
-        "split": false,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 430,
-        "y": 60,
-        "wires": [
-            [
-                "ce6ffb3b803686fc"
-            ]
-        ]
-    },
-    {
-        "id": "eb140b4200af64d2",
-        "type": "postgresql",
-        "z": "eada78bffe31b0ee",
-        "d": true,
-        "name": "Insert Online Data",
-        "query": "\nINSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n;\n",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
-        "split": false,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 670,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "38b53cc8bbb43cf5",
-        "type": "postgresql",
-        "z": "eada78bffe31b0ee",
-        "d": true,
-        "name": "Truncate Online Table",
-        "query": "TRUNCATE online_data;",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
-        "split": false,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 420,
-        "y": 480,
-        "wires": [
-            [
-                "691504a54d0a2ebf"
-            ]
-        ]
-    },
-    {
-        "id": "d4fbd5e8ae89b743",
-        "type": "ui_dropdown",
-        "z": "eada78bffe31b0ee",
-        "name": "Granularity",
-        "label": "Granularity",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "867a9ab96d94d9de",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Daily",
-                "value": "Daily",
-                "type": "str"
-            },
-            {
-                "label": "Monthly",
-                "value": "Monthly",
-                "type": "str"
-            },
-            {
-                "label": "Yearly",
-                "value": "Yearly",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 830,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3384aeebe5bd7856",
-        "type": "ui_dropdown",
-        "z": "eada78bffe31b0ee",
-        "name": "Display",
-        "label": "Display",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "867a9ab96d94d9de",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Graph",
-                "value": "Graph",
-                "type": "str"
-            },
-            {
-                "label": "Table",
-                "value": "Table",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 820,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0ec64920333aa134",
-        "type": "ui_slider",
-        "z": "eada78bffe31b0ee",
-        "name": "",
-        "label": "Rand Val Slider",
-        "tooltip": "",
-        "group": "c0b7f86240cd365e",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "outs": "all",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": 0,
-        "max": "100",
-        "step": 1,
-        "className": "",
-        "x": 1020,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7c95af4249691c4e",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "group": "c0b7f86240cd365e",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Rand Val",
-        "format": "{{msg.payload}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 1000,
-        "y": 440,
-        "wires": []
     },
     {
         "id": "42daf970b476f548",
@@ -1757,168 +1775,6 @@
         "x": 1010,
         "y": 1520,
         "wires": []
-    },
-    {
-        "id": "8a3306af8267d0cc",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "d": true,
-        "group": "6fcb8fa133925954",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "name": "Current Predicted Confort",
-        "label": "Current Predicted Confort",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1630,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "d58eb4b3c6fbb369",
-        "type": "ui_text",
-        "z": "eada78bffe31b0ee",
-        "d": true,
-        "group": "6fcb8fa133925954",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "name": "Predicted Confort Range",
-        "label": "Predicted Confort Range",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1630,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "18c6326e87b61500",
-        "type": "ui_gauge",
-        "z": "eada78bffe31b0ee",
-        "name": "",
-        "group": "c0b7f86240cd365e",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "gauge",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#ff8000",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "className": "",
-        "x": 990,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "7fb6dfe382f9ee44",
-        "type": "ui_gauge",
-        "z": "eada78bffe31b0ee",
-        "name": "Mean Temperature",
-        "group": "867a9ab96d94d9de",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Mean Temperature",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-30",
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "className": "",
-        "x": 850,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "418da393f012208a",
-        "type": "ui_gauge",
-        "z": "eada78bffe31b0ee",
-        "d": true,
-        "name": "Current Temperature",
-        "group": "6fcb8fa133925954",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Current Temperature",
-        "label": "º C",
-        "format": "{{value}}",
-        "min": 0,
-        "max": 10,
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "className": "",
-        "x": 1620,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "a3d48dd614b417b3",
-        "type": "ui_chart",
-        "z": "eada78bffe31b0ee",
-        "name": "",
-        "group": "c0b7f86240cd365e",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "5",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 990,
-        "y": 360,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "320ae2d07171a7eb",
@@ -2431,109 +2287,564 @@
         ]
     },
     {
-        "id": "46ac09ed1e6cdc75",
-        "type": "ui_table",
-        "z": "eada78bffe31b0ee",
-        "group": "867a9ab96d94d9de",
-        "name": "Values",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "columns": [
+        "id": "d3316c6f29ed4a1a",
+        "type": "file in",
+        "z": "82e904f5c5c26253",
+        "name": "online data csv file",
+        "filename": "/app/online.data",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 330,
+        "y": 280,
+        "wires": [
+            [
+                "a686d1486de261e0"
+            ]
+        ]
+    },
+    {
+        "id": "b8ec03eff8b5b133",
+        "type": "inject",
+        "z": "82e904f5c5c26253",
+        "name": "timestamp",
+        "props": [
             {
-                "field": "",
-                "title": "Test",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
+                "p": "payload"
             }
         ],
-        "outputs": 0,
-        "cts": false,
-        "x": 810,
-        "y": 440,
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "d3316c6f29ed4a1a"
+            ]
+        ]
+    },
+    {
+        "id": "c89a25c7f038a235",
+        "type": "comment",
+        "z": "82e904f5c5c26253",
+        "name": "2020-12-31 15:00:00,7.022,outside",
+        "info": "",
+        "x": 700,
+        "y": 120,
         "wires": []
     },
     {
-        "id": "312d7a252b51f8cf",
-        "type": "e-mail",
-        "z": "eada78bffe31b0ee",
-        "server": "smtp.gmail.com",
-        "port": "465",
-        "secure": true,
-        "tls": true,
+        "id": "a29cc260b8743db1",
+        "type": "ui_chart",
+        "z": "82e904f5c5c26253",
         "name": "",
-        "dname": "",
-        "x": 1070,
+        "group": "6fcb8fa133925954",
+        "order": 7,
+        "width": 11,
+        "height": 8,
+        "label": "Online.data graph inside",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "DD/MM-HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "100",
+        "removeOlderPoints": "200",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff0000",
+            "#80ffff",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1170,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "231cf1d9bea8b44e",
+        "type": "inject",
+        "z": "82e904f5c5c26253",
+        "name": "Create DB",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "9a650bbcb1e0fa43"
+            ]
+        ]
+    },
+    {
+        "id": "9a650bbcb1e0fa43",
+        "type": "postgresql",
+        "z": "82e904f5c5c26253",
+        "d": true,
+        "name": "Create online.data DB",
+        "query": "CREATE TABLE onlineData\n(\n    id serial PRIMARY KEY,times TIMESTAMP, date text, temperature text, label text\n)\nWITH (\n    OIDS=FALSE\n);",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 340,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19668be52dfe5819",
+        "type": "csv",
+        "z": "82e904f5c5c26253",
+        "d": true,
+        "name": "parse csv",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 360,
+        "y": 420,
+        "wires": [
+            [
+                "2f1e770d0a4d4a59"
+            ]
+        ]
+    },
+    {
+        "id": "0e049acda812eec9",
+        "type": "switch",
+        "z": "82e904f5c5c26253",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "temperature_outside",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "temperature_inside",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 910,
+        "y": 360,
+        "wires": [
+            [
+                "5c3e64eb34b10075",
+                "2de7b7ad24bca920"
+            ],
+            [
+                "a29cc260b8743db1",
+                "376b24f90d87e4c5"
+            ]
+        ]
+    },
+    {
+        "id": "5c3e64eb34b10075",
+        "type": "ui_chart",
+        "z": "82e904f5c5c26253",
+        "name": "",
+        "group": "6fcb8fa133925954",
+        "order": 6,
+        "width": 11,
+        "height": 8,
+        "label": "Online.data graph outside",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "DD/MM-HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "100",
+        "removeOlderPoints": "200",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff0000",
+            "#80ffff",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1170,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5114b26efa3479d",
+        "type": "delay",
+        "z": "82e904f5c5c26253",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 360,
+        "wires": [
+            [
+                "8d184303f770b736",
+                "b012c8171556cfef",
+                "6b7527361759260a"
+            ]
+        ]
+    },
+    {
+        "id": "8d184303f770b736",
+        "type": "function",
+        "z": "82e904f5c5c26253",
+        "d": true,
+        "name": "",
+        "func": "function toTimestamp(strDate) {\n    var datum = Date.parse(strDate);\n    return datum;\n}\n\nvar payload = msg.payload;\n\nmsg.payload = parseFloat(payload.temperature);\nmsg.timestamp = toTimestamp(payload.date);\n\nif (payload.label == \"inside\") {\n    msg.topic = \"temperature_inside\";\n}\nelse if (payload.label == \"outside\") {\n    msg.topic = \"temperature_outside\";\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f1e770d0a4d4a59",
+        "type": "function",
+        "z": "82e904f5c5c26253",
+        "d": true,
+        "name": "",
+        "func": "var payload = msg.payload;\nvar temperature_in = [];\nvar temperature_out = [];\n\nfor (let i = 0; i < payload.length; i++) {\n    var temp = {\"x\": payload[i].date, \"y\": parseFloat(payload[i].temperature)};\n\n    if (payload[i].label == \"inside\") {\n        temperature_in.push(temp);\n    }\n    else if (payload[i].label == \"outside\") {\n        temperature_out.push(temp);\n    }\n}\n\nmsg.payload = [{\n    \"series\" : [\"temperature_outside\", \"temperature_inside\"],\n    \"data\" : [temperature_out, temperature_in],\n    \"labels\" : [\"Temperature outside\", \"Temperature inside\"]\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a686d1486de261e0",
+        "type": "csv",
+        "z": "82e904f5c5c26253",
+        "name": "parse csv",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 360,
+        "y": 360,
+        "wires": [
+            [
+                "e5114b26efa3479d"
+            ]
+        ]
+    },
+    {
+        "id": "7a3384bd529f1f88",
+        "type": "comment",
+        "z": "82e904f5c5c26253",
+        "name": "2020-02-08 09:30:26",
+        "info": "",
+        "x": 950,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b012c8171556cfef",
+        "type": "function",
+        "z": "82e904f5c5c26253",
+        "d": true,
+        "name": "",
+        "func": "function toTimestamp(strDate) {\n    var datum = Date.parse(strDate);\n    return datum;\n}\n\nvar payload = msg.payload;\n\nvar last_temp = parseFloat(payload.temperature);\nvar last_date = toTimestamp(payload.date);\nvar future_temp = [];\nvar future_date = [];\nvar data_out = [];\n\nvar prediction = { \"x\": last_date, \"y\": last_temp };\ndata_out.push(prediction);\n\nfor (let i = 0; i < 4; i++) {\n    let sign = 1;\n    if (Math.random() > 0.5) {\n        sign = -1;\n    }\n    last_temp = last_temp + Math.random() * sign * 5;\n    last_date = last_date + 30*60*1000;\n    prediction = {\"x\": last_date, \"y\": last_temp};\n    data_out.push(prediction)\n}\n\nmsg.payload = [{\n\n    \"series\": [\"Temperature prediction\"],\n    \"data\": [data_out],\n    \"labels\": [\"temperature_prediction\"]\n}];\n\nmsg.timestamp = payload.date;\n\nif (payload.label == \"inside\") {\n    msg.topic = \"temperature_inside\";\n}\nelse if (payload.label == \"outside\") {\n    msg.topic = \"temperature_outside\";\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "972f19a7bb22d1f0",
+        "type": "ui_button",
+        "z": "82e904f5c5c26253",
+        "name": "",
+        "group": "6fcb8fa133925954",
+        "order": 2,
+        "width": 4,
+        "height": 2,
+        "passthru": false,
+        "label": "Refresh charts",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 940,
+        "y": 460,
+        "wires": [
+            [
+                "a29cc260b8743db1",
+                "5c3e64eb34b10075",
+                "a021ba95362e9a81"
+            ]
+        ]
+    },
+    {
+        "id": "6b7527361759260a",
+        "type": "function",
+        "z": "82e904f5c5c26253",
+        "name": "",
+        "func": "function toTimestamp(strDate) {\n    var datum = Date.parse(strDate);\n\n    return datum;\n}\n\nfunction nextPrediction(last_temp, last_date) {\n    let sign = 1;\n    if (Math.random() > 0.5) {\n        sign = -1;\n    }\n    var temp = last_temp + Math.random() * sign * 5;\n    var date = last_date + (30 * 60 * 1000);\n    var prediction = { \"x\": date, \"y\": temp };\n\n    return prediction;\n}\n\nconst GRAPH_SAMPLES = 10;\nconst GRAPH_SAMPLES_PRED = 5;\n\nvar temp_samples_in = context.get('temp_samples_in') || [];\nvar temp_samples_out = context.get('temp_samples_out') || [];\nvar count_outside = context.get('count_outside') || 0;\nvar count_inside = context.get('count_inside') || 0;\n\nvar payload = msg.payload;\nvar last_temp = parseFloat(payload.temperature);\nvar last_date = toTimestamp(payload.date);\n\nvar temp_samples = [];\nvar future_temp_samples = [];\n\nvar last_sample = { \"x\": last_date, \"y\": last_temp };\n\nif (payload.label == \"inside\") {\n    msg.topic = \"temperature_inside\";\n    var length = temp_samples_in.length;\n    \n    if (length < GRAPH_SAMPLES) {\n        temp_samples_in.push(last_sample);\n    }\n    else {\n        for (let i = 0; i < (length - 1); i++) {\n            temp_samples_in[i] = temp_samples_in[i + 1];\n        }\n        temp_samples_in[length - 1] = last_sample;\n        temp_samples = temp_samples_in;\n    }\n\n    if (count_inside < GRAPH_SAMPLES) {\n        count_inside += 1;\n    }\n    else {\n        // var prediction = { \"x\": last_date, \"y\": last_temp };\n        future_temp_samples.push(last_sample);\n\n        for (let i = 0; i < GRAPH_SAMPLES_PRED; i++) {\n            // last_temp = randomNum(last_temp);\n            // last_date = last_date + 30 * 60 * 1000;\n            // let prediction = { \"x\": last_date, \"y\": last_temp };\n            let prediction = nextPrediction(last_temp, last_date);\n            last_temp = prediction.y;\n            last_date = prediction.x;\n            \n            future_temp_samples.push(prediction)\n        }\n    }\n}\nelse if (payload.label == \"outside\") {\n    msg.topic = \"temperature_outside\";\n    var length = temp_samples_out.length;\n    if (length < GRAPH_SAMPLES) {\n        temp_samples_out.push(last_sample);\n    }\n    else {\n        for (let i = 0; i < (length - 1); i++) {\n            temp_samples_out[i] = temp_samples_out[i + 1];\n        }\n\n        temp_samples_out[length - 1] = last_sample;\n        temp_samples = temp_samples_out;\n    }\n\n    if (count_outside < GRAPH_SAMPLES) {\n        count_outside += 1;\n    }\n    else {\n        // var prediction = { \"x\": last_date, \"y\": last_temp };\n        future_temp_samples.push(last_sample);\n\n        for (let i = 0; i < GRAPH_SAMPLES_PRED; i++) {\n            let prediction = nextPrediction(last_temp, last_date);\n            last_temp = prediction.y;\n            last_date = prediction.x;\n            \n            future_temp_samples.push(prediction)\n        }\n    }\n}\n\nmsg.payload = [{\n    \"series\": [\"Actual temperature\", \"Temperature prediction\"],\n    \"data\": [temp_samples, future_temp_samples],\n    \"labels\": [\"actual_temperature\", \"temperature_prediction\"]\n}];\n// msg = {\"payload\": {\"count_out\": count_outside, \"count_in\": count_inside}};\n\nmsg.timestamp = payload.date;\n\ncontext.set('temp_samples_in', temp_samples_in);\ncontext.set('temp_samples_out', temp_samples_out);\ncontext.set('count_outside', count_outside);\ncontext.set('count_inside', count_inside);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 300,
+        "wires": [
+            [
+                "0e049acda812eec9"
+            ]
+        ]
+    },
+    {
+        "id": "98a8db7a26986928",
+        "type": "comment",
+        "z": "82e904f5c5c26253",
+        "name": "Deviation calculation rules",
+        "info": "● if the average outside air temperature varies between 0 ºC and 9 ºC, then the\nthermal comfort temperature varies linearly from 23 ºC to 18 ºC;\n● if the average outside air temperature varies between 9 ºC and 34 ºC, then the\nthermal comfort temperature varies linearly from 18 ºC to 30 ºC\n\nFor the calculations, consider a continuous moving average of the outside air temperature\nover a data window corresponding to the last week.",
+        "x": 670,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a021ba95362e9a81",
+        "type": "ui_chart",
+        "z": "82e904f5c5c26253",
+        "name": "",
+        "group": "6fcb8fa133925954",
+        "order": 9,
+        "width": 10,
+        "height": 8,
+        "label": "Thermal comfort deviation",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "DD/MM-HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "10",
+        "removeOlder": "10",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff0000",
+            "#80ffff",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1350,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2de7b7ad24bca920",
+        "type": "function",
+        "z": "82e904f5c5c26253",
+        "name": "Week average",
+        "func": "var samples_out = flow.get('samples_out') || [];\nvar mean_val = flow.get('mean_val') || 0;\nvar samples_out_cnt = context.get('samples_out_cnt') || 0;\n\nvar samples = msg.payload[0].data[0];\nvar length = samples.length;\nvar last_sample_temp = samples[length - 1][\"y\"];\n\n// days * hours * (30 minutes in an hour)\nconst week_samples = 7 * 24 * 2;\n\nsamples_out[samples_out_cnt % week_samples] = last_sample_temp;\nsamples_out_cnt += 1;\n\nvar sum = 0;\nfor (let i = 0; i < samples_out.length; i++) {\n    sum += samples_out[i];\n}\nmean_val = sum / samples_out.length;\n\nflow.set('samples_out', samples_out);\nflow.set('mean_val', mean_val);\ncontext.set('samples_out_cnt', samples_out_cnt);\n\n// msg = {\"payload\": { \"mean\": mean_val, \"last_sample\": samples_out[samples_out.length-1]}};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
         "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "13956eb9d519bec0",
+        "type": "debug",
+        "z": "82e904f5c5c26253",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1530,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "c02df81e3ec0125a",
-        "type": "fitbit",
-        "z": "eada78bffe31b0ee",
-        "fitbit": "58eafe82a730c2c5",
-        "name": "",
-        "dataType": "activities",
-        "x": 600,
-        "y": 220,
+        "id": "376b24f90d87e4c5",
+        "type": "function",
+        "z": "82e904f5c5c26253",
+        "name": "Thermal comfort",
+        "func": "var thermalComfort = function(mean_val) {\n    var thermal_comfort_temp;\n\n    if (mean_val >= 0 && mean_val <= 9) {\n        thermal_comfort_temp = 18 - (23 - 18) * (mean_val / 9);\n    }\n    else if (mean_val >= 9 && mean_val <= 34) {\n        thermal_comfort_temp = 18 + (30 - 18) * (mean_val / 25);\n    }\n\n    return thermal_comfort_temp;\n}\n\nvar mean_val = flow.get('mean_val') || 0;\n\nvar thermal_comfort_temp = thermalComfort(mean_val);\nvar last_deviations = [];\nvar samples_in = msg.payload[0].data[0];\n\nfor (let i = 0; i < samples_in.length; i++) {\n    last_deviations[i] = {\n        \"x\": samples_in[i][\"x\"], \"y\": (samples_in[i][\"y\"] - thermal_comfort_temp)};\n}\n\nvar future_deviations = [last_deviations[last_deviations.length-1]];\nvar samples_in_prediction = msg.payload[0].data[1];\n\nfor (let i = 1; i < (samples_in_prediction.length); i++) {\n    future_deviations[i] = {\n        \"x\": samples_in_prediction[i][\"x\"], \"y\": (samples_in_prediction[i][\"y\"] - thermal_comfort_temp)\n    };\n}\n\nmsg = {\"payload\": [{\n    \"series\": [\"Last deviations\", \"Future deviations\"],\n    \"data\": [last_deviations, future_deviations],\n    \"labels\": [\"\", \"\"]\n}]};\nmsg.topic = \"deviations\";\n\n// msg = { \"payload\": {\"last\": last_deviations, \"future\": future_deviations}};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 420,
         "wires": [
             [
-                "3a7b8d3967b1f28f"
+                "a021ba95362e9a81",
+                "cc8454fb861902b9"
             ]
         ]
     },
     {
-        "id": "e9bf8d09ae3c530d",
-        "type": "openweathermap in",
-        "z": "eada78bffe31b0ee",
-        "name": "Weather Now",
-        "wtype": "current",
-        "lon": "",
-        "lat": "",
-        "city": "Lisbon",
-        "country": "Portugal",
-        "language": "en",
-        "x": 210,
-        "y": 140,
-        "wires": [
-            [
-                "300e606a3874aa30"
-            ]
-        ]
-    },
-    {
-        "id": "271ac9217c43d952",
-        "type": "rpi-gpio out",
-        "z": "eada78bffe31b0ee",
-        "name": "Raspb Pi",
-        "pin": "12",
-        "set": true,
-        "level": "0",
-        "freq": "",
-        "out": "out",
-        "bcm": true,
-        "x": 780,
+        "id": "503918aa7b25bda1",
+        "type": "ui_gauge",
+        "z": "82e904f5c5c26253",
+        "name": "Thermal comfort",
+        "group": "6fcb8fa133925954",
+        "order": 10,
+        "width": 6,
+        "height": 6,
+        "gtype": "gage",
+        "title": "{{msg.topic}}",
+        "label": "*C",
+        "format": "{{value | number:2}}",
+        "min": "-5",
+        "max": "5",
+        "colors": [
+            "#2260df",
+            "#c0c0c0",
+            "#e92929"
+        ],
+        "seg1": "-1",
+        "seg2": "1",
+        "className": "",
+        "x": 1560,
         "y": 420,
         "wires": []
     },
     {
-        "id": "c49a90ff6d83374c",
-        "type": "twitter in",
-        "z": "eada78bffe31b0ee",
-        "d": true,
-        "twitter": "",
-        "tags": "#led",
-        "user": "false",
-        "name": "#led sensor",
-        "inputs": 0,
-        "x": 370,
-        "y": 220,
+        "id": "cc8454fb861902b9",
+        "type": "function",
+        "z": "82e904f5c5c26253",
+        "name": "",
+        "func": "var payload_data = msg.payload[0].data;\n\nvar length = payload_data[0].length;\nvar deviation = payload_data[0][length-1][\"y\"];\n\nmsg = {\n    \"payload\": deviation,\n    \"topic\": \"Current thermal comfort deviation\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 420,
         "wires": [
-            []
+            [
+                "503918aa7b25bda1",
+                "13956eb9d519bec0"
+            ]
         ]
     },
     {
@@ -2557,7 +2868,6 @@
         "y": 60,
         "wires": [
             [
-                "5fe11c1032ef89ef",
                 "70cb1d24919f6d6c"
             ]
         ]
@@ -2644,7 +2954,6 @@
         "y": 60,
         "wires": [
             [
-                "fe7dcfd820009cc2",
                 "501e883d75814a02"
             ]
         ]
@@ -2671,7 +2980,6 @@
         "y": 480,
         "wires": [
             [
-                "38b53cc8bbb43cf5",
                 "c828a0a1d636b849"
             ]
         ]
@@ -2736,7 +3044,6 @@
         "y": 540,
         "wires": [
             [
-                "eb140b4200af64d2",
                 "c4e4382e292dfdfe"
             ]
         ]
@@ -2874,6 +3181,540 @@
         "y": 540,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "e38fcd69b348ee88",
+        "type": "debug",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ae7c1c2c7f154272",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "test historical data",
+        "query": "SELECT * FROM historical_data\norder by date desc\nlimit 10;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "e38fcd69b348ee88"
+            ]
+        ]
+    },
+    {
+        "id": "91d1cb00ae0403c9",
+        "type": "inject",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "ae7c1c2c7f154272"
+            ]
+        ]
+    },
+    {
+        "id": "350bec9cbc788d41",
+        "type": "mqtt in",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "topic": "idc/fc55309",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "41445dc30e2a6a35",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 720,
+        "wires": [
+            [
+                "84d479588f89237d"
+            ]
+        ]
+    },
+    {
+        "id": "70fc37ac5fe958a4",
+        "type": "debug",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "label",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "84d479588f89237d",
+        "type": "function",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "func": "var msg2 = msg.payload.split(\",\")\nvar date = msg2[0]\nvar temperature = msg2[1]\nvar label = msg2[2]\n\nmsg.params = [date, temperature, label];\nmsg.date = date\nmsg.temperature = temperature\nmsg.label = label\n\n\nif (temperature != null)\n    return msg;\nelse\n    return \"error\"",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 720,
+        "wires": [
+            [
+                "1641fc6257084e70",
+                "70fc37ac5fe958a4"
+            ]
+        ]
+    },
+    {
+        "id": "1641fc6257084e70",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "Insert Online Data",
+        "query": "INSERT INTO online_data\n(msg.date, msg.temperature, msg.label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 730,
+        "y": 700,
+        "wires": [
+            [
+                "7a963a77bbd85a36"
+            ]
+        ]
+    },
+    {
+        "id": "f66ffc3d84156454",
+        "type": "inject",
+        "z": "2c26b9058db8173f",
+        "name": "teste_inject",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "olá",
+        "payloadType": "str",
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [
+                "53b904e0bcb74c25"
+            ]
+        ]
+    },
+    {
+        "id": "53b904e0bcb74c25",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "SELECT * from online_data",
+        "query": "SELECT * FROM online_data;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "db6bbba2d267ce26"
+            ]
+        ]
+    },
+    {
+        "id": "db6bbba2d267ce26",
+        "type": "debug",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6d70383ae8b8e4ce",
+        "type": "inject",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "492961dbe33c8c36"
+            ]
+        ]
+    },
+    {
+        "id": "492961dbe33c8c36",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "truncate online data",
+        "query": "TRUNCATE online_data;",
+        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "ebc7bbf602c46991"
+            ]
+        ]
+    },
+    {
+        "id": "ebc7bbf602c46991",
+        "type": "debug",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "9f01acfa2ada3958",
+        "type": "inject",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2022 129310293,24,inside",
+        "payloadType": "str",
+        "x": 130,
+        "y": 660,
+        "wires": [
+            [
+                "84d479588f89237d"
+            ]
+        ]
+    },
+    {
+        "id": "7a963a77bbd85a36",
+        "type": "debug",
+        "z": "2c26b9058db8173f",
+        "name": "insert data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "9ddc4701ee067154",
+        "type": "inject",
+        "z": "0cdf456eee4faca2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 320,
+        "wires": [
+            [
+                "dac3bfe8b92bb500"
+            ]
+        ]
+    },
+    {
+        "id": "dac3bfe8b92bb500",
+        "type": "template",
+        "z": "0cdf456eee4faca2",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{payload}} !",
+        "output": "str",
+        "x": 400,
+        "y": 320,
+        "wires": [
+            [
+                "aa367c1418948e91"
+            ]
+        ]
+    },
+    {
+        "id": "dd2bda8209ca2df2",
+        "type": "debug",
+        "z": "0cdf456eee4faca2",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "24bb9de73d5e4467",
+        "type": "inject",
+        "z": "0cdf456eee4faca2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 400,
+        "wires": [
+            [
+                "ce3973cc5c26a5b3"
+            ]
+        ]
+    },
+    {
+        "id": "ce3973cc5c26a5b3",
+        "type": "exec",
+        "z": "0cdf456eee4faca2",
+        "command": "",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Make the create_env.sh executable",
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "c4b05cd7b8e8d73e"
+            ],
+            [
+                "c4b05cd7b8e8d73e"
+            ],
+            [
+                "c4b05cd7b8e8d73e"
+            ]
+        ]
+    },
+    {
+        "id": "bc8425600f4a5352",
+        "type": "exec",
+        "z": "0cdf456eee4faca2",
+        "command": "",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Execute create_env script",
+        "x": 450,
+        "y": 480,
+        "wires": [
+            [
+                "f4e3c6cda70a9823"
+            ],
+            [
+                "f4e3c6cda70a9823"
+            ],
+            [
+                "f4e3c6cda70a9823"
+            ]
+        ]
+    },
+    {
+        "id": "8915871127737e2a",
+        "type": "inject",
+        "z": "0cdf456eee4faca2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 480,
+        "wires": [
+            [
+                "bc8425600f4a5352"
+            ]
+        ]
+    },
+    {
+        "id": "c4b05cd7b8e8d73e",
+        "type": "debug",
+        "z": "0cdf456eee4faca2",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f4e3c6cda70a9823",
+        "type": "debug",
+        "z": "0cdf456eee4faca2",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "aa367c1418948e91",
+        "type": "file",
+        "z": "0cdf456eee4faca2",
+        "name": "Create env setup bash",
+        "filename": "/app/create_env.sh",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 600,
+        "y": 320,
+        "wires": [
+            [
+                "dd2bda8209ca2df2"
+            ]
         ]
     }
 ]

@@ -785,5 +785,26 @@
                 "file": "/data/node_modules/node-red-node-pi-gpio/36-rpi-gpio.js"
             }
         }
+    },
+    "node-red-node-twitter": {
+        "name": "node-red-node-twitter",
+        "version": "1.2.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "twitter": {
+                "name": "twitter",
+                "types": [
+                    "twitter-credentials",
+                    "twitter in",
+                    "twitter out"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-twitter",
+                "file": "/data/node_modules/node-red-node-twitter/27-twitter.js"
+            }
+        }
     }
 }

@@ -806,5 +806,68 @@
                 "file": "/data/node_modules/node-red-node-twitter/27-twitter.js"
             }
         }
+    },
+    "node-red-contrib-grpc": {
+        "name": "node-red-contrib-grpc",
+        "version": "1.2.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "grpc-server-config": {
+                "name": "grpc-server-config",
+                "types": [
+                    "grpc-server"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-server.js"
+            },
+            "grpc-register-function": {
+                "name": "grpc-register-function",
+                "types": [
+                    "grpc-register-function"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-register-function.js"
+            },
+            "grpc-response": {
+                "name": "grpc-response",
+                "types": [
+                    "grpc-response"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-response.js"
+            },
+            "grpc-call": {
+                "name": "grpc-call",
+                "types": [
+                    "grpc-call"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-call.js"
+            },
+            "grpc-client-streaming": {
+                "name": "grpc-client-streaming",
+                "types": [
+                    "grpc-client-streaming"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-client-streaming.js"
+            }
+        }
     }
 }
