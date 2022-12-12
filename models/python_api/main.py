@@ -60,7 +60,9 @@ async def single_prediction(body: SingleRequest):
     return JSONResponse(content=jsonable_encoder(
         {
             "OutsidePreds": outside_preds,
-            "InsidePreds": inside_preds
+            "InsidePreds": inside_preds,
+            "current_temperature_outside": curr_temp_out,
+            "current_temperature_inside": curr_temp_in
         }
     ))
 
@@ -84,7 +86,9 @@ async def batch_prediction(body: BatchRequest):
     return JSONResponse(content=jsonable_encoder(
         {
             "OutsidePreds": outside_preds,
-            "InsidePreds": inside_preds
+            "InsidePreds": inside_preds,
+            "temperature_sequence_outside": temp_seq_out,
+            "current_temperature_inside": curr_temp_in
         }
     ))
 
