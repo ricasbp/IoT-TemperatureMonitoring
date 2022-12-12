@@ -43,7 +43,7 @@
         "id": "eada78bffe31b0ee",
         "type": "tab",
         "label": "Room Temperature Comfort IoT Project",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -3289,7 +3289,7 @@
         "type": "function",
         "z": "2c26b9058db8173f",
         "name": "",
-        "func": "var msg2 = msg.payload.split(\",\")\nvar date = msg2[0]\nvar temperature = msg2[1]\nvar label = msg2[2]\n\nmsg.params = [date, temperature, label];\nmsg.date = date\nmsg.temperature = temperature\nmsg.label = label\n\n\nif (temperature != null)\n    return msg;\nelse\n    return \"error\"",
+        "func": "var msg2 = msg.payload.split(\",\")\nvar date = msg2[0]\nvar temperature = msg2[1]\nvar label = msg2[2]\n\n\nmsg.params = [date, temperature, label];\n\n\nif (temperature != null)\n    return msg\nelse\n    return \"error\"",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3309,7 +3309,7 @@
         "type": "postgresql",
         "z": "2c26b9058db8173f",
         "name": "Insert Online Data",
-        "query": "INSERT INTO online_data\n(msg.date, msg.temperature, msg.label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n",
+        "query": "INSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n",
         "postgreSQLConfig": "c1bde5c5cae042e2",
         "split": false,
         "rowsPerMsg": 1,
@@ -3493,17 +3493,28 @@
         "wires": []
     },
     {
-        "id": "9ddc4701ee067154",
+        "id": "95dd76de46f8e762",
         "type": "inject",
         "z": "0cdf456eee4faca2",
-        "name": "",
+        "name": "Post Request",
         "props": [
             {
-                "p": "payload"
+                "p": "payload2",
+                "v": "{\"current_temperature\":31.52}",
+                "vt": "json"
             },
             {
-                "p": "topic",
+                "p": "headers",
+                "v": "{\"content-type\":\"application/json\"}",
+                "vt": "json"
+            },
+            {
+                "p": "method",
+                "v": "post",
                 "vt": "str"
+            },
+            {
+                "p": "payload"
             }
         ],
         "repeat": "",
@@ -3511,210 +3522,53 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 240,
+        "payload": "test",
+        "payloadType": "str",
+        "x": 270,
         "y": 320,
         "wires": [
             [
-                "dac3bfe8b92bb500"
+                "99e9235e8ff3031f"
             ]
         ]
     },
     {
-        "id": "dac3bfe8b92bb500",
-        "type": "template",
+        "id": "99e9235e8ff3031f",
+        "type": "http request",
         "z": "0cdf456eee4faca2",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "This is the payload: {{payload}} !",
-        "output": "str",
-        "x": 400,
+        "name": "Post Single Temperature",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "body",
+        "url": "model_service:8000/single",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "x": 490,
         "y": 320,
         "wires": [
             [
-                "aa367c1418948e91"
+                "dea7c33dee740379"
             ]
         ]
     },
     {
-        "id": "dd2bda8209ca2df2",
+        "id": "dea7c33dee740379",
         "type": "debug",
         "z": "0cdf456eee4faca2",
         "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 810,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "24bb9de73d5e4467",
-        "type": "inject",
-        "z": "0cdf456eee4faca2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 240,
-        "y": 400,
-        "wires": [
-            [
-                "ce3973cc5c26a5b3"
-            ]
-        ]
-    },
-    {
-        "id": "ce3973cc5c26a5b3",
-        "type": "exec",
-        "z": "0cdf456eee4faca2",
-        "command": "",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "Make the create_env.sh executable",
-        "x": 480,
-        "y": 400,
-        "wires": [
-            [
-                "c4b05cd7b8e8d73e"
-            ],
-            [
-                "c4b05cd7b8e8d73e"
-            ],
-            [
-                "c4b05cd7b8e8d73e"
-            ]
-        ]
-    },
-    {
-        "id": "bc8425600f4a5352",
-        "type": "exec",
-        "z": "0cdf456eee4faca2",
-        "command": "",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "Execute create_env script",
-        "x": 450,
-        "y": 480,
-        "wires": [
-            [
-                "f4e3c6cda70a9823"
-            ],
-            [
-                "f4e3c6cda70a9823"
-            ],
-            [
-                "f4e3c6cda70a9823"
-            ]
-        ]
-    },
-    {
-        "id": "8915871127737e2a",
-        "type": "inject",
-        "z": "0cdf456eee4faca2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 240,
-        "y": 480,
-        "wires": [
-            [
-                "bc8425600f4a5352"
-            ]
-        ]
-    },
-    {
-        "id": "c4b05cd7b8e8d73e",
-        "type": "debug",
-        "z": "0cdf456eee4faca2",
-        "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "f4e3c6cda70a9823",
-        "type": "debug",
-        "z": "0cdf456eee4faca2",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 670,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "aa367c1418948e91",
-        "type": "file",
-        "z": "0cdf456eee4faca2",
-        "name": "Create env setup bash",
-        "filename": "/app/create_env.sh",
-        "appendNewline": false,
-        "createDir": false,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 600,
+        "x": 710,
         "y": 320,
-        "wires": [
-            [
-                "dd2bda8209ca2df2"
-            ]
-        ]
+        "wires": []
     }
 ]
