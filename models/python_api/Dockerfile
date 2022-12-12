@@ -20,5 +20,4 @@ ADD inside_model inside_model
 ADD outside_model outside_model
 
 ENV PYTHONUNBUFFERED=0
-#EXPOSE 9090
-#CMD ["python", "-u", "model_api.py"]
+ENTRYPOINT [ "uvicorn", "--host", "0.0.0.0","main:app", "--port", "9090" ]

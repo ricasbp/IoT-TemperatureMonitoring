@@ -28,8 +28,8 @@ services:
       context: ./models/python_api
       dockerfile: Dockerfile
     #entrypoint: "tail -f /dev/null"
+    entrypoint: ["uvicorn", "--host", "0.0.0.0","main:app", "--port", "9090"]
     container_name: model_service
-    entrypoint: ["uvicorn", "--host", "0.0.0.0","main:app"]
     #ports:
     #  - 9090:9090
   #mosquitto:
