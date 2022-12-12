@@ -22,7 +22,7 @@ print(inside_model)
 
 app = FastAPI()
 
-@app.get("/single")
+@app.post("/single")
 async def single_pred(msg):
     """ Takes in a single temperature as input and predicts the posteriors. """
     print(str(msg))
