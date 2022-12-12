@@ -19,12 +19,14 @@ class SingleRequest(BaseModel):
 
     current_temperature_outside: float
     current_temperature_inside: float
+    current_datetime: str
 
 class BatchRequest(BaseModel):
     """ Base Model for Batched temperature Requests. """
 
     temperature_sequence_outside: List[float]
     current_temperature_inside: float
+    current_datetime: str
 
 setattr(__main__, "LSTM", LSTM)
 setattr(__main__, "CustomRandomForestRegressor", CustomRandomForestRegressor)
@@ -62,7 +64,8 @@ async def single_prediction(body: SingleRequest):
             "OutsidePreds": outside_preds,
             "InsidePreds": inside_preds,
             "current_temperature_outside": curr_temp_out,
-            "current_temperature_inside": curr_temp_in
+            "current_temperature_inside": curr_temp_in,
+            "current_datetime": body.current_datetime
         }
     ))
 
@@ -88,7 +91,8 @@ async def batch_prediction(body: BatchRequest):
             "OutsidePreds": outside_preds,
             "InsidePreds": inside_preds,
             "temperature_sequence_outside": temp_seq_out,
-            "current_temperature_inside": curr_temp_in
+            "current_temperature_inside": curr_temp_in,
+            "current_datetime": body.current_datetime
         }
     ))
 
