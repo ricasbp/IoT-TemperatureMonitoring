@@ -9,7 +9,7 @@ from fastapi import FastAPI
 from models import LSTM, CustomRandomForestRegressor
 
 with open("./outside_model/model_v3","rb") as o:
-    outside_model: LSTM = torch.load(o, encoding='bytes')
+    outside_model: LSTM = torch.load(o, encoding='bytes', map_location="cpu")
 
 print("Outside Model:")
 print(outside_model)
