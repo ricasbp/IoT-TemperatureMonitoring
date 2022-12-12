@@ -1,4 +1,4 @@
-## model 1
+## model 1 - Saved only supporting GPU
 output_size=5, hidden_layer_size=100, num_layers=4, epochs=26
 <br>
 <br>
@@ -13,7 +13,7 @@ The Maximum Error is is:  6.171790191650388
 <br>
 The Mean Absolute Error is:  0.5607495925979424
 
-## model 2
+## model 2 - Saved only supporting GPU
 output_size=5, hidden_layer_size=100, num_layers=4, epochs=200
 <br>
 <br>
