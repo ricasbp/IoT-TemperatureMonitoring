@@ -1,7 +1,8 @@
 """ Fastapi service to compute the ML temperature prediction models. """
 
+import pickle
+
 import torch
-import piclle
 import uvicorn
 from fastapi import FastAPI
 
