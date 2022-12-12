@@ -30,8 +30,8 @@ services:
     #entrypoint: "tail -f /dev/null"
     entrypoint: ["uvicorn", "--host", "0.0.0.0","main:app", "--port", "9090"]
     container_name: model_service
-    ports:
-      - 9090:9090
+    #ports:
+    #  - 9090:9090
   #mosquitto:
   #  profiles:
   #    - broker_vm
