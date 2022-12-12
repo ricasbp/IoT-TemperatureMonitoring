@@ -1,13 +1,15 @@
 """ Fastapi service to compute the ML temperature prediction models. """
 
 import pickle
+
+import torch
 import uvicorn
 from fastapi import FastAPI
 
 from models import LSTM, CustomRandomForestRegressor
 
 with open("./outside_model/model_v3","rb") as o:
-    outside_model: LSTM = pickle.load(o, encoding='bytes')
+    outside_model: LSTM = torch.load(o, encoding='bytes')
 
 print("Outside Model:")
 print(outside_model)
@@ -22,7 +24,7 @@ print(inside_model)
 
 app = FastAPI()
 
-@app.get("/single")
+@app.post("/single")
 async def single_pred(msg):
     """ Takes in a single temperature as input and predicts the posteriors. """
     print(str(msg))
