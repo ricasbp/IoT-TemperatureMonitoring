@@ -19,8 +19,12 @@ RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 # Install deps
 RUN pip3 install numpy
-RUN pip3 install pandas
+#RUN pip3 install pandas
 RUN pip3 install scikit-learn
+RUN pip3 install torch torchvision torchaudio
+
+
+RUN pip3 install fastapi uvicorn[standard]
 
 
 USER node-red

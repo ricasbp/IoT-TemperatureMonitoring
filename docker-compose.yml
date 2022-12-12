@@ -20,6 +20,18 @@ services:
       #- ./data/temp:/usr/src/node-red
     ports:
       - 1880:1880
+  model_service:
+    profiles:
+      - main_vm
+      - total
+    env_file: .env
+    build:
+      context: ./models/python_api
+      dockerfile: Dockerfile
+    #entrypoint: "tail -f /dev/null"
+    container_name: model_service
+    #ports:
+    #  - 9090:9090
   #mosquitto:
   #  profiles:
   #    - broker_vm
