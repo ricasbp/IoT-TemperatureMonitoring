@@ -59,12 +59,14 @@ class LSTM(nn.Module):
         actual_predictions = self.scaler.inverse_transform(Y.reshape(-1, 1))
         return actual_predictions
 
-    def set_device(self):
-        """ Sets the device to cuda if available, or cpu if not.
-        SHOULD ALWAYS BE RAN WHEN LOADING FROM PICKLE!! """
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    def set_device(self, device = None):
+        """ Sets the device to cuda if available, or cpu if not."""
+        if device is None:
+            self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        elif device == "cpu" or device == "cuda":
+            self.device = device
         print(self.device)
-
+        
         self.to(self.device)
 
     def train(self, train_data, train_window = 50, epochs = 100):
