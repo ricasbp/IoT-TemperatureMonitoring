@@ -12,6 +12,7 @@ import paho.mqtt.client as mqtt
 #https://www.ev3dev.org/docs/tutorials/sending-and-receiving-messages-with-mqtt/
 
 client = mqtt.Client()
+client.username_pw_set("iot01","iot2k22.2k23")
 client.connect('34.175.93.216',1883,60)
 client.publish("idc/fc55309/truncate", 0)
 time.sleep(1)
