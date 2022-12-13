@@ -1,0 +1,45 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--no-audit',
+1 verbose cli   '--no-update-notifier',
+1 verbose cli   '--no-fund',
+1 verbose cli   '--save',
+1 verbose cli   '--save-prefix=~',
+1 verbose cli   '--production',
+1 verbose cli   '--engine-strict',
+1 verbose cli   'node-red-node-ui-etable@1.0.4'
+1 verbose cli ]
+2 info using npm@6.14.15
+3 info using node@v14.18.2
+4 verbose npm-session e00bb9517aacbbe0
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 200 https://registry.npmjs.org/node-red-node-ui-etable 873ms
+8 silly fetchPackageMetaData error for node-red-node-ui-etable@1.0.4 No valid versions available for node-red-node-ui-etable
+9 timing stage:rollbackFailedOptional Completed in 1ms
+10 timing stage:runTopLevelLifecycles Completed in 1382ms
+11 verbose type version
+12 verbose stack node-red-node-ui-etable: No valid versions available for node-red-node-ui-etable
+12 verbose stack     at pickManifest (/usr/local/lib/node_modules/npm/node_modules/npm-pick-manifest/index.js:39:11)
+12 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/pacote/lib/fetchers/registry/manifest.js:24:14
+12 verbose stack     at tryCatcher (/usr/local/lib/node_modules/npm/node_modules/bluebird/js/release/util.js:16:23)
+12 verbose stack     at Promise._settlePromiseFromHandler (/usr/local/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:517:31)
+12 verbose stack     at Promise._settlePromise (/usr/local/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:574:18)
+12 verbose stack     at Promise._settlePromise0 (/usr/local/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:619:10)
+12 verbose stack     at Promise._settlePromises (/usr/local/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:699:18)
+12 verbose stack     at _drainQueueStep (/usr/local/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:138:12)
+12 verbose stack     at _drainQueue (/usr/local/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:131:9)
+12 verbose stack     at Async._drainQueues (/usr/local/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:147:5)
+12 verbose stack     at Immediate.Async.drainQueues [as _onImmediate] (/usr/local/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:17:14)
+12 verbose stack     at processImmediate (internal/timers.js:464:21)
+13 verbose cwd /data
+14 verbose Linux 5.15.0-1025-gcp
+15 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "--save-prefix=~" "--production" "--engine-strict" "node-red-node-ui-etable@1.0.4"
+16 verbose node v14.18.2
+17 verbose npm  v6.14.15
+18 error code ENOVERSIONS
+19 error No valid versions available for node-red-node-ui-etable
+20 verbose exit [ 1, true ]
