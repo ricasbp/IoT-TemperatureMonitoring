@@ -13,6 +13,7 @@ import paho.mqtt.client as mqtt
 
 client = mqtt.Client()
 client.connect('34.175.93.216',1883,60)
+client.publish("idc/fc55309/truncate", 0)
 # reading from the file
 
 df = pd.read_csv("./data/datasets/online.data")
@@ -52,15 +53,15 @@ while ix_in < len(df_in) or ix_out < len(df_out):
 
 
     if datetime.strptime(in_date, f"%Y-%m-%d %H:%M:%S") == datetime.strptime(out_date, f"%Y-%m-%d %H:%M:%S"):
-        client.publish("idc/fc55309", req_str_out)
-        client.publish("idc/fc55309", req_str_in)
+        client.publish("idc/fc55309/insert", req_str_out)
+        client.publish("idc/fc55309/insert", req_str_in)
         ix_in += 1
         ix_out += 1
     elif datetime.strptime(in_date, f"%Y-%m-%d %H:%M:%S") >= datetime.strptime(out_date, f"%Y-%m-%d %H:%M:%S"):
-        client.publish("idc/fc55309", req_str_out)
+        client.publish("idc/fc55309/insert", req_str_out)
         ix_out += 1
     elif datetime.strptime(in_date, f"%Y-%m-%d %H:%M:%S") <= datetime.strptime(out_date, f"%Y-%m-%d %H:%M:%S"):
-        client.publish("idc/fc55309", req_str_in)
+        client.publish("idc/fc55309/insert", req_str_in)
         ix_in += 1
     else:
         raise Exception()
