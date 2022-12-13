@@ -14,6 +14,7 @@ import paho.mqtt.client as mqtt
 client = mqtt.Client()
 client.connect('34.175.93.216',1883,60)
 client.publish("idc/fc55309/truncate", 0)
+time.sleep(1)
 # reading from the file
 
 df = pd.read_csv("./data/datasets/online.data")
