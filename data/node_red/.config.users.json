@@ -49,7 +49,14 @@
         "menu-menu-item-palette": true,
         "menu-menu-item-sidebar": true,
         "debug": {
-            "filter": "filterCurrent"
+            "filter": "filterCurrent",
+            "filteredNodes": [
+                "7a963a77bbd85a36",
+                "70fc37ac5fe958a4",
+                "e38fcd69b348ee88",
+                "db6bbba2d267ce26",
+                "ebc7bbf602c46991"
+            ]
         }
     },
     "guest": {

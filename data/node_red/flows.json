@@ -51,7 +51,7 @@
         "id": "82e904f5c5c26253",
         "type": "tab",
         "label": "Temperature Dashboard",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -67,6 +67,14 @@
         "id": "0cdf456eee4faca2",
         "type": "tab",
         "label": "Temperature Model",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "17ea79a5b6ded39b",
+        "type": "tab",
+        "label": "Final Result",
         "disabled": false,
         "info": "",
         "env": []
@@ -684,6 +692,31 @@
         "order": 25,
         "width": 9,
         "height": 1
+    },
+    {
+        "id": "0b4eaef3d101ee44",
+        "type": "postgreSQLConfig",
+        "name": "basic",
+        "host": "timescale_db",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "timescaledb",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "timescaledb",
+        "userFieldType": "str",
+        "password": "password",
+        "passwordFieldType": "str"
     },
     {
         "id": "1fe28d05009a58dc",
@@ -2317,12 +2350,12 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": true,
+        "once": false,
         "onceDelay": "0.5",
         "topic": "",
         "payload": "1",
         "payloadType": "str",
-        "x": 130,
+        "x": 120,
         "y": 280,
         "wires": [
             [
@@ -2427,30 +2460,6 @@
         ]
     },
     {
-        "id": "19668be52dfe5819",
-        "type": "csv",
-        "z": "82e904f5c5c26253",
-        "d": true,
-        "name": "parse csv",
-        "sep": ",",
-        "hdrin": true,
-        "hdrout": "none",
-        "multi": "mult",
-        "ret": "\\n",
-        "temp": "",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 360,
-        "y": 420,
-        "wires": [
-            [
-                "2f1e770d0a4d4a59"
-            ]
-        ]
-    },
-    {
         "id": "0e049acda812eec9",
         "type": "switch",
         "z": "82e904f5c5c26253",
@@ -2550,46 +2559,8 @@
         "y": 360,
         "wires": [
             [
-                "8d184303f770b736",
-                "b012c8171556cfef",
                 "6b7527361759260a"
             ]
-        ]
-    },
-    {
-        "id": "8d184303f770b736",
-        "type": "function",
-        "z": "82e904f5c5c26253",
-        "d": true,
-        "name": "",
-        "func": "function toTimestamp(strDate) {\n    var datum = Date.parse(strDate);\n    return datum;\n}\n\nvar payload = msg.payload;\n\nmsg.payload = parseFloat(payload.temperature);\nmsg.timestamp = toTimestamp(payload.date);\n\nif (payload.label == \"inside\") {\n    msg.topic = \"temperature_inside\";\n}\nelse if (payload.label == \"outside\") {\n    msg.topic = \"temperature_outside\";\n}\n\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 680,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2f1e770d0a4d4a59",
-        "type": "function",
-        "z": "82e904f5c5c26253",
-        "d": true,
-        "name": "",
-        "func": "var payload = msg.payload;\nvar temperature_in = [];\nvar temperature_out = [];\n\nfor (let i = 0; i < payload.length; i++) {\n    var temp = {\"x\": payload[i].date, \"y\": parseFloat(payload[i].temperature)};\n\n    if (payload[i].label == \"inside\") {\n        temperature_in.push(temp);\n    }\n    else if (payload[i].label == \"outside\") {\n        temperature_out.push(temp);\n    }\n}\n\nmsg.payload = [{\n    \"series\" : [\"temperature_outside\", \"temperature_inside\"],\n    \"data\" : [temperature_out, temperature_in],\n    \"labels\" : [\"Temperature outside\", \"Temperature inside\"]\n}];\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 520,
-        "y": 420,
-        "wires": [
-            []
         ]
     },
     {
@@ -2624,24 +2595,6 @@
         "x": 950,
         "y": 120,
         "wires": []
-    },
-    {
-        "id": "b012c8171556cfef",
-        "type": "function",
-        "z": "82e904f5c5c26253",
-        "d": true,
-        "name": "",
-        "func": "function toTimestamp(strDate) {\n    var datum = Date.parse(strDate);\n    return datum;\n}\n\nvar payload = msg.payload;\n\nvar last_temp = parseFloat(payload.temperature);\nvar last_date = toTimestamp(payload.date);\nvar future_temp = [];\nvar future_date = [];\nvar data_out = [];\n\nvar prediction = { \"x\": last_date, \"y\": last_temp };\ndata_out.push(prediction);\n\nfor (let i = 0; i < 4; i++) {\n    let sign = 1;\n    if (Math.random() > 0.5) {\n        sign = -1;\n    }\n    last_temp = last_temp + Math.random() * sign * 5;\n    last_date = last_date + 30*60*1000;\n    prediction = {\"x\": last_date, \"y\": last_temp};\n    data_out.push(prediction)\n}\n\nmsg.payload = [{\n\n    \"series\": [\"Temperature prediction\"],\n    \"data\": [data_out],\n    \"labels\": [\"temperature_prediction\"]\n}];\n\nmsg.timestamp = payload.date;\n\nif (payload.label == \"inside\") {\n    msg.topic = \"temperature_inside\";\n}\nelse if (payload.label == \"outside\") {\n    msg.topic = \"temperature_outside\";\n}\n\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 680,
-        "y": 420,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "972f19a7bb22d1f0",
@@ -2851,6 +2804,7 @@
         "id": "2a500ffbb2347df6",
         "type": "inject",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "Load Historical Data",
         "props": [
             {
@@ -3221,6 +3175,7 @@
         "id": "91d1cb00ae0403c9",
         "type": "inject",
         "z": "2c26b9058db8173f",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -3262,9 +3217,7 @@
         "x": 150,
         "y": 720,
         "wires": [
-            [
-                "84d479588f89237d"
-            ]
+            []
         ]
     },
     {
@@ -3310,7 +3263,7 @@
         "z": "2c26b9058db8173f",
         "name": "Insert Online Data",
         "query": "INSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, $3)\n",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "postgreSQLConfig": "0b4eaef3d101ee44",
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
@@ -3353,7 +3306,7 @@
         "z": "2c26b9058db8173f",
         "name": "SELECT * from online_data",
         "query": "SELECT * FROM online_data;",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "postgreSQLConfig": "0b4eaef3d101ee44",
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
@@ -3417,7 +3370,7 @@
         "z": "2c26b9058db8173f",
         "name": "truncate online data",
         "query": "TRUNCATE online_data;",
-        "postgreSQLConfig": "c1bde5c5cae042e2",
+        "postgreSQLConfig": "0b4eaef3d101ee44",
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
@@ -3493,15 +3446,90 @@
         "wires": []
     },
     {
+        "id": "0691fd5206d6ac27",
+        "type": "inject",
+        "z": "2c26b9058db8173f",
+        "name": "teste_inject",
+        "props": [
+            {
+                "p": "params",
+                "v": "[\"2020-12-01 20:30:00.000 +0000\"]",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 710,
+        "y": 240,
+        "wires": [
+            [
+                "34cc2214eb75c9b5",
+                "ee33333254eca284"
+            ]
+        ]
+    },
+    {
+        "id": "34cc2214eb75c9b5",
+        "type": "postgresql",
+        "z": "2c26b9058db8173f",
+        "name": "SELECT * from online_data",
+        "query": "SELECT * FROM online_data\nWHERE \"date\" >= TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS') - INTERVAL '1 week';\n",
+        "postgreSQLConfig": "0b4eaef3d101ee44",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 940,
+        "y": 240,
+        "wires": [
+            [
+                "213029c7b3c26a02"
+            ]
+        ]
+    },
+    {
+        "id": "213029c7b3c26a02",
+        "type": "debug",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "ee33333254eca284",
+        "type": "debug",
+        "z": "2c26b9058db8173f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 300,
+        "wires": []
+    },
+    {
         "id": "95dd76de46f8e762",
         "type": "inject",
         "z": "0cdf456eee4faca2",
         "name": "Post Request",
         "props": [
             {
-                "p": "payload2",
-                "v": "{\"current_temperature\":31.52}",
-                "vt": "json"
+                "p": "payload"
             },
             {
                 "p": "headers",
@@ -3512,11 +3540,6 @@
                 "p": "method",
                 "v": "post",
                 "vt": "str"
-            },
-            {
-                "p": "msg",
-                "v": "test",
-                "vt": "str"
             }
         ],
         "repeat": "",
@@ -3524,6 +3547,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
+        "payload": "{\"current_temperature_outside\":31.11423,\"current_temperature_inside\":21.23412,\"current_datetime\":\"2020-12-31 15:00:00\"}",
+        "payloadType": "json",
         "x": 270,
         "y": 320,
         "wires": [
@@ -3540,7 +3565,7 @@
         "method": "use",
         "ret": "obj",
         "paytoqs": "body",
-        "url": "model_service:8000/single",
+        "url": "model_service:9090/single",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -3570,5 +3595,592 @@
         "x": 710,
         "y": 320,
         "wires": []
+    },
+    {
+        "id": "bdedbc16f8429dce",
+        "type": "ui_chart",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "group": "6fcb8fa133925954",
+        "order": 7,
+        "width": 11,
+        "height": 8,
+        "label": "Online.data graph inside",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "DD/MM-HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "100",
+        "removeOlderPoints": "200",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff0000",
+            "#80ffff",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1210,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63535e47aeca3183",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "temperature_outside",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "temperature_inside",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 950,
+        "y": 560,
+        "wires": [
+            [
+                "532bee294d545fc3",
+                "d48cdd23c411c4c1"
+            ],
+            [
+                "bdedbc16f8429dce",
+                "3a7eaf6fd4f57566"
+            ]
+        ]
+    },
+    {
+        "id": "532bee294d545fc3",
+        "type": "ui_chart",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "group": "6fcb8fa133925954",
+        "order": 6,
+        "width": 11,
+        "height": 8,
+        "label": "Online.data graph outside",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "DD/MM-HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "100",
+        "removeOlderPoints": "200",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff0000",
+            "#80ffff",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1170,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2916737c7c63561c",
+        "type": "ui_button",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "group": "6fcb8fa133925954",
+        "order": 2,
+        "width": 4,
+        "height": 2,
+        "passthru": false,
+        "label": "Refresh charts",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 980,
+        "y": 660,
+        "wires": [
+            [
+                "bdedbc16f8429dce",
+                "532bee294d545fc3",
+                "a166f4da1489699e"
+            ]
+        ]
+    },
+    {
+        "id": "b2a03e812c3997cb",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "function toTimestamp(strDate) {\n    var datum = Date.parse(strDate);\n\n    return datum;\n}\n\nfunction nextPrediction(last_temp, last_date) {\n    let sign = 1;\n    if (Math.random() > 0.5) {\n        sign = -1;\n    }\n    var temp = last_temp + Math.random() * sign * 5;\n    var date = last_date + (30 * 60 * 1000);\n    var prediction = { \"x\": date, \"y\": temp };\n\n    return prediction;\n}\n\nconst GRAPH_SAMPLES = 10;\nconst GRAPH_SAMPLES_PRED = 5;\n\nvar temp_samples_in = context.get('temp_samples_in') || [];\nvar temp_samples_out = context.get('temp_samples_out') || [];\nvar count_outside = context.get('count_outside') || 0;\nvar count_inside = context.get('count_inside') || 0;\n\nvar payload = msg.payload;\nvar last_temp = parseFloat(payload.temperature);\nvar last_date = toTimestamp(payload.date);\n\nvar temp_samples = [];\nvar future_temp_samples = [];\n\nvar last_sample = { \"x\": last_date, \"y\": last_temp };\n\nif (payload.label == \"inside\") {\n    msg.topic = \"temperature_inside\";\n    var length = temp_samples_in.length;\n    \n    if (length < GRAPH_SAMPLES) {\n        temp_samples_in.push(last_sample);\n    }\n    else {\n        for (let i = 0; i < (length - 1); i++) {\n            temp_samples_in[i] = temp_samples_in[i + 1];\n        }\n        temp_samples_in[length - 1] = last_sample;\n        temp_samples = temp_samples_in;\n    }\n\n    if (count_inside < GRAPH_SAMPLES) {\n        count_inside += 1;\n    }\n    else {\n        // var prediction = { \"x\": last_date, \"y\": last_temp };\n        future_temp_samples.push(last_sample);\n\n        for (let i = 0; i < GRAPH_SAMPLES_PRED; i++) {\n            // last_temp = randomNum(last_temp);\n            // last_date = last_date + 30 * 60 * 1000;\n            // let prediction = { \"x\": last_date, \"y\": last_temp };\n            let prediction = nextPrediction(last_temp, last_date);\n            last_temp = prediction.y;\n            last_date = prediction.x;\n            \n            future_temp_samples.push(prediction)\n        }\n    }\n}\nelse if (payload.label == \"outside\") {\n    msg.topic = \"temperature_outside\";\n    var length = temp_samples_out.length;\n    if (length < GRAPH_SAMPLES) {\n        temp_samples_out.push(last_sample);\n    }\n    else {\n        for (let i = 0; i < (length - 1); i++) {\n            temp_samples_out[i] = temp_samples_out[i + 1];\n        }\n\n        temp_samples_out[length - 1] = last_sample;\n        temp_samples = temp_samples_out;\n    }\n\n    if (count_outside < GRAPH_SAMPLES) {\n        count_outside += 1;\n    }\n    else {\n        // var prediction = { \"x\": last_date, \"y\": last_temp };\n        future_temp_samples.push(last_sample);\n\n        for (let i = 0; i < GRAPH_SAMPLES_PRED; i++) {\n            let prediction = nextPrediction(last_temp, last_date);\n            last_temp = prediction.y;\n            last_date = prediction.x;\n            \n            future_temp_samples.push(prediction)\n        }\n    }\n}\n\nmsg.payload = [{\n    \"series\": [\"Actual temperature\", \"Temperature prediction\"],\n    \"data\": [temp_samples, future_temp_samples],\n    \"labels\": [\"actual_temperature\", \"temperature_prediction\"]\n}];\n// msg = {\"payload\": {\"count_out\": count_outside, \"count_in\": count_inside}};\n\nmsg.timestamp = payload.date;\n\ncontext.set('temp_samples_in', temp_samples_in);\ncontext.set('temp_samples_out', temp_samples_out);\ncontext.set('count_outside', count_outside);\ncontext.set('count_inside', count_inside);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 540,
+        "wires": [
+            [
+                "63535e47aeca3183"
+            ]
+        ]
+    },
+    {
+        "id": "a166f4da1489699e",
+        "type": "ui_chart",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "group": "6fcb8fa133925954",
+        "order": 9,
+        "width": 10,
+        "height": 8,
+        "label": "Thermal comfort deviation",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "DD/MM-HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "10",
+        "removeOlder": "10",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff0000",
+            "#80ffff",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1390,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d48cdd23c411c4c1",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "Week average",
+        "func": "var samples_out = flow.get('samples_out') || [];\nvar mean_val = flow.get('mean_val') || 0;\nvar samples_out_cnt = context.get('samples_out_cnt') || 0;\n\nvar samples = msg.payload[0].data[0];\nvar length = samples.length;\nvar last_sample_temp = samples[length - 1][\"y\"];\n\n// days * hours * (30 minutes in an hour)\nconst week_samples = 7 * 24 * 2;\n\nsamples_out[samples_out_cnt % week_samples] = last_sample_temp;\nsamples_out_cnt += 1;\n\nvar sum = 0;\nfor (let i = 0; i < samples_out.length; i++) {\n    sum += samples_out[i];\n}\nmean_val = sum / samples_out.length;\n\nflow.set('samples_out', samples_out);\nflow.set('mean_val', mean_val);\ncontext.set('samples_out_cnt', samples_out_cnt);\n\n// msg = {\"payload\": { \"mean\": mean_val, \"last_sample\": samples_out[samples_out.length-1]}};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "76d574c0de0149e2",
+        "type": "debug",
+        "z": "17ea79a5b6ded39b",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1570,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "3a7eaf6fd4f57566",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "Thermal comfort",
+        "func": "var thermalComfort = function(mean_val) {\n    var thermal_comfort_temp;\n\n    if (mean_val >= 0 && mean_val <= 9) {\n        thermal_comfort_temp = 18 - (23 - 18) * (mean_val / 9);\n    }\n    else if (mean_val >= 9 && mean_val <= 34) {\n        thermal_comfort_temp = 18 + (30 - 18) * (mean_val / 25);\n    }\n\n    return thermal_comfort_temp;\n}\n\nvar mean_val = flow.get('mean_val') || 0;\n\nvar thermal_comfort_temp = thermalComfort(mean_val);\nvar last_deviations = [];\nvar samples_in = msg.payload[0].data[0];\n\nfor (let i = 0; i < samples_in.length; i++) {\n    last_deviations[i] = {\n        \"x\": samples_in[i][\"x\"], \"y\": (samples_in[i][\"y\"] - thermal_comfort_temp)};\n}\n\nvar future_deviations = [last_deviations[last_deviations.length-1]];\nvar samples_in_prediction = msg.payload[0].data[1];\n\nfor (let i = 1; i < (samples_in_prediction.length); i++) {\n    future_deviations[i] = {\n        \"x\": samples_in_prediction[i][\"x\"], \"y\": (samples_in_prediction[i][\"y\"] - thermal_comfort_temp)\n    };\n}\n\nmsg = {\"payload\": [{\n    \"series\": [\"Last deviations\", \"Future deviations\"],\n    \"data\": [last_deviations, future_deviations],\n    \"labels\": [\"\", \"\"]\n}]};\nmsg.topic = \"deviations\";\n\n// msg = { \"payload\": {\"last\": last_deviations, \"future\": future_deviations}};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 620,
+        "wires": [
+            [
+                "a166f4da1489699e",
+                "f0fbd12790d3cb40"
+            ]
+        ]
+    },
+    {
+        "id": "ed8b32dff0e1f1c2",
+        "type": "ui_gauge",
+        "z": "17ea79a5b6ded39b",
+        "name": "Thermal comfort",
+        "group": "6fcb8fa133925954",
+        "order": 10,
+        "width": 6,
+        "height": 6,
+        "gtype": "gage",
+        "title": "{{msg.topic}}",
+        "label": "*C",
+        "format": "{{value | number:2}}",
+        "min": "-5",
+        "max": "5",
+        "colors": [
+            "#2260df",
+            "#c0c0c0",
+            "#e92929"
+        ],
+        "seg1": "-1",
+        "seg2": "1",
+        "className": "",
+        "x": 1600,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "f0fbd12790d3cb40",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "var payload_data = msg.payload[0].data;\n\nvar length = payload_data[0].length;\nvar deviation = payload_data[0][length-1][\"y\"];\n\nmsg = {\n    \"payload\": deviation,\n    \"topic\": \"Current thermal comfort deviation\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1420,
+        "y": 620,
+        "wires": [
+            [
+                "ed8b32dff0e1f1c2",
+                "76d574c0de0149e2"
+            ]
+        ]
+    },
+    {
+        "id": "a4bb329f6b67a787",
+        "type": "http request",
+        "z": "17ea79a5b6ded39b",
+        "name": "Post Single Temperature",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "body",
+        "url": "model_service:9090/single",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "a1c0cca62067a4b4"
+            ]
+        ]
+    },
+    {
+        "id": "cc3d877a66e41a9b",
+        "type": "mqtt in",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "topic": "idc/fc55309",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "41445dc30e2a6a35",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "b095af2ebd6dcbb3"
+            ]
+        ]
+    },
+    {
+        "id": "b095af2ebd6dcbb3",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "var msg2 = msg.payload.split(\",\")\nvar date = msg2[0]\nvar temperature = msg2[1]\nvar label = msg2[2]\n\n\nmsg.params = [date,temperature];\n\nmsg.payload = {\n    \"label\": label,\n    \"date\": date,\n    \"temperature\": temperature\n}\n\nif (temperature != null)\n    return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "f7abafb56d1473d6",
+                "0aade698a244d235"
+            ]
+        ]
+    },
+    {
+        "id": "48093e4e59f30c8b",
+        "type": "postgresql",
+        "z": "17ea79a5b6ded39b",
+        "name": "Insert Online Data Outside",
+        "query": "INSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, 'outside')\n",
+        "postgreSQLConfig": "0b4eaef3d101ee44",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 760,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a6e7b6f5901b9b7a",
+        "type": "postgresql",
+        "z": "17ea79a5b6ded39b",
+        "name": "Get Stored Temps",
+        "query": "SELECT * FROM online_data\nWHERE \"date\" >= TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS') - INTERVAL '15 hours';\n",
+        "postgreSQLConfig": "0b4eaef3d101ee44",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 830,
+        "y": 320,
+        "wires": [
+            [
+                "f0c873e833ab2075",
+                "b66a7252f6e08d18"
+            ]
+        ]
+    },
+    {
+        "id": "847ddc9524b4d766",
+        "type": "postgresql",
+        "z": "17ea79a5b6ded39b",
+        "name": "Insert Online Data Inside",
+        "query": "INSERT INTO online_data\n(date, temperature, label)\nVALUES (TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS'), $2, 'inside')\n",
+        "postgreSQLConfig": "0b4eaef3d101ee44",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 750,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7abafb56d1473d6",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "payload.label",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "outside",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "inside",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [
+                "48093e4e59f30c8b"
+            ],
+            [
+                "847ddc9524b4d766"
+            ]
+        ]
+    },
+    {
+        "id": "0aade698a244d235",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "\n\nvar outDateTime = context.get('outDateTime') || \"\";\nvar outTemperature = context.get('outTemperature') || null;\n\nvar inDateTime = context.get('inDateTime') || \"\";\nvar inTemperature = context.get('inTemperature') || null;\n\nif (msg.payload.label == \"inside\") {\n    inDateTime = msg.payload.date\n    inTemperature = msg.payload.temperature\n} else if (msg.payload.label == \"outside\") {\n    outDateTime = msg.payload.date\n    outTemperature = msg.payload.temperature\n} else {\n    throw \"\";\n}\n\n\n\n\nif (outDateTime != \"\")\n    context.set('outDateTime', outDateTime);\nif (outTemperature != null)\n    context.set('outTemperature', outTemperature);\n\nif (inDateTime != \"\")\n    context.set('inDateTime', inDateTime);\nif (inTemperature != null)\n    context.set('inTemperature', inTemperature);\n\nlet outDateParsed = Date.parse(outDateTime);\nlet inDateParsed = Date.parse(inDateTime);\n\n\nif (inDateParsed >= outDateParsed + (3600000 * 1)) {\n    msg.topic = 0\n    msg.payload = {\n        \"current_temperature_inside\": inTemperature,\n        \"current_datetime\": outDateTime\n    }\n    return msg;\n} else if (outDateParsed >= inDateParsed + (3600000 * 1)) {\n    msg.topic = 1\n    msg.payload = {\n        \"current_temperature_outside\": outTemperature,\n        \"current_datetime\": outDateTime\n    }\n    msg.headers = { \"content-type\": \"application/json\" }\n    return msg;\n} else if (outDateTime == inDateTime) {\n    msg.topic = 1\n    msg.payload = {\n        \"current_temperature_outside\": outTemperature,\n        \"current_temperature_inside\": inTemperature,\n        \"current_datetime\": outDateTime\n    }\n    msg.headers = { \"content-type\": \"application/json\" }\n    return msg;\n}\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "ad02cbd482dbea79"
+            ]
+        ]
+    },
+    {
+        "id": "ad02cbd482dbea79",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "Single or Dual Temp",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "a1c0cca62067a4b4"
+            ],
+            [
+                "a4bb329f6b67a787"
+            ]
+        ]
+    },
+    {
+        "id": "a1c0cca62067a4b4",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "\nmsg.params = [msg.payload.current_datetime]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 320,
+        "wires": [
+            [
+                "a6e7b6f5901b9b7a",
+                "c15af1d5ebc1ccfd",
+                "b66a7252f6e08d18"
+            ]
+        ]
+    },
+    {
+        "id": "c15af1d5ebc1ccfd",
+        "type": "debug",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f0c873e833ab2075",
+        "type": "debug",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b66a7252f6e08d18",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 380,
+        "wires": [
+            []
+        ]
     }
 ]
