@@ -18,14 +18,14 @@ class SingleRequest(BaseModel):
     """ Base Model for Single temperature Requests. """
 
     current_temperature_outside: float
-    current_temperature_inside: float
+    current_temperature_inside: float = None
     current_datetime: str
 
 class BatchRequest(BaseModel):
     """ Base Model for Batched temperature Requests. """
 
     temperature_sequence_outside: List[float]
-    current_temperature_inside: float
+    current_temperature_inside: float = None
     current_datetime: str
 
 setattr(__main__, "LSTM", LSTM)
@@ -37,7 +37,7 @@ with open("./outside_model/model_v3","rb") as o:
 
 print("Outside Model:")
 print(outside_model)
-outside_model.set_device()
+outside_model.set_device("cpu")
 
 print("Inside Model:")
 with open("./inside_model/model_v3","rb") as o:
@@ -52,22 +52,37 @@ async def single_prediction(body: SingleRequest):
     """ Takes in a single inside and outside temperature as input and predicts the posteriors. """
 
     curr_temp_out = body.current_temperature_outside
-    curr_temp_in = body.current_temperature_inside
+
+    with_inside = True
+    if body.current_temperature_inside is None:
+        with_inside = False
+    else:
+        curr_temp_in = body.current_temperature_inside
 
     outside_preds = outside_model.predict(np.array(curr_temp_out))
-    inside_preds = inside_model.total_predict(curr_temp_out, outside_preds, curr_temp_in)
+    if with_inside:
+        inside_preds = inside_model.total_predict(curr_temp_out, outside_preds, curr_temp_in)
 
     outside_preds = [ float(o[0]) for o in outside_preds ]
-    inside_preds = [ float(o[0]) for o in inside_preds ]
-    return JSONResponse(content=jsonable_encoder(
-        {
-            "OutsidePreds": outside_preds,
-            "InsidePreds": inside_preds,
-            "current_temperature_outside": curr_temp_out,
-            "current_temperature_inside": curr_temp_in,
-            "current_datetime": body.current_datetime
-        }
-    ))
+    if with_inside:
+        inside_preds = [ float(o[0]) for o in inside_preds ]
+        return JSONResponse(content=jsonable_encoder(
+            {
+                "OutsidePreds": outside_preds,
+                "InsidePreds": inside_preds,
+                "current_temperature_outside": curr_temp_out,
+                "current_temperature_inside": curr_temp_in,
+                "current_datetime": body.current_datetime
+            }
+        ))
+    else:
+        return JSONResponse(content=jsonable_encoder(
+            {
+                "OutsidePreds": outside_preds,
+                "current_temperature_outside": curr_temp_out,
+                "current_datetime": body.current_datetime
+            }
+        ))
 
 @app.post("/batch")
 async def batch_prediction(body: BatchRequest):
@@ -75,26 +90,41 @@ async def batch_prediction(body: BatchRequest):
     as input and predicts the posteriors. """
 
     temp_seq_out = body.temperature_sequence_outside
-    curr_temp_in = body.current_temperature_inside
+
+    with_inside = True
+    if body.current_temperature_inside is None:
+        with_inside = False
+    else:
+        curr_temp_in = body.current_temperature_inside
 
     outside_preds = outside_model.predict(np.array(temp_seq_out))
-    inside_preds = inside_model.total_predict(
-                        temp_seq_out[-1],
-                        outside_preds,
-                        curr_temp_in
-                    )
+    if with_inside:
+        inside_preds = inside_model.total_predict(
+                            temp_seq_out[-1],
+                            outside_preds,
+                            curr_temp_in
+                        )
 
     outside_preds = [ float(o[0]) for o in outside_preds ]
-    inside_preds = [ float(o[0]) for o in inside_preds ]
-    return JSONResponse(content=jsonable_encoder(
-        {
-            "OutsidePreds": outside_preds,
-            "InsidePreds": inside_preds,
-            "temperature_sequence_outside": temp_seq_out,
-            "current_temperature_inside": curr_temp_in,
-            "current_datetime": body.current_datetime
-        }
-    ))
+    if with_inside:
+        inside_preds = [ float(o[0]) for o in inside_preds ]
+        return JSONResponse(content=jsonable_encoder(
+            {
+                "OutsidePreds": outside_preds,
+                "InsidePreds": inside_preds,
+                "temperature_sequence_outside": temp_seq_out,
+                "current_temperature_inside": curr_temp_in,
+                "current_datetime": body.current_datetime
+            }
+        ))
+    else:
+        return JSONResponse(content=jsonable_encoder(
+            {
+                "OutsidePreds": outside_preds,
+                "temperature_sequence_outside": temp_seq_out,
+                "current_datetime": body.current_datetime
+            }
+        ))
 
 if __name__ == "__main__":
     uvicorn.run(app=app, host="127.0.0.1", port=9090, log_level="info")
