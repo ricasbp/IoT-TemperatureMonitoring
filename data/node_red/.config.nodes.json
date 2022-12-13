@@ -693,5 +693,142 @@
                 "file": "/data/node_modules/node-red-dashboard/nodes/ui_spacer.js"
             }
         }
+    },
+    "node-red-contrib-semaphore": {
+        "name": "node-red-contrib-semaphore",
+        "version": "1.0.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "semaphore": {
+                "name": "semaphore",
+                "types": [
+                    "semaphore-config",
+                    "semaphore-take",
+                    "semaphore-leave"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-semaphore",
+                "file": "/data/node_modules/node-red-contrib-semaphore/semaphore.js"
+            }
+        }
+    },
+    "node-red-contrib-timeout": {
+        "name": "node-red-contrib-timeout",
+        "version": "1.1.5",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "timeout": {
+                "name": "timeout",
+                "types": [
+                    "timeout"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-timeout",
+                "file": "/data/node_modules/node-red-contrib-timeout/timeout.js"
+            }
+        }
+    },
+    "node-red-contrib-timeouttrigger": {
+        "name": "node-red-contrib-timeouttrigger",
+        "version": "0.0.3",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "timeouttrigger": {
+                "name": "timeouttrigger",
+                "types": [
+                    "timeouttrigger"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-timeouttrigger",
+                "file": "/data/node_modules/node-red-contrib-timeouttrigger/timeouttrigger.js"
+            }
+        }
+    },
+    "node-red-node-email": {
+        "name": "node-red-node-email",
+        "version": "1.18.2",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "email": {
+                "name": "email",
+                "types": [
+                    "e-mail",
+                    "e-mail in",
+                    "e-mail mta"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-email",
+                "file": "/data/node_modules/node-red-node-email/61-email.js"
+            }
+        }
+    },
+    "node-red-contrib-mytimeout": {
+        "name": "node-red-contrib-mytimeout",
+        "version": "3.2.2",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "mytimeout": {
+                "name": "mytimeout",
+                "types": [
+                    "mytimeout"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-mytimeout",
+                "file": "/data/node_modules/node-red-contrib-mytimeout/mytimeout.js"
+            }
+        }
+    },
+    "node-red-contrib-error-on-timeout": {
+        "name": "node-red-contrib-error-on-timeout",
+        "version": "1.2.4",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "error-on-timeout": {
+                "name": "error-on-timeout",
+                "types": [
+                    "error-on-timeout"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-error-on-timeout",
+                "file": "/data/node_modules/node-red-contrib-error-on-timeout/error-on-timeout.js"
+            }
+        }
+    },
+    "node-red-contrib-msg-timeout": {
+        "name": "node-red-contrib-msg-timeout",
+        "version": "0.1.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "node-red-contrib-msg-timeout": {
+                "name": "node-red-contrib-msg-timeout",
+                "types": [
+                    "msgtimeout"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-msg-timeout",
+                "file": "/data/node_modules/node-red-contrib-msg-timeout/msgtimeout.js"
+            }
+        }
     }
 }

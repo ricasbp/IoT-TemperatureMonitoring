@@ -151,7 +151,7 @@
         "maxFieldType": "num",
         "idle": "1000",
         "idleFieldType": "num",
-        "connectionTimeout": "10000",
+        "connectionTimeout": "2000",
         "connectionTimeoutFieldType": "num",
         "user": "temp_monitor",
         "userFieldType": "str",
@@ -717,6 +717,18 @@
         "userFieldType": "str",
         "password": "password",
         "passwordFieldType": "str"
+    },
+    {
+        "id": "7b1f1ae81f8afdb8",
+        "type": "semaphore-config",
+        "name": "Outside Reading Semaphore",
+        "capacity": "1"
+    },
+    {
+        "id": "b783a82559256d8c",
+        "type": "semaphore-config",
+        "name": "Inside Reading Semaphore",
+        "capacity": "1"
     },
     {
         "id": "1fe28d05009a58dc",
@@ -3634,8 +3646,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1210,
-        "y": 580,
+        "x": 710,
+        "y": 740,
         "wires": [
             []
         ]
@@ -3662,8 +3674,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 950,
-        "y": 560,
+        "x": 450,
+        "y": 720,
         "wires": [
             [
                 "532bee294d545fc3",
@@ -3713,8 +3725,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1170,
-        "y": 540,
+        "x": 670,
+        "y": 700,
         "wires": [
             []
         ]
@@ -3739,8 +3751,8 @@
         "payloadType": "json",
         "topic": "topic",
         "topicType": "msg",
-        "x": 980,
-        "y": 660,
+        "x": 480,
+        "y": 820,
         "wires": [
             [
                 "bdedbc16f8429dce",
@@ -3760,8 +3772,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 540,
+        "x": 300,
+        "y": 620,
         "wires": [
             [
                 "63535e47aeca3183"
@@ -3806,8 +3818,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1390,
-        "y": 680,
+        "x": 890,
+        "y": 840,
         "wires": [
             []
         ]
@@ -3823,8 +3835,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1160,
-        "y": 480,
+        "x": 640,
+        "y": 640,
         "wires": [
             []
         ]
@@ -3842,8 +3854,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1570,
-        "y": 560,
+        "x": 1070,
+        "y": 720,
         "wires": []
     },
     {
@@ -3857,8 +3869,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1180,
-        "y": 620,
+        "x": 680,
+        "y": 780,
         "wires": [
             [
                 "a166f4da1489699e",
@@ -3889,8 +3901,8 @@
         "seg1": "-1",
         "seg2": "1",
         "className": "",
-        "x": 1600,
-        "y": 620,
+        "x": 1100,
+        "y": 780,
         "wires": []
     },
     {
@@ -3904,8 +3916,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1420,
-        "y": 620,
+        "x": 920,
+        "y": 780,
         "wires": [
             [
                 "ed8b32dff0e1f1c2",
@@ -3921,18 +3933,18 @@
         "method": "POST",
         "ret": "obj",
         "paytoqs": "body",
-        "url": "model_service:9090/single",
+        "url": "model_service:9090/singlea",
         "tls": "",
         "persist": false,
         "proxy": "",
         "insecureHTTPParser": false,
         "authType": "",
         "senderr": false,
-        "x": 390,
-        "y": 360,
+        "x": 150,
+        "y": 380,
         "wires": [
             [
-                "a1c0cca62067a4b4"
+                "996fa906580af09c"
             ]
         ]
     },
@@ -3941,7 +3953,7 @@
         "type": "mqtt in",
         "z": "17ea79a5b6ded39b",
         "name": "",
-        "topic": "idc/fc55309",
+        "topic": "idc/fc55309/insert",
         "qos": "2",
         "datatype": "auto",
         "broker": "41445dc30e2a6a35",
@@ -3949,7 +3961,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 130,
+        "x": 100,
         "y": 160,
         "wires": [
             [
@@ -3962,18 +3974,18 @@
         "type": "function",
         "z": "17ea79a5b6ded39b",
         "name": "",
-        "func": "var msg2 = msg.payload.split(\",\")\nvar date = msg2[0]\nvar temperature = msg2[1]\nvar label = msg2[2]\n\n\nmsg.params = [date,temperature];\n\nmsg.payload = {\n    \"label\": label,\n    \"date\": date,\n    \"temperature\": temperature\n}\n\nif (temperature != null)\n    return msg\n",
+        "func": "var msg2 = msg.payload.split(\",\")\nvar date = msg2[0]\nvar temperature = msg2[1]\nvar label = msg2[2]\n\nif (label == \"inside\")\n    flow.set('receivedInsideTemp', true);\nif (label == \"outside\")\n    flow.set('receivedOutsideTemp', true);\n\nmsg.params = [date,temperature];\n\nmsg.payload = {\n    \"label\": label,\n    \"date\": date,\n    \"temperature\": temperature\n}\n\nif (temperature != null)\n    return msg\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 160,
+        "x": 280,
+        "y": 200,
         "wires": [
             [
-                "f7abafb56d1473d6",
-                "0aade698a244d235"
+                "0aade698a244d235",
+                "f7abafb56d1473d6"
             ]
         ]
     },
@@ -3987,10 +3999,12 @@
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 760,
-        "y": 60,
+        "x": 960,
+        "y": 160,
         "wires": [
-            []
+            [
+                "83a2aa3476a88370"
+            ]
         ]
     },
     {
@@ -3998,16 +4012,16 @@
         "type": "postgresql",
         "z": "17ea79a5b6ded39b",
         "name": "Get Stored Temps",
-        "query": "SELECT * FROM online_data\nWHERE \"date\" >= TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS') - INTERVAL '15 hours';\n",
+        "query": "SELECT * FROM online_data\nWHERE \"date\" >= TO_TIMESTAMP($1,'YYYY-MM-DD HH24:MI:SS') - INTERVAL '15:10 hours';\n",
         "postgreSQLConfig": "0b4eaef3d101ee44",
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 790,
-        "y": 320,
+        "x": 1290,
+        "y": 380,
         "wires": [
             [
-                "f0c873e833ab2075"
+                "037d877bcfcf12e8"
             ]
         ]
     },
@@ -4021,10 +4035,12 @@
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 750,
-        "y": 120,
+        "x": 950,
+        "y": 220,
         "wires": [
-            []
+            [
+                "f4ae8a11b3526990"
+            ]
         ]
     },
     {
@@ -4049,14 +4065,14 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 550,
-        "y": 100,
+        "x": 470,
+        "y": 200,
         "wires": [
             [
-                "48093e4e59f30c8b"
+                "bff4bb785427cbf9"
             ],
             [
-                "847ddc9524b4d766"
+                "a4085e7c04372539"
             ]
         ]
     },
@@ -4071,8 +4087,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 140,
-        "y": 260,
+        "x": 300,
+        "y": 280,
         "wires": [
             [
                 "ad02cbd482dbea79"
@@ -4101,7 +4117,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 140,
+        "x": 160,
         "y": 340,
         "wires": [
             [
@@ -4123,17 +4139,53 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 320,
+        "x": 640,
+        "y": 340,
         "wires": [
             [
-                "a6e7b6f5901b9b7a",
-                "c15af1d5ebc1ccfd"
+                "3b92b50de2ad0ff5",
+                "b66a7252f6e08d18",
+                "462aee508abb1d32"
             ]
         ]
     },
     {
-        "id": "c15af1d5ebc1ccfd",
+        "id": "b66a7252f6e08d18",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "\nif ()\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 1,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c71526fc7d248251",
+        "type": "postgresql",
+        "z": "17ea79a5b6ded39b",
+        "name": "truncate online data",
+        "query": "TRUNCATE online_data;",
+        "postgreSQLConfig": "0b4eaef3d101ee44",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 40,
+        "wires": [
+            [
+                "c3ace3a7e48ea47d"
+            ]
+        ]
+    },
+    {
+        "id": "c3ace3a7e48ea47d",
         "type": "debug",
         "z": "17ea79a5b6ded39b",
         "name": "",
@@ -4141,15 +4193,104 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 770,
-        "y": 280,
+        "x": 570,
+        "y": 40,
         "wires": []
     },
     {
-        "id": "f0c873e833ab2075",
+        "id": "05f84bcbeb8a648c",
+        "type": "mqtt in",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "topic": "idc/fc55309/truncate",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "41445dc30e2a6a35",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "c71526fc7d248251"
+            ]
+        ]
+    },
+    {
+        "id": "a4085e7c04372539",
+        "type": "semaphore-take",
+        "z": "17ea79a5b6ded39b",
+        "config": "b783a82559256d8c",
+        "name": "Inside Take",
+        "x": 670,
+        "y": 220,
+        "wires": [
+            [
+                "847ddc9524b4d766"
+            ]
+        ]
+    },
+    {
+        "id": "d868972b4bbb0bd9",
+        "type": "semaphore-leave",
+        "z": "17ea79a5b6ded39b",
+        "config": "b783a82559256d8c",
+        "name": "Inside Leave",
+        "x": 1650,
+        "y": 480,
+        "wires": [
+            [
+                "b66a7252f6e08d18",
+                "666529399f2fd040"
+            ]
+        ]
+    },
+    {
+        "id": "bff4bb785427cbf9",
+        "type": "semaphore-take",
+        "z": "17ea79a5b6ded39b",
+        "config": "7b1f1ae81f8afdb8",
+        "name": "Outside Take",
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "48093e4e59f30c8b"
+            ]
+        ]
+    },
+    {
+        "id": "83a2aa3476a88370",
+        "type": "semaphore-leave",
+        "z": "17ea79a5b6ded39b",
+        "config": "7b1f1ae81f8afdb8",
+        "name": "Outside Leave",
+        "x": 1200,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4ae8a11b3526990",
+        "type": "semaphore-leave",
+        "z": "17ea79a5b6ded39b",
+        "config": "b783a82559256d8c",
+        "name": "Inside Leave",
+        "x": 1190,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b92b50de2ad0ff5",
         "type": "debug",
         "z": "17ea79a5b6ded39b",
         "name": "",
@@ -4160,8 +4301,637 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 990,
-        "y": 280,
+        "x": 650,
+        "y": 400,
         "wires": []
+    },
+    {
+        "id": "36290cd3a8e58a2a",
+        "type": "semaphore-leave",
+        "z": "17ea79a5b6ded39b",
+        "config": "7b1f1ae81f8afdb8",
+        "name": "Outside Leave",
+        "x": 1480,
+        "y": 440,
+        "wires": [
+            [
+                "d3433cb3019e8fd2"
+            ]
+        ]
+    },
+    {
+        "id": "666529399f2fd040",
+        "type": "debug",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1830,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "eb4bb60b028242ad",
+        "type": "semaphore-leave",
+        "z": "17ea79a5b6ded39b",
+        "config": "7b1f1ae81f8afdb8",
+        "name": "Outside Leave",
+        "x": 2180,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa90a75e06f6051c",
+        "type": "semaphore-leave",
+        "z": "17ea79a5b6ded39b",
+        "config": "b783a82559256d8c",
+        "name": "Inside Leave",
+        "x": 2030,
+        "y": 240,
+        "wires": [
+            [
+                "53bff4c9f679ce11"
+            ]
+        ]
+    },
+    {
+        "id": "844e12c0ee71490c",
+        "type": "e-mail",
+        "z": "17ea79a5b6ded39b",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "Database Monitorization Email",
+        "x": 2090,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ee400b83cec1e390",
+        "type": "template",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<h2>\n    There is a problem with Temperature monitoring Database/Model!\n</h2>",
+        "output": "str",
+        "x": 1840,
+        "y": 340,
+        "wires": [
+            [
+                "844e12c0ee71490c"
+            ]
+        ]
+    },
+    {
+        "id": "c27f360f8f4351b1",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "\nlet receivedOutsideTemp = flow.get('receivedOutsideTemp') || false;\nlet receivedInsideTemp = flow.get('receivedInsideTemp') || false;\n\n\nlet receivedTemp = receivedOutsideTemp || receivedInsideTemp;\n\nmsg.payload = {\n    \"receivedTemp\": receivedTemp,\n    \"receivedOutsideTemp\": receivedOutsideTemp,\n    \"receivedInsideTemp\": receivedInsideTemp\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1680,
+        "y": 200,
+        "wires": [
+            [
+                "71b373cc05a6c491",
+                "1a76197e7f6afe25"
+            ]
+        ]
+    },
+    {
+        "id": "71b373cc05a6c491",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "payload.receivedTemp",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1650,
+        "y": 360,
+        "wires": [
+            [
+                "ee400b83cec1e390",
+                "f0fb7a94012fc16e"
+            ],
+            [
+                "c7b27ea186bc2c3c"
+            ]
+        ]
+    },
+    {
+        "id": "d8e3ea7ab1905f28",
+        "type": "template",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<h2>\n    No Temperatures!!\n</h2>",
+        "output": "str",
+        "x": 1840,
+        "y": 420,
+        "wires": [
+            [
+                "844e12c0ee71490c"
+            ]
+        ]
+    },
+    {
+        "id": "c7b27ea186bc2c3c",
+        "type": "join",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "",
+        "joiner": "",
+        "joinerType": "bin",
+        "accumulate": false,
+        "timeout": "",
+        "count": "300",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1650,
+        "y": 420,
+        "wires": [
+            [
+                "d8e3ea7ab1905f28"
+            ]
+        ]
+    },
+    {
+        "id": "1a76197e7f6afe25",
+        "type": "debug",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1770,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "462aee508abb1d32",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "receivedOutsideTemp",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 830,
+        "y": 340,
+        "wires": [
+            [
+                "876509e99fd95351"
+            ],
+            [
+                "940bf16389dd59b2",
+                "8b85a5d469393b24"
+            ]
+        ]
+    },
+    {
+        "id": "940bf16389dd59b2",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "receivedInsideTemp",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1070,
+        "y": 360,
+        "wires": [
+            [
+                "7a3c5c258e405b87"
+            ],
+            [
+                "a6e7b6f5901b9b7a",
+                "975536733767e1e2"
+            ]
+        ]
+    },
+    {
+        "id": "8b85a5d469393b24",
+        "type": "template",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<h2>\n    There is a problem with Inside Temperature Sensor!\n</h2>",
+        "output": "str",
+        "x": 1020,
+        "y": 480,
+        "wires": [
+            [
+                "156075143a8fe95a"
+            ]
+        ]
+    },
+    {
+        "id": "156075143a8fe95a",
+        "type": "e-mail",
+        "z": "17ea79a5b6ded39b",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "Sensor Monitorization Email",
+        "x": 1240,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "975536733767e1e2",
+        "type": "template",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<h2>\n    There is a problem with Outside Temperature Sensor!\n</h2>",
+        "output": "str",
+        "x": 1020,
+        "y": 440,
+        "wires": [
+            [
+                "156075143a8fe95a"
+            ]
+        ]
+    },
+    {
+        "id": "f0fb7a94012fc16e",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "receivedInsideTemp",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1830,
+        "y": 280,
+        "wires": [
+            [
+                "aa90a75e06f6051c",
+                "4252166de4ee871f"
+            ],
+            [
+                "53bff4c9f679ce11"
+            ]
+        ]
+    },
+    {
+        "id": "53bff4c9f679ce11",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "receivedOutsideTemp",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2010,
+        "y": 300,
+        "wires": [
+            [
+                "9a312a8ec9d60589",
+                "eb4bb60b028242ad"
+            ]
+        ]
+    },
+    {
+        "id": "9a312a8ec9d60589",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "flow.set('receivedOutsideTemp', false);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2160,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4252166de4ee871f",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "flow.set('receivedInsideTemp', false);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2020,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "037d877bcfcf12e8",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "receivedOutsideTemp",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1310,
+        "y": 440,
+        "wires": [
+            [
+                "36290cd3a8e58a2a"
+            ],
+            [
+                "d3433cb3019e8fd2"
+            ]
+        ]
+    },
+    {
+        "id": "d3433cb3019e8fd2",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "receivedInsideTemp",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1470,
+        "y": 480,
+        "wires": [
+            [
+                "d868972b4bbb0bd9"
+            ],
+            [
+                "b66a7252f6e08d18",
+                "666529399f2fd040"
+            ]
+        ]
+    },
+    {
+        "id": "876509e99fd95351",
+        "type": "semaphore-take",
+        "z": "17ea79a5b6ded39b",
+        "config": "7b1f1ae81f8afdb8",
+        "name": "Outside Take",
+        "x": 970,
+        "y": 280,
+        "wires": [
+            [
+                "940bf16389dd59b2"
+            ]
+        ]
+    },
+    {
+        "id": "7a3c5c258e405b87",
+        "type": "semaphore-take",
+        "z": "17ea79a5b6ded39b",
+        "config": "b783a82559256d8c",
+        "name": "Inside Take",
+        "x": 1210,
+        "y": 320,
+        "wires": [
+            [
+                "a6e7b6f5901b9b7a"
+            ]
+        ]
+    },
+    {
+        "id": "02ad68a06ac77626",
+        "type": "catch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "scope": [
+            "a6e7b6f5901b9b7a",
+            "48093e4e59f30c8b",
+            "847ddc9524b4d766"
+        ],
+        "uncaught": false,
+        "x": 1470,
+        "y": 260,
+        "wires": [
+            [
+                "c27f360f8f4351b1"
+            ]
+        ]
+    },
+    {
+        "id": "fc3c31e41df1b1a1",
+        "type": "catch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "scope": [
+            "a6e7b6f5901b9b7a"
+        ],
+        "uncaught": false,
+        "x": 590,
+        "y": 540,
+        "wires": [
+            [
+                "c93cb329cbd0ebb3"
+            ]
+        ]
+    },
+    {
+        "id": "c93cb329cbd0ebb3",
+        "type": "template",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[]",
+        "output": "json",
+        "x": 720,
+        "y": 580,
+        "wires": [
+            [
+                "b66a7252f6e08d18"
+            ]
+        ]
+    },
+    {
+        "id": "b039bcc7a3dccabb",
+        "type": "template",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<h2>\n    There is a problem with the Model Service!!\n</h2>",
+        "output": "str",
+        "x": 320,
+        "y": 500,
+        "wires": [
+            [
+                "254e0f0cea351608"
+            ]
+        ]
+    },
+    {
+        "id": "254e0f0cea351608",
+        "type": "e-mail",
+        "z": "17ea79a5b6ded39b",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "ModelService Monitorization Email",
+        "x": 540,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "7bda5f3aaac84413",
+        "type": "function",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "func": "\nvar months = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\nvar days = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"];\n\n\nvar d = new Date();\n\n\n\n\nvar hr = d.getHours();\nif (hr < 10) {\n    hr = \"0\" + hr;\n}\nif (hr == 0)\n    hr = \"00\"\n\n\n\n\nvar min = d.getMinutes();\nif (min < 10) {\n    min = \"0\" + min;\n}\nif (min == 0)\n    min = \"00\"\n\n\n\n\nvar sec = d.getSeconds();\nif (sec < 10) {\n    sec = \"0\" + sec;\n}\nif (sec == 0)\n    sec = \"00\"\n\n\n\n\nvar day = d.getDate();\n\n\n\n\nvar month = d.getMonth() + 1;\n\n\n\n\nvar year = d.getFullYear();\n\n\n\n\nlet currentTimeParsed = year + \"-\" + month + \"-\" + day + \" \" + hr + \":\" + min + \":\" + sec;\n\nmsg.payload = {\n    \"current_datetime\": currentTimeParsed\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "a1c0cca62067a4b4",
+                "3b92b50de2ad0ff5"
+            ]
+        ]
+    },
+    {
+        "id": "996fa906580af09c",
+        "type": "switch",
+        "z": "17ea79a5b6ded39b",
+        "name": "",
+        "property": "payload.detail",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "a1c0cca62067a4b4"
+            ],
+            [
+                "7bda5f3aaac84413",
+                "b039bcc7a3dccabb"
+            ]
+        ]
     }
 ]
