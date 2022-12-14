@@ -830,5 +830,190 @@
                 "file": "/data/node_modules/node-red-contrib-msg-timeout/msgtimeout.js"
             }
         }
+    },
+    "node-red-contrib-filter": {
+        "name": "node-red-contrib-filter",
+        "version": "0.1.4",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "filter": {
+                "name": "filter",
+                "types": [
+                    "filter"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-filter",
+                "file": "/data/node_modules/node-red-contrib-filter/18-filter.js"
+            }
+        }
+    },
+    "node-red-contrib-grpc": {
+        "name": "node-red-contrib-grpc",
+        "version": "1.2.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "grpc-server-config": {
+                "name": "grpc-server-config",
+                "types": [
+                    "grpc-server"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-server.js"
+            },
+            "grpc-register-function": {
+                "name": "grpc-register-function",
+                "types": [
+                    "grpc-register-function"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-register-function.js"
+            },
+            "grpc-response": {
+                "name": "grpc-response",
+                "types": [
+                    "grpc-response"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-response.js"
+            },
+            "grpc-call": {
+                "name": "grpc-call",
+                "types": [
+                    "grpc-call"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-call.js"
+            },
+            "grpc-client-streaming": {
+                "name": "grpc-client-streaming",
+                "types": [
+                    "grpc-client-streaming"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-grpc",
+                "file": "/data/node_modules/node-red-contrib-grpc/grpc/grpc-client-streaming.js"
+            }
+        }
+    },
+    "node-red-node-fitbit": {
+        "name": "node-red-node-fitbit",
+        "version": "0.1.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "fitbit": {
+                "name": "fitbit",
+                "types": [
+                    "fitbit-credentials",
+                    "fitbit in",
+                    "fitbit"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-fitbit",
+                "file": "/data/node_modules/node-red-node-fitbit/fitbit.js"
+            }
+        }
+    },
+    "node-red-node-openweathermap": {
+        "name": "node-red-node-openweathermap",
+        "version": "0.5.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "openweathermap": {
+                "name": "openweathermap",
+                "types": [
+                    "openweathermap",
+                    "openweathermap in"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-openweathermap",
+                "file": "/data/node_modules/node-red-node-openweathermap/weather.js"
+            }
+        }
+    },
+    "node-red-node-pi-gpio": {
+        "name": "node-red-node-pi-gpio",
+        "version": "2.0.5",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "rpi-gpio": {
+                "name": "rpi-gpio",
+                "types": [
+                    "rpi-gpio in",
+                    "rpi-gpio out",
+                    "rpi-mouse",
+                    "rpi-keyboard"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-pi-gpio",
+                "file": "/data/node_modules/node-red-node-pi-gpio/36-rpi-gpio.js"
+            }
+        }
+    },
+    "node-red-node-twitter": {
+        "name": "node-red-node-twitter",
+        "version": "1.2.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "twitter": {
+                "name": "twitter",
+                "types": [
+                    "twitter-credentials",
+                    "twitter in",
+                    "twitter out"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-twitter",
+                "file": "/data/node_modules/node-red-node-twitter/27-twitter.js"
+            }
+        }
+    },
+    "node-red-node-ui-table": {
+        "name": "node-red-node-ui-table",
+        "version": "0.4.3",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "ui_table": {
+                "name": "ui_table",
+                "types": [
+                    "ui_table"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-ui-table",
+                "file": "/data/node_modules/node-red-node-ui-table/node.js"
+            }
+        }
     }
 }

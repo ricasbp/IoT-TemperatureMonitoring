@@ -140,6 +140,7 @@
             "tours": {
                 "welcome": "2.2.3"
             }
-        }
+        },
+        "menu-menu-item-sidebar": true
     }
 }

@@ -811,5 +811,24 @@
                 "file": "/data/node_modules/node-red-contrib-error-on-timeout/error-on-timeout.js"
             }
         }
+    },
+    "node-red-contrib-msg-timeout": {
+        "name": "node-red-contrib-msg-timeout",
+        "version": "0.1.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "node-red-contrib-msg-timeout": {
+                "name": "node-red-contrib-msg-timeout",
+                "types": [
+                    "msgtimeout"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-msg-timeout",
+                "file": "/data/node_modules/node-red-contrib-msg-timeout/msgtimeout.js"
+            }
+        }
     }
 }

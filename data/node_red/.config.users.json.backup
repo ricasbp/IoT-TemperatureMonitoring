@@ -122,7 +122,7 @@
                 ]
             }
         },
-        "menu-menu-item-sidebar": false
+        "menu-menu-item-sidebar": true
     },
     "ricardo": {
         "editor": {
@@ -140,6 +140,7 @@
             "tours": {
                 "welcome": "2.2.3"
             }
-        }
+        },
+        "menu-menu-item-sidebar": false
     }
 }
