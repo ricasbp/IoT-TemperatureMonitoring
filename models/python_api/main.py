@@ -31,9 +31,9 @@ class BatchRequest(BaseModel):
 setattr(__main__, "LSTM", LSTM)
 setattr(__main__, "CustomRandomForestRegressor", CustomRandomForestRegressor)
 
-with open("./outside_model/model_v3","rb") as o:
+with open("./outside_model/model_v3.1-torch","rb") as o:
     outside_model: LSTM = \
-        torch.load("./outside_model/model_v3", encoding='bytes', map_location="cpu")
+        torch.load(o, encoding='bytes', map_location="cpu")
 
 print("Outside Model:")
 print(outside_model)
