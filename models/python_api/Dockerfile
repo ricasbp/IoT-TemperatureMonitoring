@@ -6,7 +6,7 @@ RUN apk upgrade
 
 RUN conda install numpy
 RUN conda install -c pytorch pytorch torchvision torchaudio
-RUN pip install -U scikit-learn
+RUN pip install -U scikit-learn==1.1.2
 
 RUN pip install fastapi
 RUN pip install uvicorn[standard]
