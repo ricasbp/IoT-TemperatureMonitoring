@@ -3045,7 +3045,8 @@ async def single_prediction(body: SingleRequest):
         outside_preds = outside_model.predict(np.array(outside_memory))
     else:
         outside_memory.pop(0)
-        outside_preds = outside_model.predict(np.array(curr_temp_out))
+        outside_memory.append(curr_temp_out)
+        outside_preds = outside_model.predict(np.array(outside_memory))
     if with_inside:
         inside_preds = inside_model.total_predict(curr_temp_out, outside_preds, curr_temp_in)
 
