@@ -30,21 +30,21 @@ services:
     #entrypoint: "tail -f /dev/null"
     entrypoint: ["uvicorn", "--host", "0.0.0.0","main:app", "--port", "9090"]
     container_name: model_service
+    #ports:
+    #  - 9090:9090
+  mosquitto:
+    profiles:
+      - broker_vm
+      - total
+    image: eclipse-mosquitto:2.0.15
+    container_name: mosquitto_broker
+    volumes:
+      - ./data/mosquitto/config/:/mosquitto/config/:ro
+      - ./data/mosquitto/log/:/mosquitto/log/
+      - ./data/mosquitto/data/:/mosquitto/data/
     ports:
-      - 9090:9090
-  #mosquitto:
-  #  profiles:
-  #    - broker_vm
-  #    - total
-  #  image: eclipse-mosquitto:2.0.15
-  #  container_name: mosquitto_broker
-  #  volumes:
-  #    - ./data/mosquitto/config/:/mosquitto/config/:ro
-  #    - ./data/mosquitto/log/:/mosquitto/log/
-  #    - ./data/mosquitto/data/:/mosquitto/data/
-  #  #ports:
-  #  #  - 1883:1883
-  #  #  - 9001:9001
+      - 1883:1883
+      - 9001:9001
   timescale_db:
     profiles:
       - main_vm
@@ -55,11 +55,25 @@ services:
     environment:
       POSTGRES_USER: timescaledb
       POSTGRES_PASSWORD: password
-    #entrypoint: "tail -f /dev/null"
     volumes:
-      - ./data/timescaledb2:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
+      - ./data/timescaledb:/var/lib/postgresql/data
+    #ports:
+    #  - 1883:1883
+    #  - 9001:9001
+  #timescale_db:
+  #  profiles:
+  #    - main_vm
+  #    - total
+  #  image: timescale/timescaledb:2.8.1-pg14
+  #  restart: always
+  #  container_name: timescale_db
+  #  environment:
+  #    POSTGRES_USER: timescaledb
+  #    POSTGRES_PASSWORD: password
+  #  volumes:
+  #    - ./data/timescaledb:/var/lib/postgresql/data
+  #  ports:
+  #    - 5432:5432
   #prometheus_postgresql_adapter:
   #  depends_on:
   #  - timescaledb
