@@ -3023,6 +3023,9 @@ with open("./inside_model/model_v3","rb") as o:
 print(inside_model)
 
 
+MEMORY_MAX = 100
+outside_memory = []
+
 app = FastAPI()
 
 @app.post("/single")
@@ -3037,7 +3040,11 @@ async def single_prediction(body: SingleRequest):
     else:
         curr_temp_in = body.current_temperature_inside
 
-    outside_preds = outside_model.predict(np.array(curr_temp_out))
+    if len(outside_memory) < MEMORY_MAX:
+        outside_memory.append(curr_temp_out)
+        outside_preds = outside_model.predict(np.array(outside_memory))
+    else:
+        outside_preds = outside_model.predict(np.array(curr_temp_out))
     if with_inside:
         inside_preds = inside_model.total_predict(curr_temp_out, outside_preds, curr_temp_in)
 
